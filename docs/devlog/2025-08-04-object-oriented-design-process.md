@@ -1,0 +1,7 @@
+# 2025-08-04 – Object Oriented Design Process
+
+## Narrative
+I began the day by finishing off the establishment of the narrative surrounding my application. I described the environment that the app would be used in, followed by how the app would augment and supplement the experiences within that environment. I derived from this a collection of candidate classes and responsibilities that I will use in conjunction with the things I develop in the next section to establish my domain classes and responisbilities.
+
+## Use Cases
+User auth, the index (dex) functionalities, and the majority of the teambuilding use cases have been detailed so far. I'll end the day with about 50 described. Throughout the process my mental picture of the classes and responsibilities/the interoperability of different components became clearer. As silly as it sounds, my big revelation of the day was to design a "Slot" class which will be the building block of teams, as well as of the damage calculator. The Slot class will hold a pokemon, its stats, and its user selected fields. The dual use in the teambuilder and the calculator will allow users to move seamlessly from designing to calculating/testing and vice versa, effectively facilitating the iterative process. The last of the teambuilding, as well as all of the calculator use cases remain to be done, but I'm happy with where I'm leaving it for the day.
