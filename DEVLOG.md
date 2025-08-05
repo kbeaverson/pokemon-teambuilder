@@ -10,7 +10,8 @@ To document architecture decisions, trade-offs, ideas, and roadblocks during the
 | Date       | Title                            | Link                                             |
 |------------|----------------------------------|--------------------------------------------------|
 | 2025-08-03 | Rebuild Start – Goals & Vision   | [2025-08-03-rebuild-start.md](docs/devlog/2025-08-03-rebuild-start.md) |
-| 2025-08-03 | Object Oriented Design Process   | [2025-08-04-object-oriented-design-process.md](docs/devlog/2025-08-04-object-oriented-design-process.md) |
+| 2025-08-04 | Object Oriented Design Process: Narrative and Use Cases | [2025-08-04-object-oriented-design-process.md](docs/devlog/2025-08-04-object-oriented-design-process.md) |
+| 2025-08-05 | OOD Continued: Use Cases, Domain Classes, and Responsibilities | [2025-08-05-classes-and-responsibilities.md](docs/devlog/2025-08-05-classes-and-responsibilities.md) |
 | ...        | ...                              | ...                                              |
 
 ## Key Documents
