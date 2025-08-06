@@ -4,11 +4,12 @@
 
 ### User creates account
 1. User taps "Create Account" from login screen
-2. User enters email
-3. User enters password
-4. User enters password confirmation
-5. User taps "Create"
-6. User returns to login screen
+2. User is taken to Registration screen
+3. User enters email
+4. User enters password
+5. User enters password confirmation
+6. User taps "Create"
+7. User returns to login screen
 
 ### User logs in
 1. User opens app to login screen
@@ -226,36 +227,41 @@
 5. User taps "back"
 6. User is returned to Itemdex screen
 
-### User selects an item to build around from the Itemdex screen
-1. User long-presses the item in list
-2. User taps "Build around"
-3. User is taken to Teambuilder screen
-4. New team object is created
-5. Selected item is placed in the first slot's item field
-6. Perform team save flow
+~~### User selects an item to build around from the Itemdex screen~~
+~~1. User long-presses the item in list~~
+~~2. User taps "Build around"~~
+~~3. User is taken to Teambuilder screen~~
+~~4. New team object is created~~
+~~5. Selected item is placed in the first slot's item field~~
+~~6. Perform team save flow~~
 
 ## Team Functions
 
 ### **Pokémon into Slot Flow**
 When a new Pokémon is inserted into a team slot (via Build Around, Add, or Replace), the following steps occur:
-1. **Base Stat Setup**
-   - Set the slot’s base stats to match the newly inserted Pokémon’s base stats
-   - Set all IVs to 31 (maximum value)
-   - Set all EVs to 0
-   - Set nature to "Quirky" (neutral nature)
-2. **Derived Stat Calculation**
-   - Calculate total stats using:
-     - Base stats
-     - Level (default=50)
-     - Nature
-     - IVs and EVs
-   - Update the slot’s displayed stats accordingly
-3. **Held Item Assignment**
-   - If the Pokémon has a required held item (e.g., Ogerpon-Hearthflame requires the Hearthflame Mask), automatically assign it to the slot’s held item field
-4. **Gimmick Reset**
-   - Reset generational gimmick fields (e.g., Terastallization, Dynamax) to their default values:
-     - Terastallization: selected pokemons primary type (first type that appears in type list)
-     - Dynamax: toggle gigantamax off by default
+1. Base Stat Setup
+    - Set the slot’s base stats to match the newly inserted Pokémon’s base stats
+    - Set all IVs to 31 (maximum value)
+    - Set all EVs to 0
+    - Set nature to "Docile" (neutral nature)
+2. Derived Stat Calculation
+    - Calculate total stats using:
+        - Base stats
+        - Level (default=50)
+        - Nature
+        - IVs and EVs
+    - Update the slot’s displayed stats accordingly
+3. Held Item Assignment
+    - If the Pokémon has a required held item (e.g., Ogerpon-Hearthflame requires the Hearthflame Mask), automatically assign it to the slot’s held item field
+4. Gimmick Reset
+    - Reset generational gimmick fields (e.g., Terastallization, Dynamax) to their default values:
+        - Terastallization: selected pokemons primary type (first type that appears in type list)
+        - Dynamax: toggle gigantamax off by default
+5. Move Compatibility Assessment
+    - For each non-empty move, check the selected pokemon's movepool for that move. Clear the move slot if not present.
+6. Ability Compatibility Assessment
+    - For a non-empty ability field, check the selected pokemon's abilitypool for that ability. Clear the ability slot if not present.
+
 
 ### **Team save flow**
 1. App inserts/updates team in local DB immediately
@@ -280,11 +286,11 @@ When a new Pokémon is inserted into a team slot (via Build Around, Add, or Repl
 ### User creates a team from My Teams screen
 1. User taps "Create team"
 2. User is taken to Teambuilder screen
-3. New team objects is created
+3. New team object is created
 4. New team object is automatically saved to DB (local and online)
 
 ### User deletes a team from My Teams screen
-1. User opens context menu for a team by long-pressing the team in list of teams
+1. User ~~opens context menu for a team by long-pressing the team in list of teams~~ taps hamburger menu for a team in the list of teams
 2. User taps "Delete team"
 3. User is presented with confirmation dialogue warning "This cannot be undone"
 4. User taps "Delete"
@@ -344,7 +350,7 @@ When a new Pokémon is inserted into a team slot (via Build Around, Add, or Repl
 1. User adds a move to a move field of the slot in the Teambuilder screen
 2. User taps the pokemon field of the slot
 3. User is taken to Pokedex screen
-    - Pokemon list is filtered to display only those pokemon with the selected move in its movepool
+    - Pokemon list is filtered to display first those pokemon with the selected move in their movepool, in a more vibrant hue than the subsequent pokemon that do not have the selected move in their movepool
     - User optionally uses search/filter functionality to locate desired pokemon
 4. User taps a pokemon's list item to select
 5. User is returned to Teambuilder screen
@@ -356,7 +362,7 @@ When a new Pokémon is inserted into a team slot (via Build Around, Add, or Repl
 1. User adds moves to move fields of the slot in the Teambuilder screen
 2. User taps the pokemon field of the slot
 3. User is taken to Pokedex screen
-    - Pokemon list is filtered to display only those pokemon with the selected moves in its movepool
+    - Pokemon list is filtered to display first those pokemon with the selected moves in their movepool, in a more vibrant hue than the subsequent pokemon that do not have the selected moves in their movepool
     - User optionally uses search/filter functionality to locate desired pokemon
 4. User taps a pokemon's list item to select
 5. User is returned to Teambuilder screen
@@ -368,7 +374,7 @@ When a new Pokémon is inserted into a team slot (via Build Around, Add, or Repl
 1. User adds an ability to the ability field of the slot in the Teambuilder screen
 2. User taps the pokemon field of the slot
 3. User is taken to Pokedex screen
-    - Pokemon list is filtered to display only those pokemon with the selected ability in its abilitypool
+    - Pokemon list is filtered to display first those pokemon with the selected ability in their abilitypool, in a more vibrant hue than the subsequent pokemon that do not have the selected ability in their abilitypool
     - User optionally uses search/filter functionality to locate desired pokemon
 4. User taps a pokemon's list item to select
 5. User is returned to Teambuilder screen

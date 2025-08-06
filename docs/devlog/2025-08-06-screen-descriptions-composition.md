@@ -1,0 +1,27 @@
+# 2025-08-06 - Screen Descriptions and Compositions
+
+## Screens and Widgets
+While I know these are technically very similar, I chose to organize them by major elements/minor elements, or screens/widgets. You can find them [here](../ood_process/screen-composition.md). Today I went through my use cases again and developed most of the screens and widgets referenced therein. The calculator screens/widgets are yet to be completed, but the task is nearly done anyhow. I am a little shaky on my implementation of the type relationship representations. I tried to implement in a way that components can be reused between individual pokemon and whole teams, but I think I'm realizing that I prefer that information be communicated differently. I may redo that section tomorrow. Otherwise, I'm feeling good and excited to continue. I had been hoping to make it to the mockup/flow stage today, going so far as to make a Figma account this morning, but alas. Hopefully tomorrow is the day.
+
+## Biggest Development of the Day
+So as it turns out, the most important thing done today was likely not the screens/widgets exactly, but the uncovering of a logistical issue and its solution identified during the screen/widget description. The reuse of Slot widgets and Pokemon info card widgets to maintain a sense of familiarity is very important, but some views and screens are designed for direct modification/teambuilding functionalities, while others are intended only for view/simple selection. I ended up deciding to pursue a custom context based system, wherein I develop a few needed abstract context classes that will be implemented by parents of these widgets, and those context classes will communicate whether the widgets should be loaded as read-only or not. This is probably a common problem and a simple solution, but it's my first time encountering something like this and I'm excited to take a shot a implementing it. 
+
+## Revisions and Further Development
+This section is going to describe some of the highlights from the realtime notes I jotted down while I was working. One simple but important change was the introduction of the mythical and legendary boolean attributes for pokemon, as these will be used in filtering pokemon and verifying pokemon legality regularly. I also pre-empted a quality of life change in the filtering of pokemon in the teambuilder pokemon selection flow when moves or abilities are already selected. Now, instead of only showing compatible pokemon, it will show compatible pokemon first, with all the rest after. This was done to avoid forcing users to remove each individual move from a slot before selecting a pokemon they want in the team builder. Of course, this change also necessitated some tweaks to the Pokemon into Slot flow, and it now removes any incompatible moves and abilities automatically when a pokemon is selected. The other big thing was my discovery of a possible team sheet generation flow using the screenshot package (linked below).
+
+## Realtime Notes
+- I noticed right away, when describing the different screens I would need, my login use case failed to indicate that the user is to be taken to the Registration screen. Fixed.
+- Forgot to add gender ratio, mythical, and legendary status to Pokemon attributes yesterday - fixed.
+- Renamed Pokemon Info screen -> Pokemon Details screen to avoid confusion with Pokemon Info widget. Similar for Move and Ability.
+- Designed BuildAroundContext and its extensions, and added it to classes and responsibilities.
+- Elected to forego any "Build Around" functionality from the Itemdex, for now, due to increased complexity with minor use cases
+- Noticed that I currently had not considered how to handle when a users device may be out of storage when trying to sync teams (downloading) with the database.
+- Considering making Stat screen modification flow into a modal sheet rather than a whole new screen.
+- Modified rules about filtering displayed pokemon for a slot when moves/abilities are selected. Now displays compatible pokemon first in a more vibrant hue, and incompatible pokemon after in a dimmer hue. Selecting an incompatible pokemon will clear the ability/move fieds that are incompatible. Updated pokemon into slot flow accordingly.
+- As I wrote out what might be included in the Account screen, I realized that I would like users to be able to see the number of teams they built, which pokemon they use, what types they use most, etc. so I would like to add user stats widgets.
+- Something something "team tags" that allow users to note the style/strategy of the team e.g. "Sun", "Tail-room", etc.
+- May implement shareable images by producing a widget that has the layout of team elements that I want, then use a package like this: https://pub.dev/packages/screenshot to screenshot it.
+- Considering adding similar context logic for Slot and its children so that slots may be viewed in Bank and from "Select from Other Team" button without being modified
+- Considering reordering set creation in bank to take user to set modification screen before opening the modal sheet of pokedex to make flow clearer to user.
+- Considering scatter chart or the like to display speed tiers rather than original idea. 
+- Some of the hamburger menus are quite bloated, may rework widget layouts to accomodate new buttons

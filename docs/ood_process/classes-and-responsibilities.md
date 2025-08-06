@@ -119,6 +119,9 @@ Side should have the field effects for its side, as well as the Slot for its sid
 - baseSpe: int
 - preEvolution: bool
 - weight: int
+- genderRatio: int
+- isMythical: bool
+- isLegendary: bool
 - sprite: Image
 - movePool: List<Move>?
 - abilityPool: List<Ability>?
