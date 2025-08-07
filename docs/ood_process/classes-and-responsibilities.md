@@ -118,10 +118,12 @@ Side should have the field effects for its side, as well as the Slot for its sid
 - baseSpD: int
 - baseSpe: int
 - preEvolution: bool
-- weight: int
+- weight: double
 - genderRatio: int
 - isMythical: bool
 - isLegendary: bool
+- isMax: bool
+- isMega: bool
 - sprite: Image
 - movePool: List<Move>?
 - abilityPool: List<Ability>?
@@ -145,6 +147,7 @@ Side should have the field effects for its side, as well as the Slot for its sid
 - power: int
 - accuracy: int
 - priority: int
+- pp: int
 - shortDescription: String
 - longDescription: String
 - hasSecondaryEffect: bool
@@ -167,6 +170,8 @@ Side should have the field effects for its side, as well as the Slot for its sid
 - wind: bool
 - boostedBySheerForce: bool
 - ohko: bool
+- isZmove: bool
+- isMaxMove: bool
 ### Responsibilities
 - Provide immutable, canonical data about a move
 - Serve as a reference model for Slot customization

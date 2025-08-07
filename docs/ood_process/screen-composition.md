@@ -161,7 +161,12 @@ Displays detailed breakdown of team offenses, defenses, resources etc. for a giv
 
 ### Screen: Damage calculator
 Provides UI to perform damage calculation
-### NOTE: Stopped here for the day.
+- Calculator result text
+- 2x Widget: Calculator pokemon *(place this at top of screen so that they remain visible when scrolling down through calculator options)*
+- 2x Widget: Calculator side
+- Widget: Calculator field effects
+- Crit button
+
 
 ## Widgets
 
@@ -374,6 +379,8 @@ Displays the item info for a slot
 ### Widget: Nature field
 Displays the nature for a slot
 - Name text *(Default docile)*
+**Context menu (long-press):**
+- Opens a drop down of all available natures to select from
 
 ### Widget: Stat card
 Displays all stats and the nature for a slot. Tappable when a pokemon is selected, navigates to Stats screen.
@@ -427,3 +434,105 @@ Shows list of slots in immutable state, for use in bank or when selecting sets f
 - List of Widget: Slot *(immutable in this context)*
 - Search bar
 - Filter button *(for use with set tags, stretch goal)*
+
+### Widget: Calculator pokemon
+Provides interface for pokemon for damage calculator
+- Sprite image
+- Name text
+**Context menu (long-press):**
+- Select pokemon button -> Opens the pokedex screen for pokemon re-selection for this slot
+
+### Widget: Calculator side
+Provides interface for all components of a side in the damage calculator
+- List (Group?) of Widget: Calculator move
+- Widget: Calculator tera
+- Widget: Calculator dynamax
+- Widget: Calculator mega
+- Widget: Calculator Z move
+- Widget: Calculator ability
+- Widget: Calculator item
+- Widget: Calculator status
+- Widget: Calculator health
+- Widget: Calculator stat card
+- Widget: Calculator side conditions
+
+### Widget: Calculator move
+Provides interface for moves for damage calculator. Setting the move to the attacking move in the calculator will color-code it to its type's color. Tapping an empty move slot opens the movedex screen for the slot's pokemon.
+- Type image
+- Category image
+- Name text
+**Context menu (long-press):**
+- Select move button -> Opens the movedex screen for the pokemon in this move's parent slot's pokemon field for move re-selection
+
+### Widget: Calculator tera
+Provides interface for a tera type for damage calculator. Activating the tera type will color-code it to its type's color.
+- Tera type text
+- Type image
+**Context menu (long-press):**
+- Opens drop down of types to select for a tera type
+
+### Widget: Calculator dynamax
+Provides interface to modify the dynamax status of a pokemon
+- Dynamax toggle button
+**Context menu (long-press):**
+- Gigantamax toggle button *(only present if pokemon has a gigantamax form)*
+
+### Widget: Calculator mega
+Provides interface to modify the mega-evolution status of a pokemon *(only present if pokemon is holding appropriate mega stone item)*
+- Mega evolution toggle button
+
+### Widget: Calculator Z move
+Provides a button to toggle whether the used move is a Z move *(only present if attacking pokemon is holding a Z crystal of the appropriate type)*
+- Z move button
+
+### Widget: Calculator ability
+Provides interface to view and modify the ability for a slot in the calculator
+- Name text
+**Context menu (long-press):**
+- Opens drop down of abilities from this pokemon's ability pool to select
+
+### Widget: Calculator item
+Provides interface to view and modify the item for a slot in the calculator
+- Sprite image
+- Name text
+**Context menu (long-press):**
+- Select item button -> Opens the itemdex screen for item selection. *(Not present if selected pokemon has a required item)*
+
+### Widget: Calculator status
+Provides interface for selecting the status condition(s) for a slot in the calculator
+- Name text
+**Context menu (long-press):**
+- Opens a dropdown menu of status conditions to select from for this slot
+
+### Widget: Calculator health
+Provides interface for editing the health percentage for a slot in the calculator
+- Health percent text
+**Context menu (long-press):**
+- Opens a slider from 1-100 for the health percentage of this slot
+
+### Widget: Calculator stat card
+Provides interface to view and edit the stats for a slot in the calculator
+- List of Widget: Calculator single stat
+- Widget: Calculator nature
+
+### Widget: Calculator single stat
+Provides interface to view and edit a single stat and its modifiers for a pokemon in a slot in the calculator
+- Stat name text
+- Calculated stat value text *(Color-coded if one of the two stats impacted by the slot's selected nature)*
+- Widget: EV modifier editor
+- Widget: IV modifier editor
+
+### Widget: Calculator nature
+Provides interface to view and edit the selected nature for a slot in the calculator
+- Nature text
+**Context menu (long-press):**
+- Opens a drop down of all available natures to select from
+
+### Widget: Calculator field effects
+Provides a grid of buttons to toggle different field effects in the damage calculator
+- Grid of buttons to toggle field effect booleans
+
+### Widget: Calculator side conditions
+Provides a grid of buttons for all possible side conditions for a side in the damage calculator
+- Grid of buttons for each boolean
+- Series of buttons for each level of Spikes possible

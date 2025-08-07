@@ -13,8 +13,8 @@ To document architecture decisions, trade-offs, ideas, and roadblocks during the
 | 2025-08-04 | Object Oriented Design Process: Narrative and Use Cases | [2025-08-04-object-oriented-design-process.md](docs/devlog/2025-08-04-object-oriented-design-process.md) |
 | 2025-08-05 | OOD Continued: Use Cases, Domain Classes, and Responsibilities | [2025-08-05-classes-and-responsibilities.md](docs/devlog/2025-08-05-classes-and-responsibilities.md) |
 | 2025-08-06 | OOD Continued: Screen Descriptions & Composition | [2025-08-06-screen-descriptions-composition.md](docs/devlog/2025-08-06-screen-descriptions-composition.md) |
+| 2025-08-07 | OOD Continued: Screen Flows & Databases | [2025-08-07-screen-flows-databases.md](docs/devlog/2025-08-07-screen-flows-databases.md) |
 | ...        | ...                              | ...                                              |
-
 ## Key Documents
 
 - [Architecture Overview](docs/architecture.md)
