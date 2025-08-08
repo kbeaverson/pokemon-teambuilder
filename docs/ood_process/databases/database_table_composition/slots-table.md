@@ -1,0 +1,25 @@
+## Slots table composition
+- id: UUID
+- pokemon_id: foreign key [(Pokemon)](databases/database_table_composition/pokemon-table.md)
+- move1_id: foreign key [(Moves)](databases/database_table_composition/moves-table.md)
+- move2_id: foreign key [(Moves)](databases/database_table_composition/moves-table.md)
+- move3_id: foreign key [(Moves)](databases/database_table_composition/moves-table.md)
+- move4_id: foreign key [(Moves)](databases/database_table_composition/moves-table.md)
+- ability_id: foreign key [(Abilities)](databases/database_table_composition/abilities-table.md)
+- item_id: foreign key [(Items)](databases/database_table_composition/items-table.md)
+- nature: String
+- teraType: String?
+- gigantamax: bool
+- notes: String?
+- hpIV: int
+- hpEV: int
+- atkIV: int
+- atkEV: int
+- defIV: int
+- defEV: int
+- spaIV: int
+- spaEV: int
+- spdIV: int
+- spdEV: int
+- speIV: int
+- speEV: int

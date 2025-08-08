@@ -404,6 +404,7 @@ When a new Pokémon is inserted into a team slot (via Build Around, Add, or Repl
 2. User is taken to Movedex screen
     - If a pokemon is selected for the slot: move list is filtered to display only those moves that the selected pokemon can learn
     - If a pokemon is not selected for the slot: move list is presented in its entirety
+    - If a move is already selected, it is shaded a different color from the rest to indicate such. If selected anyhow, remove the other instance of the move from its move field for the slot before placing 
 3. User can optionally search/filter to locate the desired move
 4. User taps a move's list item to select
 5. User is returned to Teambuilder screen
@@ -484,11 +485,12 @@ When a new Pokémon is inserted into a team slot (via Build Around, Add, or Repl
     - Mutability restored
 
 ### User selects a regulation for the team
-*Note: the regulation/ruleset will default to an empty field (national dex, essentially), so that initialization of a team doesn't require a regulation be selected beforehand*
+*Note: the regulation/ruleset will default to ~~an empty field (~~national dex or the current competitive regulation,~~, essentially),~~ so that initialization of a team doesn't require a regulation be selected beforehand*
 1. User taps the regulation field for a team in the Teambuilder screen
 2. A dropdown appears that lists all possible competitive rulesets
 3. User selects a ruleset
 4. The selected ruleset is placed in the ruleset field for the team
+    - Any gimmicks that may have been selected when switching to a regulation that disallows it should be set to the default value for each slot as they are disabled
 5. Ruleset validity indicators are enabled, flagging any pokemon/item/move/etc. that is not allowed in the format
     - Red outline, maybe? Red glowing exclamation in a circle?
 6. Perform team save flow

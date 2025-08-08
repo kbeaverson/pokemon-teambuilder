@@ -1,0 +1,18 @@
+# 2025-08-08 - Database Model
+Today I focused on designing my database relational model. Thinking about this led me to a rather thorough refactoring of my regulation/clause structure so that I could store clause and regulation information in the database without having to try to store dart code in the database (obviously a bad idea anyhow). One solution was to implement all clause/regulation logic and release an app update every time a new ruleset releases (typically ~every 3 months), but since most of the ruleset changes are very similar this felt like overkill. Now I plan to implement modular clause functions on-device and have specific applications of them (as inputs to the functions) stored in the database. This solution was meaningful to me because I wanted to be able to provide users with the most up-to-date regulation offerings as quickly as possible without having to wait for app updates to be approved/released. Once I had that cleared up I turned my attention back to the database relational model.
+
+## Database Tables
+I have completed the database relational model for all my database tables. I elected to store the regulations and clauses in the database as json data, with local logic shipped with the app. This should allow me to add new regulations to the app as fast as possible without having to put out a new release everytime there is a new ruleset that follows similar patterns to the existing rulesets. While the bank table is currently just a table storing the foreign key of slots now, I elected to maintain it as a separate table to allow for easy introduction of tags/favorites functionalities down the line. All the tables and their columns can be found [here.](../ood_process/databases/database-tables.md)
+
+## Realtime Notes
+- Reconsidering implementation of Regulation, Clause: Rules can apply to individual slots and their attributes, but they can also apply to entire teams via inter-slot dependent rules (e.g. limit one per species clause). Further, I idealize there being a default regulation for the teambuilder at any given time, and I would like widgets to be toggled dependent on their legality (dynamax, terastalization). To this end:
+    - Regulations should have boolean values for each generational gimmick so that the gimmicks can be activated/deactivated
+    - Clauses should apply to entire teams and/or to slots individually?
+- Clause rule(Slot) function -> validate(Team) function, as each slot Clause (less common) can be checked when checking the whole team
+- Added violationMessage to Clause so that the violation can be clearly conveyed to the user
+- The above has me considering how to make these settings toggle-able in the calculator. Perhaps there are simple toggle buttons in the calculator hamburger menu, with users being able to store their default preferences for the gimmick settings. Maybe the toggles initial settings default to the rules of the current regulation if user preferences aren't set?
+- Added clarification for selecting a regulation that disallows fields that are currently selected for slots (in the case of gimmicks) 
+- ~~Reconsidering also the idea of storing regulations/clauses server-side, as clauses will contain custom validation functions that probably shouldn't (can't?) be stored in the database. Might pursue storing regulations/clauses as json data with clause logic stored individually~~
+- Set default regulation to either national dex or the current regulation
+- Realized you need a table connecting users accounts to their teams (duh)
+- Justify the offline bank table in its current state in the following way: This structure allows for the easy introduction of tags/favorites down the line. 

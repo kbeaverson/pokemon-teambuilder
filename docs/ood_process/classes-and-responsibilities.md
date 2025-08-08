@@ -56,18 +56,23 @@ Below I've outlined all classes, their attributes and responsibilities that I ha
 
 ## Regulation
 ### Attributes
-- id: String
+- id: UUID
 - name: String
 - clauses: List<Clause>
+- isDynamaxLegal: bool
+- isMegaLegal: bool
+- isTeraLegal: bool
 ### Responsibilities
 - Validate legality of Teams and Slots
 - Define what is allowed per generation or tournament format
 
 ## Clause
 ### Attributes
+- id: UUID
 - type: Enum (Pokemon, Move, Ability, Item, Gimmick)
-- rule: Function(Slot) → bool
+- validate: Function(Team) → bool
 - message: String
+- violationMessage: String?
 ### Responsibilities
 - Validate one field of a Slot or Team
 - Generate warnings for invalid elements
