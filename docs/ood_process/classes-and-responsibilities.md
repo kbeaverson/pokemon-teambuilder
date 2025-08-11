@@ -41,7 +41,7 @@ Below I've outlined all classes, their attributes and responsibilities that I ha
 - ivs: Map<Enum (Stat), int>
 - evs: Map<Enum (Stat), int>
 - teraType: Type?
-- gigantamax: bool
+- isGigantamax: bool
 - notes: String
 - isDirty: bool
 ### Responsibilities
@@ -122,7 +122,7 @@ Side should have the field effects for its side, as well as the Slot for its sid
 - baseSpA: int
 - baseSpD: int
 - baseSpe: int
-- preEvolution: bool
+- isPreEvolution: bool
 - weight: double
 - genderRatio: int
 - isMythical: bool
@@ -130,16 +130,16 @@ Side should have the field effects for its side, as well as the Slot for its sid
 - isMax: bool
 - isMega: bool
 - sprite: Image
-- movePool: List<Move>?
-- abilityPool: List<Ability>?
+~~- movePool: List<MovePoolEntry>?~~
+~~- abilityPool: List<AbilityPoolEntry>?~~
 - mandatoryItemName: String?
-*The pools are optionals to facilitate lazy loading of this data, which will be in separate tables*
+~~The pools are optionals to facilitate lazy loading of this data, which will be in separate tables~~
 ### Responsibilities
 - Provide immutable, canonical data about a species
 - Serve as a reference model for Slot customization
 - Enable stat calculation by exposing base stats and typing
 - Facilitate Pokédex queries and info screen population
-- Support legality checks via static ability/move lists
+~~- Support legality checks via static ability/move lists~~
 
 ## Move
 ### Attributes
@@ -177,6 +177,7 @@ Side should have the field effects for its side, as well as the Slot for its sid
 - ohko: bool
 - isZmove: bool
 - isMaxMove: bool
+- isLegal: bool
 ### Responsibilities
 - Provide immutable, canonical data about a move
 - Serve as a reference model for Slot customization
@@ -220,3 +221,22 @@ Side should have the field effects for its side, as well as the Slot for its sid
 - decreasedStat: Enum (Stat)
 ### Responsibilities
 - Support stat and damage calculation by exposing nature traits
+
+## MovePoolEntry
+### Attributes
+- pokemon: Pokemon
+- move: Move
+- learnMethod: Enum (levelup, egg, etc.)
+- learnLevel: int? *(only for levelup moves)*
+### Responsibilities
+- Act as a join class providing extra per-pokemon information for moves
+- Support legality checks via static move lists
+
+## AbilityPoolEntry
+### Attributes
+- pokemon: Pokemon
+- ability: Ability
+- isHidden: bool
+### Responsibilities
+- Act as a join class providing extra per-pokemon information for abilities
+- Support legality checks via static ability lists

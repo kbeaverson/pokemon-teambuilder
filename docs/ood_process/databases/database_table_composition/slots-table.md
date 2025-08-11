@@ -9,7 +9,7 @@
 - item_id: foreign key [(Items)](../database_table_composition/items-table.md)
 - nature: String
 - teraType: String?
-- gigantamax: bool
+- isGigantamax: bool
 - notes: String?
 - hpIV: int
 - hpEV: int

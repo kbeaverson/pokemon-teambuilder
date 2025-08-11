@@ -9,12 +9,12 @@
 - baseSpA: int
 - baseSpD: int
 - baseSpe: int
-- preEvolution: bool
+- isPreEvolution: bool
 - weight: double
 - genderRatio: int
 - isMythical: bool
 - isLegendary: bool
 - isMax: bool
 - isMega: bool
-- sprite: Image
+~~- sprite: Image~~
 - mandatoryItemName: String?

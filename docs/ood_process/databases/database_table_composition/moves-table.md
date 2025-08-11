@@ -33,3 +33,4 @@
 - ohko: bool
 - isZmove: bool
 - isMaxMove: bool
+- isLegal: bool

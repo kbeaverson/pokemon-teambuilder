@@ -4,5 +4,5 @@
 - dexNum: int
 - flingPower: int
 - ignoredByKlutz: bool
-- sprite: Image
+~~- sprite: Image~~
 - category: List<String> (formatted json?)
