@@ -1,4 +1,4 @@
-/// All possible move targeting types
+/// Move targeting tags
 enum MoveTarget {
   all,
   allFoes,

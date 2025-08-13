@@ -130,16 +130,17 @@ Side should have the field effects for its side, as well as the Slot for its sid
 - isMax: bool
 - isMega: bool
 - sprite: Image
-~~- movePool: List<MovePoolEntry>?~~
-~~- abilityPool: List<AbilityPoolEntry>?~~
+- ~~movePool: List<MovePoolEntry>?~~
+- ~~abilityPool: List<AbilityPoolEntry>?~~
 - mandatoryItemName: String?
+
 ~~The pools are optionals to facilitate lazy loading of this data, which will be in separate tables~~
 ### Responsibilities
 - Provide immutable, canonical data about a species
 - Serve as a reference model for Slot customization
 - Enable stat calculation by exposing base stats and typing
 - Facilitate Pokédex queries and info screen population
-~~- Support legality checks via static ability/move lists~~
+- ~~Support legality checks via static ability/move lists~~
 
 ## Move
 ### Attributes
@@ -215,7 +216,7 @@ Side should have the field effects for its side, as well as the Slot for its sid
 
 ## Nature
 ### Attributes
-- id: UUID
+- ~~id: UUID~~
 - name: String
 - increasedStat: Enum (Stat)
 - decreasedStat: Enum (Stat)

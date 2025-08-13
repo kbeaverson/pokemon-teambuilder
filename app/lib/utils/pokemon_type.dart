@@ -1,4 +1,4 @@
-/// All possible pokemon types
+/// Pokemon type
 enum PokemonType {
   normal,
   fire,
