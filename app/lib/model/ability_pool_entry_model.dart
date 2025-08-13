@@ -6,17 +6,10 @@ part 'ability_pool_entry_model.freezed.dart';
 
 /// An ability/pokemon pair that contains whether the ability is the pokemon's hidden ability
 @freezed
-class AbilityPoolEntry with _$AbilityPoolEntry {
-  const AbilityPoolEntry ({
-    required this.ability,
-    required this.pokemon,
-    required this.isHidden,
-  });
-
-  @override
-  final Ability ability;
-  @override
-  final Pokemon pokemon;
-  @override
-  final bool isHidden;
+abstract class AbilityPoolEntry with _$AbilityPoolEntry {
+  const factory AbilityPoolEntry ({
+    required Ability ability,
+    required Pokemon pokemon,
+    required bool isHidden,
+  }) = _AbilityPoolEntry;
 }

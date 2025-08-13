@@ -155,7 +155,7 @@ class _$PokemonCopyWithImpl<$Res> implements $PokemonCopyWith<$Res> {
     Object? baseSpD = null,
     Object? baseSpe = null,
   }) {
-    return _then(Pokemon(
+    return _then(_self.copyWith(
       id: null == id
           ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -247,11 +247,14 @@ extension PokemonPatterns on Pokemon {
   /// ```
 
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Pokemon value)? $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
+      case _Pokemon() when $default != null:
+        return $default(_that);
       case _:
         return orElse();
     }
@@ -271,9 +274,13 @@ extension PokemonPatterns on Pokemon {
   /// ```
 
   @optionalTypeArgs
-  TResult map<TResult extends Object?>() {
+  TResult map<TResult extends Object?>(
+    TResult Function(_Pokemon value) $default,
+  ) {
     final _that = this;
     switch (_that) {
+      case _Pokemon():
+        return $default(_that);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -292,9 +299,13 @@ extension PokemonPatterns on Pokemon {
   /// ```
 
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>() {
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_Pokemon value)? $default,
+  ) {
     final _that = this;
     switch (_that) {
+      case _Pokemon() when $default != null:
+        return $default(_that);
       case _:
         return null;
     }
@@ -313,11 +324,51 @@ extension PokemonPatterns on Pokemon {
   /// ```
 
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            int dexNum,
+            List<PokemonType> type,
+            bool isPreEvolution,
+            double weight,
+            int genderRatio,
+            bool isMythical,
+            bool isLegendary,
+            bool isMax,
+            bool isMega,
+            String? mandatoryItemName,
+            int baseHP,
+            int baseAtk,
+            int baseDef,
+            int baseSpA,
+            int baseSpD,
+            int baseSpe)?
+        $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
+      case _Pokemon() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.dexNum,
+            _that.type,
+            _that.isPreEvolution,
+            _that.weight,
+            _that.genderRatio,
+            _that.isMythical,
+            _that.isLegendary,
+            _that.isMax,
+            _that.isMega,
+            _that.mandatoryItemName,
+            _that.baseHP,
+            _that.baseAtk,
+            _that.baseDef,
+            _that.baseSpA,
+            _that.baseSpD,
+            _that.baseSpe);
       case _:
         return orElse();
     }
@@ -337,9 +388,50 @@ extension PokemonPatterns on Pokemon {
   /// ```
 
   @optionalTypeArgs
-  TResult when<TResult extends Object?>() {
+  TResult when<TResult extends Object?>(
+    TResult Function(
+            String id,
+            String name,
+            int dexNum,
+            List<PokemonType> type,
+            bool isPreEvolution,
+            double weight,
+            int genderRatio,
+            bool isMythical,
+            bool isLegendary,
+            bool isMax,
+            bool isMega,
+            String? mandatoryItemName,
+            int baseHP,
+            int baseAtk,
+            int baseDef,
+            int baseSpA,
+            int baseSpD,
+            int baseSpe)
+        $default,
+  ) {
     final _that = this;
     switch (_that) {
+      case _Pokemon():
+        return $default(
+            _that.id,
+            _that.name,
+            _that.dexNum,
+            _that.type,
+            _that.isPreEvolution,
+            _that.weight,
+            _that.genderRatio,
+            _that.isMythical,
+            _that.isLegendary,
+            _that.isMax,
+            _that.isMega,
+            _that.mandatoryItemName,
+            _that.baseHP,
+            _that.baseAtk,
+            _that.baseDef,
+            _that.baseSpA,
+            _that.baseSpD,
+            _that.baseSpe);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -358,12 +450,321 @@ extension PokemonPatterns on Pokemon {
   /// ```
 
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>() {
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(
+            String id,
+            String name,
+            int dexNum,
+            List<PokemonType> type,
+            bool isPreEvolution,
+            double weight,
+            int genderRatio,
+            bool isMythical,
+            bool isLegendary,
+            bool isMax,
+            bool isMega,
+            String? mandatoryItemName,
+            int baseHP,
+            int baseAtk,
+            int baseDef,
+            int baseSpA,
+            int baseSpD,
+            int baseSpe)?
+        $default,
+  ) {
     final _that = this;
     switch (_that) {
+      case _Pokemon() when $default != null:
+        return $default(
+            _that.id,
+            _that.name,
+            _that.dexNum,
+            _that.type,
+            _that.isPreEvolution,
+            _that.weight,
+            _that.genderRatio,
+            _that.isMythical,
+            _that.isLegendary,
+            _that.isMax,
+            _that.isMega,
+            _that.mandatoryItemName,
+            _that.baseHP,
+            _that.baseAtk,
+            _that.baseDef,
+            _that.baseSpA,
+            _that.baseSpD,
+            _that.baseSpe);
       case _:
         return null;
     }
+  }
+}
+
+/// @nodoc
+
+class _Pokemon implements Pokemon {
+  const _Pokemon(
+      {required this.id,
+      required this.name,
+      required this.dexNum,
+      required final List<PokemonType> type,
+      required this.isPreEvolution,
+      required this.weight,
+      required this.genderRatio,
+      required this.isMythical,
+      required this.isLegendary,
+      required this.isMax,
+      required this.isMega,
+      this.mandatoryItemName,
+      required this.baseHP,
+      required this.baseAtk,
+      required this.baseDef,
+      required this.baseSpA,
+      required this.baseSpD,
+      required this.baseSpe})
+      : _type = type;
+
+  @override
+  final String id;
+  @override
+  final String name;
+  @override
+  final int dexNum;
+  final List<PokemonType> _type;
+  @override
+  List<PokemonType> get type {
+    if (_type is EqualUnmodifiableListView) return _type;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_type);
+  }
+
+  @override
+  final bool isPreEvolution;
+  @override
+  final double weight;
+  @override
+  final int genderRatio;
+  @override
+  final bool isMythical;
+  @override
+  final bool isLegendary;
+  @override
+  final bool isMax;
+  @override
+  final bool isMega;
+  @override
+  final String? mandatoryItemName;
+  @override
+  final int baseHP;
+  @override
+  final int baseAtk;
+  @override
+  final int baseDef;
+  @override
+  final int baseSpA;
+  @override
+  final int baseSpD;
+  @override
+  final int baseSpe;
+
+  /// Create a copy of Pokemon
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$PokemonCopyWith<_Pokemon> get copyWith =>
+      __$PokemonCopyWithImpl<_Pokemon>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Pokemon &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.dexNum, dexNum) || other.dexNum == dexNum) &&
+            const DeepCollectionEquality().equals(other._type, _type) &&
+            (identical(other.isPreEvolution, isPreEvolution) ||
+                other.isPreEvolution == isPreEvolution) &&
+            (identical(other.weight, weight) || other.weight == weight) &&
+            (identical(other.genderRatio, genderRatio) ||
+                other.genderRatio == genderRatio) &&
+            (identical(other.isMythical, isMythical) ||
+                other.isMythical == isMythical) &&
+            (identical(other.isLegendary, isLegendary) ||
+                other.isLegendary == isLegendary) &&
+            (identical(other.isMax, isMax) || other.isMax == isMax) &&
+            (identical(other.isMega, isMega) || other.isMega == isMega) &&
+            (identical(other.mandatoryItemName, mandatoryItemName) ||
+                other.mandatoryItemName == mandatoryItemName) &&
+            (identical(other.baseHP, baseHP) || other.baseHP == baseHP) &&
+            (identical(other.baseAtk, baseAtk) || other.baseAtk == baseAtk) &&
+            (identical(other.baseDef, baseDef) || other.baseDef == baseDef) &&
+            (identical(other.baseSpA, baseSpA) || other.baseSpA == baseSpA) &&
+            (identical(other.baseSpD, baseSpD) || other.baseSpD == baseSpD) &&
+            (identical(other.baseSpe, baseSpe) || other.baseSpe == baseSpe));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      dexNum,
+      const DeepCollectionEquality().hash(_type),
+      isPreEvolution,
+      weight,
+      genderRatio,
+      isMythical,
+      isLegendary,
+      isMax,
+      isMega,
+      mandatoryItemName,
+      baseHP,
+      baseAtk,
+      baseDef,
+      baseSpA,
+      baseSpD,
+      baseSpe);
+
+  @override
+  String toString() {
+    return 'Pokemon(id: $id, name: $name, dexNum: $dexNum, type: $type, isPreEvolution: $isPreEvolution, weight: $weight, genderRatio: $genderRatio, isMythical: $isMythical, isLegendary: $isLegendary, isMax: $isMax, isMega: $isMega, mandatoryItemName: $mandatoryItemName, baseHP: $baseHP, baseAtk: $baseAtk, baseDef: $baseDef, baseSpA: $baseSpA, baseSpD: $baseSpD, baseSpe: $baseSpe)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$PokemonCopyWith<$Res> implements $PokemonCopyWith<$Res> {
+  factory _$PokemonCopyWith(_Pokemon value, $Res Function(_Pokemon) _then) =
+      __$PokemonCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      int dexNum,
+      List<PokemonType> type,
+      bool isPreEvolution,
+      double weight,
+      int genderRatio,
+      bool isMythical,
+      bool isLegendary,
+      bool isMax,
+      bool isMega,
+      String? mandatoryItemName,
+      int baseHP,
+      int baseAtk,
+      int baseDef,
+      int baseSpA,
+      int baseSpD,
+      int baseSpe});
+}
+
+/// @nodoc
+class __$PokemonCopyWithImpl<$Res> implements _$PokemonCopyWith<$Res> {
+  __$PokemonCopyWithImpl(this._self, this._then);
+
+  final _Pokemon _self;
+  final $Res Function(_Pokemon) _then;
+
+  /// Create a copy of Pokemon
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? dexNum = null,
+    Object? type = null,
+    Object? isPreEvolution = null,
+    Object? weight = null,
+    Object? genderRatio = null,
+    Object? isMythical = null,
+    Object? isLegendary = null,
+    Object? isMax = null,
+    Object? isMega = null,
+    Object? mandatoryItemName = freezed,
+    Object? baseHP = null,
+    Object? baseAtk = null,
+    Object? baseDef = null,
+    Object? baseSpA = null,
+    Object? baseSpD = null,
+    Object? baseSpe = null,
+  }) {
+    return _then(_Pokemon(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      dexNum: null == dexNum
+          ? _self.dexNum
+          : dexNum // ignore: cast_nullable_to_non_nullable
+              as int,
+      type: null == type
+          ? _self._type
+          : type // ignore: cast_nullable_to_non_nullable
+              as List<PokemonType>,
+      isPreEvolution: null == isPreEvolution
+          ? _self.isPreEvolution
+          : isPreEvolution // ignore: cast_nullable_to_non_nullable
+              as bool,
+      weight: null == weight
+          ? _self.weight
+          : weight // ignore: cast_nullable_to_non_nullable
+              as double,
+      genderRatio: null == genderRatio
+          ? _self.genderRatio
+          : genderRatio // ignore: cast_nullable_to_non_nullable
+              as int,
+      isMythical: null == isMythical
+          ? _self.isMythical
+          : isMythical // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isLegendary: null == isLegendary
+          ? _self.isLegendary
+          : isLegendary // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isMax: null == isMax
+          ? _self.isMax
+          : isMax // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isMega: null == isMega
+          ? _self.isMega
+          : isMega // ignore: cast_nullable_to_non_nullable
+              as bool,
+      mandatoryItemName: freezed == mandatoryItemName
+          ? _self.mandatoryItemName
+          : mandatoryItemName // ignore: cast_nullable_to_non_nullable
+              as String?,
+      baseHP: null == baseHP
+          ? _self.baseHP
+          : baseHP // ignore: cast_nullable_to_non_nullable
+              as int,
+      baseAtk: null == baseAtk
+          ? _self.baseAtk
+          : baseAtk // ignore: cast_nullable_to_non_nullable
+              as int,
+      baseDef: null == baseDef
+          ? _self.baseDef
+          : baseDef // ignore: cast_nullable_to_non_nullable
+              as int,
+      baseSpA: null == baseSpA
+          ? _self.baseSpA
+          : baseSpA // ignore: cast_nullable_to_non_nullable
+              as int,
+      baseSpD: null == baseSpD
+          ? _self.baseSpD
+          : baseSpD // ignore: cast_nullable_to_non_nullable
+              as int,
+      baseSpe: null == baseSpe
+          ? _self.baseSpe
+          : baseSpe // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
   }
 }
 

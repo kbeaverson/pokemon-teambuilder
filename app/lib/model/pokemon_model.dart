@@ -5,62 +5,25 @@ part 'pokemon_model.freezed.dart';
 
 /// Pokemon model that provides immutable, canonical data about a pokemon species
 @freezed
-class Pokemon with _$Pokemon {
-  const Pokemon({
-    required this.id, 
-    required this.name, 
-    required this.dexNum, 
-    required this.type, 
-    required this.isPreEvolution, 
-    required this.weight, 
-    required this.genderRatio, 
-    required this.isMythical, 
-    required this.isLegendary, 
-    required this.isMax, 
-    required this.isMega, 
-    required this.mandatoryItemName, 
-    required this.baseHP, 
-    required this.baseAtk, 
-    required this.baseDef, 
-    required this.baseSpA, 
-    required this.baseSpD, 
-    required this.baseSpe,
-  });
-  
-  @override
-  final String id;
-  @override
-  final String name;
-  @override
-  final int dexNum;
-  @override
-  final List<PokemonType> type;
-  @override
-  final bool isPreEvolution;
-  @override
-  final double weight;
-  @override
-  final int genderRatio;
-  @override
-  final bool isMythical;
-  @override
-  final bool isLegendary;
-  @override
-  final bool isMax;
-  @override
-  final bool isMega;
-  @override
-  final String? mandatoryItemName;
-  @override
-  final int baseHP;
-  @override
-  final int baseAtk;
-  @override
-  final int baseDef;
-  @override
-  final int baseSpA;
-  @override
-  final int baseSpD;
-  @override
-  final int baseSpe;
+abstract class Pokemon with _$Pokemon {
+  const factory Pokemon({
+    required String id, 
+    required String name, 
+    required int dexNum, 
+    required List<PokemonType> type, 
+    required bool isPreEvolution, 
+    required double weight, 
+    required int genderRatio, 
+    required bool isMythical, 
+    required bool isLegendary, 
+    required bool isMax, 
+    required bool isMega, 
+    String? mandatoryItemName, 
+    required int baseHP, 
+    required int baseAtk, 
+    required int baseDef, 
+    required int baseSpA, 
+    required int baseSpD, 
+    required int baseSpe,
+  }) = _Pokemon;
 }

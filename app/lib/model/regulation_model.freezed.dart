@@ -69,7 +69,7 @@ abstract mixin class $RegulationCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      List<InvalidType> clauses,
+      List<Clause> clauses,
       bool isDynamaxLegal,
       bool isMegaLegal,
       bool isTeraLegal});
@@ -94,7 +94,7 @@ class _$RegulationCopyWithImpl<$Res> implements $RegulationCopyWith<$Res> {
     Object? isMegaLegal = null,
     Object? isTeraLegal = null,
   }) {
-    return _then(Regulation(
+    return _then(_self.copyWith(
       id: null == id
           ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -106,7 +106,7 @@ class _$RegulationCopyWithImpl<$Res> implements $RegulationCopyWith<$Res> {
       clauses: null == clauses
           ? _self.clauses
           : clauses // ignore: cast_nullable_to_non_nullable
-              as List<InvalidType>,
+              as List<Clause>,
       isDynamaxLegal: null == isDynamaxLegal
           ? _self.isDynamaxLegal
           : isDynamaxLegal // ignore: cast_nullable_to_non_nullable
@@ -138,11 +138,14 @@ extension RegulationPatterns on Regulation {
   /// ```
 
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_Regulation value)? $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
+      case _Regulation() when $default != null:
+        return $default(_that);
       case _:
         return orElse();
     }
@@ -162,9 +165,13 @@ extension RegulationPatterns on Regulation {
   /// ```
 
   @optionalTypeArgs
-  TResult map<TResult extends Object?>() {
+  TResult map<TResult extends Object?>(
+    TResult Function(_Regulation value) $default,
+  ) {
     final _that = this;
     switch (_that) {
+      case _Regulation():
+        return $default(_that);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -183,9 +190,13 @@ extension RegulationPatterns on Regulation {
   /// ```
 
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>() {
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_Regulation value)? $default,
+  ) {
     final _that = this;
     switch (_that) {
+      case _Regulation() when $default != null:
+        return $default(_that);
       case _:
         return null;
     }
@@ -204,11 +215,17 @@ extension RegulationPatterns on Regulation {
   /// ```
 
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String id, String name, List<Clause> clauses,
+            bool isDynamaxLegal, bool isMegaLegal, bool isTeraLegal)?
+        $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
+      case _Regulation() when $default != null:
+        return $default(_that.id, _that.name, _that.clauses,
+            _that.isDynamaxLegal, _that.isMegaLegal, _that.isTeraLegal);
       case _:
         return orElse();
     }
@@ -228,9 +245,16 @@ extension RegulationPatterns on Regulation {
   /// ```
 
   @optionalTypeArgs
-  TResult when<TResult extends Object?>() {
+  TResult when<TResult extends Object?>(
+    TResult Function(String id, String name, List<Clause> clauses,
+            bool isDynamaxLegal, bool isMegaLegal, bool isTeraLegal)
+        $default,
+  ) {
     final _that = this;
     switch (_that) {
+      case _Regulation():
+        return $default(_that.id, _that.name, _that.clauses,
+            _that.isDynamaxLegal, _that.isMegaLegal, _that.isTeraLegal);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -249,12 +273,155 @@ extension RegulationPatterns on Regulation {
   /// ```
 
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>() {
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(String id, String name, List<Clause> clauses,
+            bool isDynamaxLegal, bool isMegaLegal, bool isTeraLegal)?
+        $default,
+  ) {
     final _that = this;
     switch (_that) {
+      case _Regulation() when $default != null:
+        return $default(_that.id, _that.name, _that.clauses,
+            _that.isDynamaxLegal, _that.isMegaLegal, _that.isTeraLegal);
       case _:
         return null;
     }
+  }
+}
+
+/// @nodoc
+
+class _Regulation implements Regulation {
+  const _Regulation(
+      {required this.id,
+      required this.name,
+      required final List<Clause> clauses,
+      required this.isDynamaxLegal,
+      required this.isMegaLegal,
+      required this.isTeraLegal})
+      : _clauses = clauses;
+
+  @override
+  final String id;
+  @override
+  final String name;
+  final List<Clause> _clauses;
+  @override
+  List<Clause> get clauses {
+    if (_clauses is EqualUnmodifiableListView) return _clauses;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_clauses);
+  }
+
+  @override
+  final bool isDynamaxLegal;
+  @override
+  final bool isMegaLegal;
+  @override
+  final bool isTeraLegal;
+
+  /// Create a copy of Regulation
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$RegulationCopyWith<_Regulation> get copyWith =>
+      __$RegulationCopyWithImpl<_Regulation>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Regulation &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
+            const DeepCollectionEquality().equals(other._clauses, _clauses) &&
+            (identical(other.isDynamaxLegal, isDynamaxLegal) ||
+                other.isDynamaxLegal == isDynamaxLegal) &&
+            (identical(other.isMegaLegal, isMegaLegal) ||
+                other.isMegaLegal == isMegaLegal) &&
+            (identical(other.isTeraLegal, isTeraLegal) ||
+                other.isTeraLegal == isTeraLegal));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      const DeepCollectionEquality().hash(_clauses),
+      isDynamaxLegal,
+      isMegaLegal,
+      isTeraLegal);
+
+  @override
+  String toString() {
+    return 'Regulation(id: $id, name: $name, clauses: $clauses, isDynamaxLegal: $isDynamaxLegal, isMegaLegal: $isMegaLegal, isTeraLegal: $isTeraLegal)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$RegulationCopyWith<$Res>
+    implements $RegulationCopyWith<$Res> {
+  factory _$RegulationCopyWith(
+          _Regulation value, $Res Function(_Regulation) _then) =
+      __$RegulationCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {String id,
+      String name,
+      List<Clause> clauses,
+      bool isDynamaxLegal,
+      bool isMegaLegal,
+      bool isTeraLegal});
+}
+
+/// @nodoc
+class __$RegulationCopyWithImpl<$Res> implements _$RegulationCopyWith<$Res> {
+  __$RegulationCopyWithImpl(this._self, this._then);
+
+  final _Regulation _self;
+  final $Res Function(_Regulation) _then;
+
+  /// Create a copy of Regulation
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = null,
+    Object? name = null,
+    Object? clauses = null,
+    Object? isDynamaxLegal = null,
+    Object? isMegaLegal = null,
+    Object? isTeraLegal = null,
+  }) {
+    return _then(_Regulation(
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _self.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
+      clauses: null == clauses
+          ? _self._clauses
+          : clauses // ignore: cast_nullable_to_non_nullable
+              as List<Clause>,
+      isDynamaxLegal: null == isDynamaxLegal
+          ? _self.isDynamaxLegal
+          : isDynamaxLegal // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isMegaLegal: null == isMegaLegal
+          ? _self.isMegaLegal
+          : isMegaLegal // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isTeraLegal: null == isTeraLegal
+          ? _self.isTeraLegal
+          : isTeraLegal // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
   }
 }
 

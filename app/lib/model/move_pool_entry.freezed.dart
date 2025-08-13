@@ -58,6 +58,9 @@ abstract mixin class $MovePoolEntryCopyWith<$Res> {
   @useResult
   $Res call(
       {Move move, Pokemon pokemon, LearnMethod learnMethod, int? levelupLevel});
+
+  $MoveCopyWith<$Res> get move;
+  $PokemonCopyWith<$Res> get pokemon;
 }
 
 /// @nodoc
@@ -78,7 +81,7 @@ class _$MovePoolEntryCopyWithImpl<$Res>
     Object? learnMethod = null,
     Object? levelupLevel = freezed,
   }) {
-    return _then(MovePoolEntry(
+    return _then(_self.copyWith(
       move: null == move
           ? _self.move
           : move // ignore: cast_nullable_to_non_nullable
@@ -97,6 +100,26 @@ class _$MovePoolEntryCopyWithImpl<$Res>
               as int?,
     ));
   }
+
+  /// Create a copy of MovePoolEntry
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MoveCopyWith<$Res> get move {
+    return $MoveCopyWith<$Res>(_self.move, (value) {
+      return _then(_self.copyWith(move: value));
+    });
+  }
+
+  /// Create a copy of MovePoolEntry
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PokemonCopyWith<$Res> get pokemon {
+    return $PokemonCopyWith<$Res>(_self.pokemon, (value) {
+      return _then(_self.copyWith(pokemon: value));
+    });
+  }
 }
 
 /// Adds pattern-matching-related methods to [MovePoolEntry].
@@ -114,11 +137,14 @@ extension MovePoolEntryPatterns on MovePoolEntry {
   /// ```
 
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(_MovePoolEntry value)? $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
+      case _MovePoolEntry() when $default != null:
+        return $default(_that);
       case _:
         return orElse();
     }
@@ -138,9 +164,13 @@ extension MovePoolEntryPatterns on MovePoolEntry {
   /// ```
 
   @optionalTypeArgs
-  TResult map<TResult extends Object?>() {
+  TResult map<TResult extends Object?>(
+    TResult Function(_MovePoolEntry value) $default,
+  ) {
     final _that = this;
     switch (_that) {
+      case _MovePoolEntry():
+        return $default(_that);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -159,9 +189,13 @@ extension MovePoolEntryPatterns on MovePoolEntry {
   /// ```
 
   @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>() {
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult? Function(_MovePoolEntry value)? $default,
+  ) {
     final _that = this;
     switch (_that) {
+      case _MovePoolEntry() when $default != null:
+        return $default(_that);
       case _:
         return null;
     }
@@ -180,11 +214,17 @@ extension MovePoolEntryPatterns on MovePoolEntry {
   /// ```
 
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(Move move, Pokemon pokemon, LearnMethod learnMethod,
+            int? levelupLevel)?
+        $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
+      case _MovePoolEntry() when $default != null:
+        return $default(
+            _that.move, _that.pokemon, _that.learnMethod, _that.levelupLevel);
       case _:
         return orElse();
     }
@@ -204,9 +244,16 @@ extension MovePoolEntryPatterns on MovePoolEntry {
   /// ```
 
   @optionalTypeArgs
-  TResult when<TResult extends Object?>() {
+  TResult when<TResult extends Object?>(
+    TResult Function(Move move, Pokemon pokemon, LearnMethod learnMethod,
+            int? levelupLevel)
+        $default,
+  ) {
     final _that = this;
     switch (_that) {
+      case _MovePoolEntry():
+        return $default(
+            _that.move, _that.pokemon, _that.learnMethod, _that.levelupLevel);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -225,12 +272,144 @@ extension MovePoolEntryPatterns on MovePoolEntry {
   /// ```
 
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>() {
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult? Function(Move move, Pokemon pokemon, LearnMethod learnMethod,
+            int? levelupLevel)?
+        $default,
+  ) {
     final _that = this;
     switch (_that) {
+      case _MovePoolEntry() when $default != null:
+        return $default(
+            _that.move, _that.pokemon, _that.learnMethod, _that.levelupLevel);
       case _:
         return null;
     }
+  }
+}
+
+/// @nodoc
+
+class _MovePoolEntry implements MovePoolEntry {
+  const _MovePoolEntry(
+      {required this.move,
+      required this.pokemon,
+      required this.learnMethod,
+      this.levelupLevel});
+
+  @override
+  final Move move;
+  @override
+  final Pokemon pokemon;
+  @override
+  final LearnMethod learnMethod;
+  @override
+  final int? levelupLevel;
+
+  /// Create a copy of MovePoolEntry
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$MovePoolEntryCopyWith<_MovePoolEntry> get copyWith =>
+      __$MovePoolEntryCopyWithImpl<_MovePoolEntry>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _MovePoolEntry &&
+            (identical(other.move, move) || other.move == move) &&
+            (identical(other.pokemon, pokemon) || other.pokemon == pokemon) &&
+            (identical(other.learnMethod, learnMethod) ||
+                other.learnMethod == learnMethod) &&
+            (identical(other.levelupLevel, levelupLevel) ||
+                other.levelupLevel == levelupLevel));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, move, pokemon, learnMethod, levelupLevel);
+
+  @override
+  String toString() {
+    return 'MovePoolEntry(move: $move, pokemon: $pokemon, learnMethod: $learnMethod, levelupLevel: $levelupLevel)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$MovePoolEntryCopyWith<$Res>
+    implements $MovePoolEntryCopyWith<$Res> {
+  factory _$MovePoolEntryCopyWith(
+          _MovePoolEntry value, $Res Function(_MovePoolEntry) _then) =
+      __$MovePoolEntryCopyWithImpl;
+  @override
+  @useResult
+  $Res call(
+      {Move move, Pokemon pokemon, LearnMethod learnMethod, int? levelupLevel});
+
+  @override
+  $MoveCopyWith<$Res> get move;
+  @override
+  $PokemonCopyWith<$Res> get pokemon;
+}
+
+/// @nodoc
+class __$MovePoolEntryCopyWithImpl<$Res>
+    implements _$MovePoolEntryCopyWith<$Res> {
+  __$MovePoolEntryCopyWithImpl(this._self, this._then);
+
+  final _MovePoolEntry _self;
+  final $Res Function(_MovePoolEntry) _then;
+
+  /// Create a copy of MovePoolEntry
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? move = null,
+    Object? pokemon = null,
+    Object? learnMethod = null,
+    Object? levelupLevel = freezed,
+  }) {
+    return _then(_MovePoolEntry(
+      move: null == move
+          ? _self.move
+          : move // ignore: cast_nullable_to_non_nullable
+              as Move,
+      pokemon: null == pokemon
+          ? _self.pokemon
+          : pokemon // ignore: cast_nullable_to_non_nullable
+              as Pokemon,
+      learnMethod: null == learnMethod
+          ? _self.learnMethod
+          : learnMethod // ignore: cast_nullable_to_non_nullable
+              as LearnMethod,
+      levelupLevel: freezed == levelupLevel
+          ? _self.levelupLevel
+          : levelupLevel // ignore: cast_nullable_to_non_nullable
+              as int?,
+    ));
+  }
+
+  /// Create a copy of MovePoolEntry
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $MoveCopyWith<$Res> get move {
+    return $MoveCopyWith<$Res>(_self.move, (value) {
+      return _then(_self.copyWith(move: value));
+    });
+  }
+
+  /// Create a copy of MovePoolEntry
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $PokemonCopyWith<$Res> get pokemon {
+    return $PokemonCopyWith<$Res>(_self.pokemon, (value) {
+      return _then(_self.copyWith(pokemon: value));
+    });
   }
 }
 

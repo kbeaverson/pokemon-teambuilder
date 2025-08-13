@@ -16,6 +16,8 @@ To document architecture decisions, trade-offs, ideas, and roadblocks during the
 | 2025-08-07 | OOD Continued: Screen Flows & Databases | [2025-08-07-screen-flows-databases.md](docs/devlog/2025-08-07-screen-flows-databases.md) |
 | 2025-08-08 | OOD Continued: Relational Database Model | [2025-08-08-database-model.md](docs/devlog/2025-08-08-database-model.md) |
 | 2025-08-11 | OOD Continued: Model Implementations | [2025-08-11-model-implementation.md](docs/devlog/2025-08-11-model-implementation.md) |
+| 2025-08-12 | OOD Continued: Model Implementations (2) | [2025-08-12-more-model-implementation.md](docs/devlog/2025-08-12-more-model-implementation.md) |
+| 2025-08-13 | OOD Continued: Model Revision/Completion | [2025-08-13-model-revision-completion.md](docs/devlog/2025-08-13-model-revision-completion.md) |
 | ...        | ...                              | ...                                              |
 ## Key Documents
 
