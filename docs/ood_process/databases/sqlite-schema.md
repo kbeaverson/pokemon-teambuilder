@@ -1,26 +1,21 @@
 # SQLite Database Schema
 This is the database schema for my sqlite database.
 ```
-CREATE TABLE "pokemon" (
-	"id"	TEXT NOT NULL,
-	"name"	TEXT NOT NULL,
-	"dex_num"	INTEGER NOT NULL,
-	"type"	TEXT NOT NULL,
-	"is_pre_evolution"	INTEGER NOT NULL,
-	"weight"	REAL NOT NULL,
-	"gender_ratio"	REAL NOT NULL,
-	"is_mythical"	INTEGER NOT NULL,
-	"is_legendary"	INTEGER NOT NULL,
-	"is_max"	INTEGER NOT NULL,
-	"is_mega"	INTEGER NOT NULL,
-	"mandatory_item_name"	TEXT,
-	"base_hp"	INTEGER NOT NULL,
-	"base_atk"	INTEGER NOT NULL,
-	"base_def"	INTEGER NOT NULL,
-	"base_spa"	INTEGER NOT NULL,
-	"base_spd"	INTEGER NOT NULL,
-	"base_spe"	INTEGER NOT NULL,
-	PRIMARY KEY("id")
+CREATE TABLE "pokemon" ( 
+	"id" TEXT NOT NULL, 
+	"name" TEXT NOT NULL, 
+	"dex_num" INTEGER NOT NULL, 
+	"type" TEXT NOT NULL, 
+	"is_pre_evolution" INTEGER NOT NULL, 
+	"weight" REAL NOT NULL, 
+	"gender_ratio" REAL NOT NULL, 
+	"is_mythical" INTEGER NOT NULL, 
+	"is_legendary" INTEGER NOT NULL, 
+	"is_max" INTEGER NOT NULL, 
+	"is_mega" INTEGER NOT NULL, 
+	"mandatory_item_name" TEXT, 
+	"base_stats" TEXT NOT NULL, 
+	PRIMARY KEY("id") 
 );
 
 CREATE TABLE "moves" (
@@ -120,39 +115,23 @@ CREATE TABLE "regulation_clauses" (
 	FOREIGN KEY("regulation_id") REFERENCES "regulations"("id")
 );
 
-CREATE TABLE "slots" (
-	"id"	TEXT NOT NULL,
-	"pokemon_id"	TEXT,
-	"move1_id"	TEXT,
-	"move2_id"	TEXT,
-	"move3_id"	TEXT,
-	"move4_id"	TEXT,
-	"ability_id"	TEXT,
-	"item_id"	TEXT,
-	"nature"	TEXT NOT NULL,
-	"tera_type"	TEXT,
-	"is_gigantamax"	INTEGER NOT NULL,
-	"notes"	TEXT,
-	"hp_iv"	INTEGER NOT NULL,
-	"hp_ev"	INTEGER NOT NULL,
-	"atk_iv"	INTEGER NOT NULL,
-	"atk_ev"	INTEGER NOT NULL,
-	"def_iv"	INTEGER NOT NULL,
-	"def_ev"	INTEGER NOT NULL,
-	"spa_iv"	INTEGER NOT NULL,
-	"spa_ev"	INTEGER NOT NULL,
-	"spd_iv"	INTEGER NOT NULL,
-	"spd_ev"	INTEGER NOT NULL,
-	"spe_iv"	INTEGER NOT NULL,
-	"spe_ev"	INTEGER NOT NULL,
-	PRIMARY KEY("id"),
-	FOREIGN KEY("move2_id") REFERENCES "moves"("id"),
-	FOREIGN KEY("move3_id") REFERENCES "moves"("id"),
-	FOREIGN KEY("ability_id") REFERENCES "abilities"("id"),
-	FOREIGN KEY("move4_id") REFERENCES "moves"("id"),
-	FOREIGN KEY("item_id") REFERENCES "items"("id"),
-	FOREIGN KEY("pokemon_id") REFERENCES "pokemon"("id"),
-	FOREIGN KEY("move1_id") REFERENCES "moves"("id")
+CREATE TABLE "slots" ( 
+	"id" TEXT NOT NULL, 
+	"pokemon_id" TEXT, 
+	"move_ids" TEXT, 
+	"ability_id" TEXT, 
+	"item_id" TEXT, 
+	"nature" TEXT NOT NULL, 
+	"tera_type" TEXT, 
+	"is_gigantamax" INTEGER NOT NULL, 
+	"notes" TEXT, 
+	"ivs" TEXT NOT NULL, 
+	"evs" TEXT NOT NULL, 
+	PRIMARY KEY("id"), 
+	FOREIGN KEY("pokemon_id") REFERENCES "pokemon"("id"), 
+	FOREIGN KEY("ability_id") REFERENCES "abilities"("id"), 
+	FOREIGN KEY("move_ids") REFERENCES "moves"("id"), 
+	FOREIGN KEY("item_id") REFERENCES "items"("id") 
 );
 
 CREATE TABLE "teams" (

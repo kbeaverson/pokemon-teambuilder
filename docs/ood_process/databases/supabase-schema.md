@@ -18,8 +18,8 @@ CREATE TABLE public.abilitypools (
   ability_id uuid NOT NULL,
   is_hidden_ability boolean NOT NULL,
   CONSTRAINT abilitypools_pkey PRIMARY KEY (pokemon_id, ability_id),
-  CONSTRAINT abilitypools_ability_id_fkey FOREIGN KEY (ability_id) REFERENCES public.abilities(id),
-  CONSTRAINT abilitypools_pokemon_id_fkey FOREIGN KEY (pokemon_id) REFERENCES public.pokemon(id)
+  CONSTRAINT abilitypools_pokemon_id_fkey FOREIGN KEY (pokemon_id) REFERENCES public.pokemon(id),
+  CONSTRAINT abilitypools_ability_id_fkey FOREIGN KEY (ability_id) REFERENCES public.abilities(id)
 );
 CREATE TABLE public.bank (
   user_id uuid NOT NULL,
@@ -83,6 +83,7 @@ CREATE TABLE public.moves (
   ohko boolean NOT NULL,
   is_z_move boolean NOT NULL,
   is_max_move boolean NOT NULL,
+  is_legal boolean NOT NULL,
   CONSTRAINT moves_pkey PRIMARY KEY (id)
 );
 CREATE TABLE public.pokemon (
@@ -98,12 +99,7 @@ CREATE TABLE public.pokemon (
   is_max boolean NOT NULL,
   is_mega boolean NOT NULL,
   mandatory_item_name text,
-  base_hp smallint NOT NULL,
-  base_atk smallint NOT NULL,
-  base_def smallint NOT NULL,
-  base_spa smallint NOT NULL,
-  base_spd smallint NOT NULL,
-  base_spe smallint NOT NULL,
+  base_stats json NOT NULL,
   CONSTRAINT pokemon_pkey PRIMARY KEY (id)
 );
 CREATE TABLE public.regulation_clauses (
@@ -125,34 +121,17 @@ CREATE TABLE public.slots (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
   created_at timestamp with time zone NOT NULL DEFAULT now(),
   pokemon_id uuid,
-  move1_id uuid,
-  move2_id uuid,
-  move3_id uuid,
-  move4_id uuid,
   ability_id uuid,
   item_id uuid,
   tera_type json,
   is_gigantamax boolean,
   notes text,
   nature text NOT NULL,
-  hp_iv smallint NOT NULL,
-  hp_ev smallint NOT NULL,
-  atk_iv smallint NOT NULL,
-  atk_ev smallint NOT NULL,
-  def_iv smallint NOT NULL,
-  def_ev smallint NOT NULL,
-  spa_iv smallint NOT NULL,
-  spa_ev smallint NOT NULL,
-  spd_iv smallint NOT NULL,
-  spd_ev smallint NOT NULL,
-  spe_iv smallint NOT NULL,
-  spe_ev smallint NOT NULL,
+  move_ids json,
+  ivs json NOT NULL,
+  evs json NOT NULL,
   CONSTRAINT slots_pkey PRIMARY KEY (id),
-  CONSTRAINT slots_move3_id_fkey FOREIGN KEY (move3_id) REFERENCES public.moves(id),
-  CONSTRAINT slots_move2_id_fkey FOREIGN KEY (move2_id) REFERENCES public.moves(id),
-  CONSTRAINT slots_move4_id_fkey FOREIGN KEY (move4_id) REFERENCES public.moves(id),
   CONSTRAINT slots_ability_id_fkey FOREIGN KEY (ability_id) REFERENCES public.abilities(id),
-  CONSTRAINT slots_move1_id_fkey FOREIGN KEY (move1_id) REFERENCES public.moves(id),
   CONSTRAINT slots_pokemon_id_fkey FOREIGN KEY (pokemon_id) REFERENCES public.pokemon(id),
   CONSTRAINT slots_item_id_fkey FOREIGN KEY (item_id) REFERENCES public.items(id)
 );
@@ -160,8 +139,8 @@ CREATE TABLE public.team_members (
   team_id uuid NOT NULL,
   slot_id uuid NOT NULL,
   CONSTRAINT team_members_pkey PRIMARY KEY (team_id, slot_id),
-  CONSTRAINT team_members_team_id_fkey FOREIGN KEY (team_id) REFERENCES public.teams(id),
-  CONSTRAINT team_members_slot_id_fkey FOREIGN KEY (slot_id) REFERENCES public.slots(id)
+  CONSTRAINT team_members_slot_id_fkey FOREIGN KEY (slot_id) REFERENCES public.slots(id),
+  CONSTRAINT team_members_team_id_fkey FOREIGN KEY (team_id) REFERENCES public.teams(id)
 );
 CREATE TABLE public.teams (
   id uuid NOT NULL DEFAULT gen_random_uuid(),
@@ -177,7 +156,7 @@ CREATE TABLE public.user_teams (
   user_id uuid NOT NULL,
   team_id uuid NOT NULL,
   CONSTRAINT user_teams_pkey PRIMARY KEY (user_id, team_id),
-  CONSTRAINT user_teams_team_id_fkey FOREIGN KEY (team_id) REFERENCES public.teams(id),
-  CONSTRAINT user_teams_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id)
+  CONSTRAINT user_teams_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id),
+  CONSTRAINT user_teams_team_id_fkey FOREIGN KEY (team_id) REFERENCES public.teams(id)
 );
 ```
