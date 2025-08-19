@@ -17,6 +17,7 @@ mixin _$Item {
   String get id;
   String get name;
   int get dexNum;
+  String get description;
   int get flingPower;
   bool get ignoredByKlutz;
   List<ItemCategory> get category;
@@ -36,6 +37,8 @@ mixin _$Item {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.dexNum, dexNum) || other.dexNum == dexNum) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.flingPower, flingPower) ||
                 other.flingPower == flingPower) &&
             (identical(other.ignoredByKlutz, ignoredByKlutz) ||
@@ -44,12 +47,19 @@ mixin _$Item {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, dexNum, flingPower,
-      ignoredByKlutz, const DeepCollectionEquality().hash(category));
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      dexNum,
+      description,
+      flingPower,
+      ignoredByKlutz,
+      const DeepCollectionEquality().hash(category));
 
   @override
   String toString() {
-    return 'Item(id: $id, name: $name, dexNum: $dexNum, flingPower: $flingPower, ignoredByKlutz: $ignoredByKlutz, category: $category)';
+    return 'Item(id: $id, name: $name, dexNum: $dexNum, description: $description, flingPower: $flingPower, ignoredByKlutz: $ignoredByKlutz, category: $category)';
   }
 }
 
@@ -62,6 +72,7 @@ abstract mixin class $ItemCopyWith<$Res> {
       {String id,
       String name,
       int dexNum,
+      String description,
       int flingPower,
       bool ignoredByKlutz,
       List<ItemCategory> category});
@@ -82,6 +93,7 @@ class _$ItemCopyWithImpl<$Res> implements $ItemCopyWith<$Res> {
     Object? id = null,
     Object? name = null,
     Object? dexNum = null,
+    Object? description = null,
     Object? flingPower = null,
     Object? ignoredByKlutz = null,
     Object? category = null,
@@ -99,6 +111,10 @@ class _$ItemCopyWithImpl<$Res> implements $ItemCopyWith<$Res> {
           ? _self.dexNum
           : dexNum // ignore: cast_nullable_to_non_nullable
               as int,
+      description: null == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
       flingPower: null == flingPower
           ? _self.flingPower
           : flingPower // ignore: cast_nullable_to_non_nullable
@@ -208,16 +224,16 @@ extension ItemPatterns on Item {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String id, String name, int dexNum, int flingPower,
-            bool ignoredByKlutz, List<ItemCategory> category)?
+    TResult Function(String id, String name, int dexNum, String description,
+            int flingPower, bool ignoredByKlutz, List<ItemCategory> category)?
         $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _Item() when $default != null:
-        return $default(_that.id, _that.name, _that.dexNum, _that.flingPower,
-            _that.ignoredByKlutz, _that.category);
+        return $default(_that.id, _that.name, _that.dexNum, _that.description,
+            _that.flingPower, _that.ignoredByKlutz, _that.category);
       case _:
         return orElse();
     }
@@ -238,15 +254,15 @@ extension ItemPatterns on Item {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String id, String name, int dexNum, int flingPower,
-            bool ignoredByKlutz, List<ItemCategory> category)
+    TResult Function(String id, String name, int dexNum, String description,
+            int flingPower, bool ignoredByKlutz, List<ItemCategory> category)
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _Item():
-        return $default(_that.id, _that.name, _that.dexNum, _that.flingPower,
-            _that.ignoredByKlutz, _that.category);
+        return $default(_that.id, _that.name, _that.dexNum, _that.description,
+            _that.flingPower, _that.ignoredByKlutz, _that.category);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -266,15 +282,15 @@ extension ItemPatterns on Item {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String id, String name, int dexNum, int flingPower,
-            bool ignoredByKlutz, List<ItemCategory> category)?
+    TResult? Function(String id, String name, int dexNum, String description,
+            int flingPower, bool ignoredByKlutz, List<ItemCategory> category)?
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _Item() when $default != null:
-        return $default(_that.id, _that.name, _that.dexNum, _that.flingPower,
-            _that.ignoredByKlutz, _that.category);
+        return $default(_that.id, _that.name, _that.dexNum, _that.description,
+            _that.flingPower, _that.ignoredByKlutz, _that.category);
       case _:
         return null;
     }
@@ -288,6 +304,7 @@ class _Item implements Item {
       {required this.id,
       required this.name,
       required this.dexNum,
+      required this.description,
       required this.flingPower,
       required this.ignoredByKlutz,
       required final List<ItemCategory> category})
@@ -299,6 +316,8 @@ class _Item implements Item {
   final String name;
   @override
   final int dexNum;
+  @override
+  final String description;
   @override
   final int flingPower;
   @override
@@ -327,6 +346,8 @@ class _Item implements Item {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.dexNum, dexNum) || other.dexNum == dexNum) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
             (identical(other.flingPower, flingPower) ||
                 other.flingPower == flingPower) &&
             (identical(other.ignoredByKlutz, ignoredByKlutz) ||
@@ -335,12 +356,19 @@ class _Item implements Item {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, dexNum, flingPower,
-      ignoredByKlutz, const DeepCollectionEquality().hash(_category));
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      name,
+      dexNum,
+      description,
+      flingPower,
+      ignoredByKlutz,
+      const DeepCollectionEquality().hash(_category));
 
   @override
   String toString() {
-    return 'Item(id: $id, name: $name, dexNum: $dexNum, flingPower: $flingPower, ignoredByKlutz: $ignoredByKlutz, category: $category)';
+    return 'Item(id: $id, name: $name, dexNum: $dexNum, description: $description, flingPower: $flingPower, ignoredByKlutz: $ignoredByKlutz, category: $category)';
   }
 }
 
@@ -354,6 +382,7 @@ abstract mixin class _$ItemCopyWith<$Res> implements $ItemCopyWith<$Res> {
       {String id,
       String name,
       int dexNum,
+      String description,
       int flingPower,
       bool ignoredByKlutz,
       List<ItemCategory> category});
@@ -374,6 +403,7 @@ class __$ItemCopyWithImpl<$Res> implements _$ItemCopyWith<$Res> {
     Object? id = null,
     Object? name = null,
     Object? dexNum = null,
+    Object? description = null,
     Object? flingPower = null,
     Object? ignoredByKlutz = null,
     Object? category = null,
@@ -391,6 +421,10 @@ class __$ItemCopyWithImpl<$Res> implements _$ItemCopyWith<$Res> {
           ? _self.dexNum
           : dexNum // ignore: cast_nullable_to_non_nullable
               as int,
+      description: null == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
       flingPower: null == flingPower
           ? _self.flingPower
           : flingPower // ignore: cast_nullable_to_non_nullable

@@ -1,5 +1,4 @@
 import 'dart:core';
-import 'dart:math';
 import 'package:app/utils/enums/pokemon_type.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:powersync/sqlite3.dart' as sqlite;
@@ -25,8 +24,8 @@ abstract class Move with _$Move {
     required String longDescription,
     required bool hasSecondaryEffect,
     required bool isMultiHit,
-    required int multiHitHigh,
-    required int multiHitLow,
+    int? multiHitHigh,
+    int? multiHitLow,
     required bool ignoresSubstitute,
     required bool ignoresProtect,
     required bool bounceable,
@@ -54,7 +53,7 @@ abstract class Move with _$Move {
       name: row['name'],
       dexNum: row['dex_num'],
       type: (row['type'] != null)
-          ? (row['type'] as String).split(',').map((e) => PokemonTypeExtension.fromString(e)).toList()
+          ? (row['type'] as String).split(',').map((e) => PokemonType.fromString(e)).toList()
           : <PokemonType>[],
       category: (row['category'] != null)
           ? MoveCategory.values.firstWhere((e) => e.toString().split('.').last == row['category'])

@@ -7,9 +7,9 @@ part 'move_pool_entry.freezed.dart';
 @freezed
 abstract class MovePoolEntry with _$MovePoolEntry{
   const factory MovePoolEntry ({
-    required String moveId,
-    required String pokemonId,
-    required LearnMethod learnMethod,
+    String? moveId,
+    String? pokemonId,
+    LearnMethod? learnMethod,
     int? levelupLevel,
   }) = _MovePoolEntry;
 

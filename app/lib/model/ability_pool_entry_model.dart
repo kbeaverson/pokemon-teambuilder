@@ -8,8 +8,8 @@ part 'ability_pool_entry_model.freezed.dart';
 abstract class AbilityPoolEntry with _$AbilityPoolEntry {
   const factory AbilityPoolEntry ({
     required String id,
-    required String abilityId,
-    required String pokemonId,
+    String? abilityId,
+    String? pokemonId,
     required bool isHidden,
   }) = _AbilityPoolEntry;
 

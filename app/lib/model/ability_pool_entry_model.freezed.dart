@@ -15,8 +15,8 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$AbilityPoolEntry {
   String get id;
-  String get abilityId;
-  String get pokemonId;
+  String? get abilityId;
+  String? get pokemonId;
   bool get isHidden;
 
   /// Create a copy of AbilityPoolEntry
@@ -57,7 +57,7 @@ abstract mixin class $AbilityPoolEntryCopyWith<$Res> {
           AbilityPoolEntry value, $Res Function(AbilityPoolEntry) _then) =
       _$AbilityPoolEntryCopyWithImpl;
   @useResult
-  $Res call({String id, String abilityId, String pokemonId, bool isHidden});
+  $Res call({String id, String? abilityId, String? pokemonId, bool isHidden});
 }
 
 /// @nodoc
@@ -74,8 +74,8 @@ class _$AbilityPoolEntryCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? abilityId = null,
-    Object? pokemonId = null,
+    Object? abilityId = freezed,
+    Object? pokemonId = freezed,
     Object? isHidden = null,
   }) {
     return _then(_self.copyWith(
@@ -83,14 +83,14 @@ class _$AbilityPoolEntryCopyWithImpl<$Res>
           ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      abilityId: null == abilityId
+      abilityId: freezed == abilityId
           ? _self.abilityId
           : abilityId // ignore: cast_nullable_to_non_nullable
-              as String,
-      pokemonId: null == pokemonId
+              as String?,
+      pokemonId: freezed == pokemonId
           ? _self.pokemonId
           : pokemonId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       isHidden: null == isHidden
           ? _self.isHidden
           : isHidden // ignore: cast_nullable_to_non_nullable
@@ -193,7 +193,7 @@ extension AbilityPoolEntryPatterns on AbilityPoolEntry {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
-            String id, String abilityId, String pokemonId, bool isHidden)?
+            String id, String? abilityId, String? pokemonId, bool isHidden)?
         $default, {
     required TResult orElse(),
   }) {
@@ -223,7 +223,7 @@ extension AbilityPoolEntryPatterns on AbilityPoolEntry {
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
     TResult Function(
-            String id, String abilityId, String pokemonId, bool isHidden)
+            String id, String? abilityId, String? pokemonId, bool isHidden)
         $default,
   ) {
     final _that = this;
@@ -251,7 +251,7 @@ extension AbilityPoolEntryPatterns on AbilityPoolEntry {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
-            String id, String abilityId, String pokemonId, bool isHidden)?
+            String id, String? abilityId, String? pokemonId, bool isHidden)?
         $default,
   ) {
     final _that = this;
@@ -270,16 +270,16 @@ extension AbilityPoolEntryPatterns on AbilityPoolEntry {
 class _AbilityPoolEntry implements AbilityPoolEntry {
   const _AbilityPoolEntry(
       {required this.id,
-      required this.abilityId,
-      required this.pokemonId,
+      this.abilityId,
+      this.pokemonId,
       required this.isHidden});
 
   @override
   final String id;
   @override
-  final String abilityId;
+  final String? abilityId;
   @override
-  final String pokemonId;
+  final String? pokemonId;
   @override
   final bool isHidden;
 
@@ -323,7 +323,7 @@ abstract mixin class _$AbilityPoolEntryCopyWith<$Res>
       __$AbilityPoolEntryCopyWithImpl;
   @override
   @useResult
-  $Res call({String id, String abilityId, String pokemonId, bool isHidden});
+  $Res call({String id, String? abilityId, String? pokemonId, bool isHidden});
 }
 
 /// @nodoc
@@ -340,8 +340,8 @@ class __$AbilityPoolEntryCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   $Res call({
     Object? id = null,
-    Object? abilityId = null,
-    Object? pokemonId = null,
+    Object? abilityId = freezed,
+    Object? pokemonId = freezed,
     Object? isHidden = null,
   }) {
     return _then(_AbilityPoolEntry(
@@ -349,14 +349,14 @@ class __$AbilityPoolEntryCopyWithImpl<$Res>
           ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      abilityId: null == abilityId
+      abilityId: freezed == abilityId
           ? _self.abilityId
           : abilityId // ignore: cast_nullable_to_non_nullable
-              as String,
-      pokemonId: null == pokemonId
+              as String?,
+      pokemonId: freezed == pokemonId
           ? _self.pokemonId
           : pokemonId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       isHidden: null == isHidden
           ? _self.isHidden
           : isHidden // ignore: cast_nullable_to_non_nullable

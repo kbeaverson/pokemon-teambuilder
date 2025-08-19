@@ -63,7 +63,8 @@ const schema = Schema([
     Column.integer('dex_num'),
     Column.integer('fling_power'),
     Column.integer('ignored_by_klutz'),
-    Column.text('category')
+    Column.text('category'),
+    Column.text('description')
   ]),
   Table('regulations', [
     Column.text('name'),

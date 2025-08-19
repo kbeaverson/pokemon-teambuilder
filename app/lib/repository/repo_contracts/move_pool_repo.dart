@@ -9,4 +9,7 @@ abstract class MovePoolRepo {
   /// 
   /// Produces list of MovePoolEntry for every pokemon that can learn the move corresponding to [moveId].
   Future<List<MovePoolEntry>> getByMove(String moveId);
+
+  /// The move pool entry corresponding to the entry id, if it exists.
+  Future<MovePoolEntry?> getById(String movePoolEntryId);
 }

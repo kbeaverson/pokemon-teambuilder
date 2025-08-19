@@ -12,6 +12,7 @@ abstract class Item with _$Item {
     required String id,
     required String name,
     required int dexNum,
+    required String description,
     required int flingPower,
     required bool ignoredByKlutz,
     required List<ItemCategory> category,
@@ -23,6 +24,7 @@ abstract class Item with _$Item {
       name: row['name'], 
       dexNum: row['dex_num'], 
       flingPower: row['fling_power'], 
+      description: row['description'],
       ignoredByKlutz: row['ignored_by_klutz'] == 1, 
       category: (row['category'] != null)
           ? (row['category'] as String).split(',').map((e) => ItemCategory.values.firstWhere((c) => c.toString() == 'ItemCategory.$e')).toList()

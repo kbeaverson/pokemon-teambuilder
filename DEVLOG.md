@@ -19,6 +19,7 @@ To document architecture decisions, trade-offs, ideas, and roadblocks during the
 | 2025-08-12 | OOD Continued: Model Implementations (2) | [2025-08-12-more-model-implementation.md](docs/devlog/2025-08-12-more-model-implementation.md) |
 | 2025-08-13 | OOD Continued: Model Revision/Completion | [2025-08-13-model-revision-completion.md](docs/devlog/2025-08-13-model-revision-completion.md) |
 | 2025-08-18 | OOD Continued: ViewModels, Repos, and Synchronization | [2025-08-18-viewmodels_repos_sync.md](docs/devlog/2025-08-18-viewmodels_repos_sync.md) |
+| 2025-08-19 | Implementation: ViewModels and Repos | [2025-08-19-viewmodels_and_repos_again.md](docs/devlog/2025-08-19-viewmodels_and_repos_again.md) |
 | ...        | ...                              | ...                                              |
 ## Key Documents
 

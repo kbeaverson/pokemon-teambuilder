@@ -34,7 +34,7 @@ abstract class Pokemon with _$Pokemon {
       name: row['name'],
       dexNum: row['dex_num'],
       type: (row['type'] != null)
-          ? (row['type'] as String).split(',').map(PokemonTypeExtension.fromString).toList()
+          ? (row['type'] as String).split(',').map(PokemonType.fromString).toList()
           : [],
       isPreEvolution: row['is_pre_evolution'] == 1,
       weight: row['weight'],

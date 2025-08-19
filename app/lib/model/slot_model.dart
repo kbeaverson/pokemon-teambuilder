@@ -129,7 +129,7 @@ abstract class Slot with _$Slot {
       teraType: (row['tera_type'] != null) 
         ? PokemonType.values.firstWhere((e) => e.toString().split('.').last == row['tera_type'])
         : null,
-      isGigantamax: row['is_gigantamax'],
+      isGigantamax: row['is_gigantamax'] == 1,
       notes: row['notes'],
       isDirty: row['is_dirty'] == 1,
       teamPosition: row['team_position'], // Optional position for ordering within a team

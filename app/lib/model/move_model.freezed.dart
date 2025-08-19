@@ -28,8 +28,8 @@ mixin _$Move {
   String get longDescription;
   bool get hasSecondaryEffect;
   bool get isMultiHit;
-  int get multiHitHigh;
-  int get multiHitLow;
+  int? get multiHitHigh;
+  int? get multiHitLow;
   bool get ignoresSubstitute;
   bool get ignoresProtect;
   bool get bounceable;
@@ -179,8 +179,8 @@ abstract mixin class $MoveCopyWith<$Res> {
       String longDescription,
       bool hasSecondaryEffect,
       bool isMultiHit,
-      int multiHitHigh,
-      int multiHitLow,
+      int? multiHitHigh,
+      int? multiHitLow,
       bool ignoresSubstitute,
       bool ignoresProtect,
       bool bounceable,
@@ -228,8 +228,8 @@ class _$MoveCopyWithImpl<$Res> implements $MoveCopyWith<$Res> {
     Object? longDescription = null,
     Object? hasSecondaryEffect = null,
     Object? isMultiHit = null,
-    Object? multiHitHigh = null,
-    Object? multiHitLow = null,
+    Object? multiHitHigh = freezed,
+    Object? multiHitLow = freezed,
     Object? ignoresSubstitute = null,
     Object? ignoresProtect = null,
     Object? bounceable = null,
@@ -307,14 +307,14 @@ class _$MoveCopyWithImpl<$Res> implements $MoveCopyWith<$Res> {
           ? _self.isMultiHit
           : isMultiHit // ignore: cast_nullable_to_non_nullable
               as bool,
-      multiHitHigh: null == multiHitHigh
+      multiHitHigh: freezed == multiHitHigh
           ? _self.multiHitHigh
           : multiHitHigh // ignore: cast_nullable_to_non_nullable
-              as int,
-      multiHitLow: null == multiHitLow
+              as int?,
+      multiHitLow: freezed == multiHitLow
           ? _self.multiHitLow
           : multiHitLow // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       ignoresSubstitute: null == ignoresSubstitute
           ? _self.ignoresSubstitute
           : ignoresSubstitute // ignore: cast_nullable_to_non_nullable
@@ -503,8 +503,8 @@ extension MovePatterns on Move {
             String longDescription,
             bool hasSecondaryEffect,
             bool isMultiHit,
-            int multiHitHigh,
-            int multiHitLow,
+            int? multiHitHigh,
+            int? multiHitLow,
             bool ignoresSubstitute,
             bool ignoresProtect,
             bool bounceable,
@@ -601,8 +601,8 @@ extension MovePatterns on Move {
             String longDescription,
             bool hasSecondaryEffect,
             bool isMultiHit,
-            int multiHitHigh,
-            int multiHitLow,
+            int? multiHitHigh,
+            int? multiHitLow,
             bool ignoresSubstitute,
             bool ignoresProtect,
             bool bounceable,
@@ -697,8 +697,8 @@ extension MovePatterns on Move {
             String longDescription,
             bool hasSecondaryEffect,
             bool isMultiHit,
-            int multiHitHigh,
-            int multiHitLow,
+            int? multiHitHigh,
+            int? multiHitLow,
             bool ignoresSubstitute,
             bool ignoresProtect,
             bool bounceable,
@@ -783,8 +783,8 @@ class _Move implements Move {
       required this.longDescription,
       required this.hasSecondaryEffect,
       required this.isMultiHit,
-      required this.multiHitHigh,
-      required this.multiHitLow,
+      this.multiHitHigh,
+      this.multiHitLow,
       required this.ignoresSubstitute,
       required this.ignoresProtect,
       required this.bounceable,
@@ -841,9 +841,9 @@ class _Move implements Move {
   @override
   final bool isMultiHit;
   @override
-  final int multiHitHigh;
+  final int? multiHitHigh;
   @override
-  final int multiHitLow;
+  final int? multiHitLow;
   @override
   final bool ignoresSubstitute;
   @override
@@ -1014,8 +1014,8 @@ abstract mixin class _$MoveCopyWith<$Res> implements $MoveCopyWith<$Res> {
       String longDescription,
       bool hasSecondaryEffect,
       bool isMultiHit,
-      int multiHitHigh,
-      int multiHitLow,
+      int? multiHitHigh,
+      int? multiHitLow,
       bool ignoresSubstitute,
       bool ignoresProtect,
       bool bounceable,
@@ -1063,8 +1063,8 @@ class __$MoveCopyWithImpl<$Res> implements _$MoveCopyWith<$Res> {
     Object? longDescription = null,
     Object? hasSecondaryEffect = null,
     Object? isMultiHit = null,
-    Object? multiHitHigh = null,
-    Object? multiHitLow = null,
+    Object? multiHitHigh = freezed,
+    Object? multiHitLow = freezed,
     Object? ignoresSubstitute = null,
     Object? ignoresProtect = null,
     Object? bounceable = null,
@@ -1142,14 +1142,14 @@ class __$MoveCopyWithImpl<$Res> implements _$MoveCopyWith<$Res> {
           ? _self.isMultiHit
           : isMultiHit // ignore: cast_nullable_to_non_nullable
               as bool,
-      multiHitHigh: null == multiHitHigh
+      multiHitHigh: freezed == multiHitHigh
           ? _self.multiHitHigh
           : multiHitHigh // ignore: cast_nullable_to_non_nullable
-              as int,
-      multiHitLow: null == multiHitLow
+              as int?,
+      multiHitLow: freezed == multiHitLow
           ? _self.multiHitLow
           : multiHitLow // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       ignoresSubstitute: null == ignoresSubstitute
           ? _self.ignoresSubstitute
           : ignoresSubstitute // ignore: cast_nullable_to_non_nullable
