@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'utils/powersync_util.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  openDatabase();
+
   runApp(const MyApp());
 }
 

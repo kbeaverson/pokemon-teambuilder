@@ -14,8 +14,9 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$AbilityPoolEntry {
-  Ability get ability;
-  Pokemon get pokemon;
+  String get id;
+  String get abilityId;
+  String get pokemonId;
   bool get isHidden;
 
   /// Create a copy of AbilityPoolEntry
@@ -31,18 +32,22 @@ mixin _$AbilityPoolEntry {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is AbilityPoolEntry &&
-            (identical(other.ability, ability) || other.ability == ability) &&
-            (identical(other.pokemon, pokemon) || other.pokemon == pokemon) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.abilityId, abilityId) ||
+                other.abilityId == abilityId) &&
+            (identical(other.pokemonId, pokemonId) ||
+                other.pokemonId == pokemonId) &&
             (identical(other.isHidden, isHidden) ||
                 other.isHidden == isHidden));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, ability, pokemon, isHidden);
+  int get hashCode =>
+      Object.hash(runtimeType, id, abilityId, pokemonId, isHidden);
 
   @override
   String toString() {
-    return 'AbilityPoolEntry(ability: $ability, pokemon: $pokemon, isHidden: $isHidden)';
+    return 'AbilityPoolEntry(id: $id, abilityId: $abilityId, pokemonId: $pokemonId, isHidden: $isHidden)';
   }
 }
 
@@ -52,10 +57,7 @@ abstract mixin class $AbilityPoolEntryCopyWith<$Res> {
           AbilityPoolEntry value, $Res Function(AbilityPoolEntry) _then) =
       _$AbilityPoolEntryCopyWithImpl;
   @useResult
-  $Res call({Ability ability, Pokemon pokemon, bool isHidden});
-
-  $AbilityCopyWith<$Res> get ability;
-  $PokemonCopyWith<$Res> get pokemon;
+  $Res call({String id, String abilityId, String pokemonId, bool isHidden});
 }
 
 /// @nodoc
@@ -71,44 +73,29 @@ class _$AbilityPoolEntryCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? ability = null,
-    Object? pokemon = null,
+    Object? id = null,
+    Object? abilityId = null,
+    Object? pokemonId = null,
     Object? isHidden = null,
   }) {
     return _then(_self.copyWith(
-      ability: null == ability
-          ? _self.ability
-          : ability // ignore: cast_nullable_to_non_nullable
-              as Ability,
-      pokemon: null == pokemon
-          ? _self.pokemon
-          : pokemon // ignore: cast_nullable_to_non_nullable
-              as Pokemon,
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      abilityId: null == abilityId
+          ? _self.abilityId
+          : abilityId // ignore: cast_nullable_to_non_nullable
+              as String,
+      pokemonId: null == pokemonId
+          ? _self.pokemonId
+          : pokemonId // ignore: cast_nullable_to_non_nullable
+              as String,
       isHidden: null == isHidden
           ? _self.isHidden
           : isHidden // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
-  }
-
-  /// Create a copy of AbilityPoolEntry
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $AbilityCopyWith<$Res> get ability {
-    return $AbilityCopyWith<$Res>(_self.ability, (value) {
-      return _then(_self.copyWith(ability: value));
-    });
-  }
-
-  /// Create a copy of AbilityPoolEntry
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $PokemonCopyWith<$Res> get pokemon {
-    return $PokemonCopyWith<$Res>(_self.pokemon, (value) {
-      return _then(_self.copyWith(pokemon: value));
-    });
   }
 }
 
@@ -205,14 +192,16 @@ extension AbilityPoolEntryPatterns on AbilityPoolEntry {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(Ability ability, Pokemon pokemon, bool isHidden)?
+    TResult Function(
+            String id, String abilityId, String pokemonId, bool isHidden)?
         $default, {
     required TResult orElse(),
   }) {
     final _that = this;
     switch (_that) {
       case _AbilityPoolEntry() when $default != null:
-        return $default(_that.ability, _that.pokemon, _that.isHidden);
+        return $default(
+            _that.id, _that.abilityId, _that.pokemonId, _that.isHidden);
       case _:
         return orElse();
     }
@@ -233,12 +222,15 @@ extension AbilityPoolEntryPatterns on AbilityPoolEntry {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(Ability ability, Pokemon pokemon, bool isHidden) $default,
+    TResult Function(
+            String id, String abilityId, String pokemonId, bool isHidden)
+        $default,
   ) {
     final _that = this;
     switch (_that) {
       case _AbilityPoolEntry():
-        return $default(_that.ability, _that.pokemon, _that.isHidden);
+        return $default(
+            _that.id, _that.abilityId, _that.pokemonId, _that.isHidden);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -258,13 +250,15 @@ extension AbilityPoolEntryPatterns on AbilityPoolEntry {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(Ability ability, Pokemon pokemon, bool isHidden)?
+    TResult? Function(
+            String id, String abilityId, String pokemonId, bool isHidden)?
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _AbilityPoolEntry() when $default != null:
-        return $default(_that.ability, _that.pokemon, _that.isHidden);
+        return $default(
+            _that.id, _that.abilityId, _that.pokemonId, _that.isHidden);
       case _:
         return null;
     }
@@ -275,12 +269,17 @@ extension AbilityPoolEntryPatterns on AbilityPoolEntry {
 
 class _AbilityPoolEntry implements AbilityPoolEntry {
   const _AbilityPoolEntry(
-      {required this.ability, required this.pokemon, required this.isHidden});
+      {required this.id,
+      required this.abilityId,
+      required this.pokemonId,
+      required this.isHidden});
 
   @override
-  final Ability ability;
+  final String id;
   @override
-  final Pokemon pokemon;
+  final String abilityId;
+  @override
+  final String pokemonId;
   @override
   final bool isHidden;
 
@@ -297,18 +296,22 @@ class _AbilityPoolEntry implements AbilityPoolEntry {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _AbilityPoolEntry &&
-            (identical(other.ability, ability) || other.ability == ability) &&
-            (identical(other.pokemon, pokemon) || other.pokemon == pokemon) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.abilityId, abilityId) ||
+                other.abilityId == abilityId) &&
+            (identical(other.pokemonId, pokemonId) ||
+                other.pokemonId == pokemonId) &&
             (identical(other.isHidden, isHidden) ||
                 other.isHidden == isHidden));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, ability, pokemon, isHidden);
+  int get hashCode =>
+      Object.hash(runtimeType, id, abilityId, pokemonId, isHidden);
 
   @override
   String toString() {
-    return 'AbilityPoolEntry(ability: $ability, pokemon: $pokemon, isHidden: $isHidden)';
+    return 'AbilityPoolEntry(id: $id, abilityId: $abilityId, pokemonId: $pokemonId, isHidden: $isHidden)';
   }
 }
 
@@ -320,12 +323,7 @@ abstract mixin class _$AbilityPoolEntryCopyWith<$Res>
       __$AbilityPoolEntryCopyWithImpl;
   @override
   @useResult
-  $Res call({Ability ability, Pokemon pokemon, bool isHidden});
-
-  @override
-  $AbilityCopyWith<$Res> get ability;
-  @override
-  $PokemonCopyWith<$Res> get pokemon;
+  $Res call({String id, String abilityId, String pokemonId, bool isHidden});
 }
 
 /// @nodoc
@@ -341,44 +339,29 @@ class __$AbilityPoolEntryCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
-    Object? ability = null,
-    Object? pokemon = null,
+    Object? id = null,
+    Object? abilityId = null,
+    Object? pokemonId = null,
     Object? isHidden = null,
   }) {
     return _then(_AbilityPoolEntry(
-      ability: null == ability
-          ? _self.ability
-          : ability // ignore: cast_nullable_to_non_nullable
-              as Ability,
-      pokemon: null == pokemon
-          ? _self.pokemon
-          : pokemon // ignore: cast_nullable_to_non_nullable
-              as Pokemon,
+      id: null == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
+      abilityId: null == abilityId
+          ? _self.abilityId
+          : abilityId // ignore: cast_nullable_to_non_nullable
+              as String,
+      pokemonId: null == pokemonId
+          ? _self.pokemonId
+          : pokemonId // ignore: cast_nullable_to_non_nullable
+              as String,
       isHidden: null == isHidden
           ? _self.isHidden
           : isHidden // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
-  }
-
-  /// Create a copy of AbilityPoolEntry
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $AbilityCopyWith<$Res> get ability {
-    return $AbilityCopyWith<$Res>(_self.ability, (value) {
-      return _then(_self.copyWith(ability: value));
-    });
-  }
-
-  /// Create a copy of AbilityPoolEntry
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $PokemonCopyWith<$Res> get pokemon {
-    return $PokemonCopyWith<$Res>(_self.pokemon, (value) {
-      return _then(_self.copyWith(pokemon: value));
-    });
   }
 }
 

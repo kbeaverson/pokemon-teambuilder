@@ -17,7 +17,7 @@ mixin _$Team {
   String get id;
   String get name;
   String? get description;
-  List<Slot> get members;
+  List<String> get memberIds;
   String? get regulationId;
   String? get rentalCode;
   bool get isDirty;
@@ -38,7 +38,7 @@ mixin _$Team {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            const DeepCollectionEquality().equals(other.members, members) &&
+            const DeepCollectionEquality().equals(other.memberIds, memberIds) &&
             (identical(other.regulationId, regulationId) ||
                 other.regulationId == regulationId) &&
             (identical(other.rentalCode, rentalCode) ||
@@ -52,14 +52,14 @@ mixin _$Team {
       id,
       name,
       description,
-      const DeepCollectionEquality().hash(members),
+      const DeepCollectionEquality().hash(memberIds),
       regulationId,
       rentalCode,
       isDirty);
 
   @override
   String toString() {
-    return 'Team(id: $id, name: $name, description: $description, members: $members, regulationId: $regulationId, rentalCode: $rentalCode, isDirty: $isDirty)';
+    return 'Team(id: $id, name: $name, description: $description, memberIds: $memberIds, regulationId: $regulationId, rentalCode: $rentalCode, isDirty: $isDirty)';
   }
 }
 
@@ -72,7 +72,7 @@ abstract mixin class $TeamCopyWith<$Res> {
       {String id,
       String name,
       String? description,
-      List<Slot> members,
+      List<String> memberIds,
       String? regulationId,
       String? rentalCode,
       bool isDirty});
@@ -93,7 +93,7 @@ class _$TeamCopyWithImpl<$Res> implements $TeamCopyWith<$Res> {
     Object? id = null,
     Object? name = null,
     Object? description = freezed,
-    Object? members = null,
+    Object? memberIds = null,
     Object? regulationId = freezed,
     Object? rentalCode = freezed,
     Object? isDirty = null,
@@ -111,10 +111,10 @@ class _$TeamCopyWithImpl<$Res> implements $TeamCopyWith<$Res> {
           ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      members: null == members
-          ? _self.members
-          : members // ignore: cast_nullable_to_non_nullable
-              as List<Slot>,
+      memberIds: null == memberIds
+          ? _self.memberIds
+          : memberIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       regulationId: freezed == regulationId
           ? _self.regulationId
           : regulationId // ignore: cast_nullable_to_non_nullable
@@ -228,7 +228,7 @@ extension TeamPatterns on Team {
             String id,
             String name,
             String? description,
-            List<Slot> members,
+            List<String> memberIds,
             String? regulationId,
             String? rentalCode,
             bool isDirty)?
@@ -238,8 +238,14 @@ extension TeamPatterns on Team {
     final _that = this;
     switch (_that) {
       case _Team() when $default != null:
-        return $default(_that.id, _that.name, _that.description, _that.members,
-            _that.regulationId, _that.rentalCode, _that.isDirty);
+        return $default(
+            _that.id,
+            _that.name,
+            _that.description,
+            _that.memberIds,
+            _that.regulationId,
+            _that.rentalCode,
+            _that.isDirty);
       case _:
         return orElse();
     }
@@ -264,7 +270,7 @@ extension TeamPatterns on Team {
             String id,
             String name,
             String? description,
-            List<Slot> members,
+            List<String> memberIds,
             String? regulationId,
             String? rentalCode,
             bool isDirty)
@@ -273,8 +279,14 @@ extension TeamPatterns on Team {
     final _that = this;
     switch (_that) {
       case _Team():
-        return $default(_that.id, _that.name, _that.description, _that.members,
-            _that.regulationId, _that.rentalCode, _that.isDirty);
+        return $default(
+            _that.id,
+            _that.name,
+            _that.description,
+            _that.memberIds,
+            _that.regulationId,
+            _that.rentalCode,
+            _that.isDirty);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -298,7 +310,7 @@ extension TeamPatterns on Team {
             String id,
             String name,
             String? description,
-            List<Slot> members,
+            List<String> memberIds,
             String? regulationId,
             String? rentalCode,
             bool isDirty)?
@@ -307,8 +319,14 @@ extension TeamPatterns on Team {
     final _that = this;
     switch (_that) {
       case _Team() when $default != null:
-        return $default(_that.id, _that.name, _that.description, _that.members,
-            _that.regulationId, _that.rentalCode, _that.isDirty);
+        return $default(
+            _that.id,
+            _that.name,
+            _that.description,
+            _that.memberIds,
+            _that.regulationId,
+            _that.rentalCode,
+            _that.isDirty);
       case _:
         return null;
     }
@@ -322,11 +340,11 @@ class _Team implements Team {
       {required this.id,
       this.name = "Untitled",
       this.description,
-      required final List<Slot> members,
+      final List<String> memberIds = const [],
       this.regulationId,
       this.rentalCode,
       this.isDirty = true})
-      : _members = members;
+      : _memberIds = memberIds;
 
   @override
   final String id;
@@ -335,12 +353,13 @@ class _Team implements Team {
   final String name;
   @override
   final String? description;
-  final List<Slot> _members;
+  final List<String> _memberIds;
   @override
-  List<Slot> get members {
-    if (_members is EqualUnmodifiableListView) return _members;
+  @JsonKey()
+  List<String> get memberIds {
+    if (_memberIds is EqualUnmodifiableListView) return _memberIds;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_members);
+    return EqualUnmodifiableListView(_memberIds);
   }
 
   @override
@@ -368,7 +387,8 @@ class _Team implements Team {
             (identical(other.name, name) || other.name == name) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            const DeepCollectionEquality().equals(other._members, _members) &&
+            const DeepCollectionEquality()
+                .equals(other._memberIds, _memberIds) &&
             (identical(other.regulationId, regulationId) ||
                 other.regulationId == regulationId) &&
             (identical(other.rentalCode, rentalCode) ||
@@ -382,14 +402,14 @@ class _Team implements Team {
       id,
       name,
       description,
-      const DeepCollectionEquality().hash(_members),
+      const DeepCollectionEquality().hash(_memberIds),
       regulationId,
       rentalCode,
       isDirty);
 
   @override
   String toString() {
-    return 'Team(id: $id, name: $name, description: $description, members: $members, regulationId: $regulationId, rentalCode: $rentalCode, isDirty: $isDirty)';
+    return 'Team(id: $id, name: $name, description: $description, memberIds: $memberIds, regulationId: $regulationId, rentalCode: $rentalCode, isDirty: $isDirty)';
   }
 }
 
@@ -403,7 +423,7 @@ abstract mixin class _$TeamCopyWith<$Res> implements $TeamCopyWith<$Res> {
       {String id,
       String name,
       String? description,
-      List<Slot> members,
+      List<String> memberIds,
       String? regulationId,
       String? rentalCode,
       bool isDirty});
@@ -424,7 +444,7 @@ class __$TeamCopyWithImpl<$Res> implements _$TeamCopyWith<$Res> {
     Object? id = null,
     Object? name = null,
     Object? description = freezed,
-    Object? members = null,
+    Object? memberIds = null,
     Object? regulationId = freezed,
     Object? rentalCode = freezed,
     Object? isDirty = null,
@@ -442,10 +462,10 @@ class __$TeamCopyWithImpl<$Res> implements _$TeamCopyWith<$Res> {
           ? _self.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
-      members: null == members
-          ? _self._members
-          : members // ignore: cast_nullable_to_non_nullable
-              as List<Slot>,
+      memberIds: null == memberIds
+          ? _self._memberIds
+          : memberIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       regulationId: freezed == regulationId
           ? _self.regulationId
           : regulationId // ignore: cast_nullable_to_non_nullable

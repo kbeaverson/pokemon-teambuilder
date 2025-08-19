@@ -1,0 +1,6 @@
+framework module powersync_flutter_libs {
+  umbrella header "powersync_flutter_libs-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,6 +1,6 @@
 import 'package:app/model/clause_models/clause_model.dart';
 import 'package:app/model/team_model.dart';
-import 'package:app/utils/clause_type.dart';
+import 'package:app/utils/enums/clause_type.dart';
 
 /// Enforces a banned-pokemon rule for a Regulation
 class BannedPokemonClause extends Clause {
@@ -17,8 +17,12 @@ class BannedPokemonClause extends Clause {
 
   @override
   Map<String, dynamic> toJson() {
-    // TODO: implement toJson
-    throw UnimplementedError();
+    return {
+      'id': id,
+      'descriptionMessage': descriptionMessage,
+      'bannedPokemonDexNums': bannedPokemonDexNums,
+      'clauseType': clauseType.toString(),
+    };
   }
 
   @override

@@ -1,5 +1,6 @@
 import 'package:app/model/team_model.dart';
-import 'package:app/utils/clause_type.dart';
+import 'package:app/utils/enums/clause_type.dart';
+import 'package:powersync/sqlite3.dart' as sqlite;
 
 /// Abstract class that validates for a single rule on a team
 abstract class Clause {

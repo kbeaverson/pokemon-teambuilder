@@ -1,6 +1,5 @@
-import 'package:app/model/ability_model.dart';
-import 'package:app/model/pokemon_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:powersync/sqlite3.dart' as sqlite;
 
 part 'ability_pool_entry_model.freezed.dart';
 
@@ -8,8 +7,13 @@ part 'ability_pool_entry_model.freezed.dart';
 @freezed
 abstract class AbilityPoolEntry with _$AbilityPoolEntry {
   const factory AbilityPoolEntry ({
-    required Ability ability,
-    required Pokemon pokemon,
+    required String id,
+    required String abilityId,
+    required String pokemonId,
     required bool isHidden,
   }) = _AbilityPoolEntry;
+
+  factory AbilityPoolEntry.fromRow(sqlite.Row row) {
+    return AbilityPoolEntry(id: row['id'], abilityId: row['ability_id'], pokemonId: row['pokemon_id'], isHidden: row['is_hidden']);
+  }
 }

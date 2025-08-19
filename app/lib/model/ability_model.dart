@@ -1,5 +1,6 @@
 import 'dart:core';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:powersync/sqlite3.dart' as sqlite;
 
 part 'ability_model.freezed.dart';
 
@@ -14,4 +15,15 @@ abstract class Ability with _$Ability {
     required bool blockedByNeutGas,
     required bool ignored,
   }) = _Ability;
+
+  factory Ability.fromRow(sqlite.Row row) {
+    return Ability(
+      id: row['id'],
+      name: row['name'],
+      dexNum: row['dex_num'],
+      description: row['description'],
+      blockedByNeutGas: row['blocked_by_neut_gas'] == 1,
+      ignored: row['ignored'] == 1,
+    );
+  }
 }

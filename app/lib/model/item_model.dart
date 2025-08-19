@@ -1,7 +1,7 @@
 import 'dart:core';
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import '../utils/item_category.dart';
+import 'package:powersync/sqlite3.dart' as sqlite;
+import '../utils/enums/item_category.dart';
 
 part 'item_model.freezed.dart';
 
@@ -16,4 +16,17 @@ abstract class Item with _$Item {
     required bool ignoredByKlutz,
     required List<ItemCategory> category,
   }) = _Item;
+
+  factory Item.fromRow(sqlite.Row row) {
+    return Item(
+      id: row['id'],
+      name: row['name'], 
+      dexNum: row['dex_num'], 
+      flingPower: row['fling_power'], 
+      ignoredByKlutz: row['ignored_by_klutz'] == 1, 
+      category: (row['category'] != null)
+          ? (row['category'] as String).split(',').map((e) => ItemCategory.values.firstWhere((c) => c.toString() == 'ItemCategory.$e')).toList()
+          : [],
+    );
+  }
 }

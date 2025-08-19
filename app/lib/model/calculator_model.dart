@@ -1,8 +1,8 @@
 import 'package:app/model/calculator_side_model.dart';
 import 'package:app/model/move_model.dart';
-import 'package:app/utils/side_name.dart';
-import 'package:app/utils/terrain.dart';
-import 'package:app/utils/weather.dart';
+import 'package:app/utils/enums/side_name.dart';
+import 'package:app/utils/enums/terrain.dart';
+import 'package:app/utils/enums/weather.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'calculator_model.freezed.dart';

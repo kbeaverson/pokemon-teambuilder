@@ -8,7 +8,7 @@ This roadmap outlines the major development milestones, features, and priorities
 
 - [x] Set up project directory structure (`app/`, `docs/`, `README.md`, etc.)
 - [x] Create initial devlog and architecture documentation
-- [ ] Complete written OOD process elements
+- [x] Complete written OOD process elements
 - [ ] Define full scope of MVP features
 - [ ] Write method contracts
 - [ ] Write test cases according to method contracts

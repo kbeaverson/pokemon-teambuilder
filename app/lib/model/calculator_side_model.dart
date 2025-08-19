@@ -1,5 +1,5 @@
 import 'package:app/model/slot_model.dart';
-import 'package:app/utils/status_condition.dart';
+import 'package:app/utils/enums/status_condition.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 

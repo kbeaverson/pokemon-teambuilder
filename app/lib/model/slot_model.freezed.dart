@@ -15,10 +15,11 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Slot {
   String get id;
-  Pokemon? get pokemon;
-  List<MovePoolEntry>? get moves;
-  AbilityPoolEntry? get ability;
-  Item? get item;
+  String? get teamId;
+  String? get pokemonId;
+  List<String> get movePoolEntryIds;
+  String? get abilityPoolEntryId;
+  String? get itemId;
   Nature get nature;
   Map<Stat, int> get ivs;
   Map<Stat, int> get evs;
@@ -26,6 +27,7 @@ mixin _$Slot {
   bool get isGigantamax;
   String? get notes;
   bool get isDirty;
+  int? get teamPosition;
 
   /// Create a copy of Slot
   /// with the given fields replaced by the non-null parameter values.
@@ -40,10 +42,14 @@ mixin _$Slot {
         (other.runtimeType == runtimeType &&
             other is Slot &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.pokemon, pokemon) || other.pokemon == pokemon) &&
-            const DeepCollectionEquality().equals(other.moves, moves) &&
-            (identical(other.ability, ability) || other.ability == ability) &&
-            (identical(other.item, item) || other.item == item) &&
+            (identical(other.teamId, teamId) || other.teamId == teamId) &&
+            (identical(other.pokemonId, pokemonId) ||
+                other.pokemonId == pokemonId) &&
+            const DeepCollectionEquality()
+                .equals(other.movePoolEntryIds, movePoolEntryIds) &&
+            (identical(other.abilityPoolEntryId, abilityPoolEntryId) ||
+                other.abilityPoolEntryId == abilityPoolEntryId) &&
+            (identical(other.itemId, itemId) || other.itemId == itemId) &&
             (identical(other.nature, nature) || other.nature == nature) &&
             const DeepCollectionEquality().equals(other.ivs, ivs) &&
             const DeepCollectionEquality().equals(other.evs, evs) &&
@@ -52,28 +58,32 @@ mixin _$Slot {
             (identical(other.isGigantamax, isGigantamax) ||
                 other.isGigantamax == isGigantamax) &&
             (identical(other.notes, notes) || other.notes == notes) &&
-            (identical(other.isDirty, isDirty) || other.isDirty == isDirty));
+            (identical(other.isDirty, isDirty) || other.isDirty == isDirty) &&
+            (identical(other.teamPosition, teamPosition) ||
+                other.teamPosition == teamPosition));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       id,
-      pokemon,
-      const DeepCollectionEquality().hash(moves),
-      ability,
-      item,
+      teamId,
+      pokemonId,
+      const DeepCollectionEquality().hash(movePoolEntryIds),
+      abilityPoolEntryId,
+      itemId,
       nature,
       const DeepCollectionEquality().hash(ivs),
       const DeepCollectionEquality().hash(evs),
       teraType,
       isGigantamax,
       notes,
-      isDirty);
+      isDirty,
+      teamPosition);
 
   @override
   String toString() {
-    return 'Slot(id: $id, pokemon: $pokemon, moves: $moves, ability: $ability, item: $item, nature: $nature, ivs: $ivs, evs: $evs, teraType: $teraType, isGigantamax: $isGigantamax, notes: $notes, isDirty: $isDirty)';
+    return 'Slot(id: $id, teamId: $teamId, pokemonId: $pokemonId, movePoolEntryIds: $movePoolEntryIds, abilityPoolEntryId: $abilityPoolEntryId, itemId: $itemId, nature: $nature, ivs: $ivs, evs: $evs, teraType: $teraType, isGigantamax: $isGigantamax, notes: $notes, isDirty: $isDirty, teamPosition: $teamPosition)';
   }
 }
 
@@ -84,21 +94,19 @@ abstract mixin class $SlotCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      Pokemon? pokemon,
-      List<MovePoolEntry>? moves,
-      AbilityPoolEntry? ability,
-      Item? item,
+      String? teamId,
+      String? pokemonId,
+      List<String> movePoolEntryIds,
+      String? abilityPoolEntryId,
+      String? itemId,
       Nature nature,
       Map<Stat, int> ivs,
       Map<Stat, int> evs,
       PokemonType? teraType,
       bool isGigantamax,
       String? notes,
-      bool isDirty});
-
-  $PokemonCopyWith<$Res>? get pokemon;
-  $AbilityPoolEntryCopyWith<$Res>? get ability;
-  $ItemCopyWith<$Res>? get item;
+      bool isDirty,
+      int? teamPosition});
 }
 
 /// @nodoc
@@ -114,10 +122,11 @@ class _$SlotCopyWithImpl<$Res> implements $SlotCopyWith<$Res> {
   @override
   $Res call({
     Object? id = null,
-    Object? pokemon = freezed,
-    Object? moves = freezed,
-    Object? ability = freezed,
-    Object? item = freezed,
+    Object? teamId = freezed,
+    Object? pokemonId = freezed,
+    Object? movePoolEntryIds = null,
+    Object? abilityPoolEntryId = freezed,
+    Object? itemId = freezed,
     Object? nature = null,
     Object? ivs = null,
     Object? evs = null,
@@ -125,28 +134,33 @@ class _$SlotCopyWithImpl<$Res> implements $SlotCopyWith<$Res> {
     Object? isGigantamax = null,
     Object? notes = freezed,
     Object? isDirty = null,
+    Object? teamPosition = freezed,
   }) {
     return _then(_self.copyWith(
       id: null == id
           ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      pokemon: freezed == pokemon
-          ? _self.pokemon
-          : pokemon // ignore: cast_nullable_to_non_nullable
-              as Pokemon?,
-      moves: freezed == moves
-          ? _self.moves
-          : moves // ignore: cast_nullable_to_non_nullable
-              as List<MovePoolEntry>?,
-      ability: freezed == ability
-          ? _self.ability
-          : ability // ignore: cast_nullable_to_non_nullable
-              as AbilityPoolEntry?,
-      item: freezed == item
-          ? _self.item
-          : item // ignore: cast_nullable_to_non_nullable
-              as Item?,
+      teamId: freezed == teamId
+          ? _self.teamId
+          : teamId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      pokemonId: freezed == pokemonId
+          ? _self.pokemonId
+          : pokemonId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      movePoolEntryIds: null == movePoolEntryIds
+          ? _self.movePoolEntryIds
+          : movePoolEntryIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      abilityPoolEntryId: freezed == abilityPoolEntryId
+          ? _self.abilityPoolEntryId
+          : abilityPoolEntryId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      itemId: freezed == itemId
+          ? _self.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as String?,
       nature: null == nature
           ? _self.nature
           : nature // ignore: cast_nullable_to_non_nullable
@@ -175,49 +189,11 @@ class _$SlotCopyWithImpl<$Res> implements $SlotCopyWith<$Res> {
           ? _self.isDirty
           : isDirty // ignore: cast_nullable_to_non_nullable
               as bool,
+      teamPosition: freezed == teamPosition
+          ? _self.teamPosition
+          : teamPosition // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
-  }
-
-  /// Create a copy of Slot
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $PokemonCopyWith<$Res>? get pokemon {
-    if (_self.pokemon == null) {
-      return null;
-    }
-
-    return $PokemonCopyWith<$Res>(_self.pokemon!, (value) {
-      return _then(_self.copyWith(pokemon: value));
-    });
-  }
-
-  /// Create a copy of Slot
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $AbilityPoolEntryCopyWith<$Res>? get ability {
-    if (_self.ability == null) {
-      return null;
-    }
-
-    return $AbilityPoolEntryCopyWith<$Res>(_self.ability!, (value) {
-      return _then(_self.copyWith(ability: value));
-    });
-  }
-
-  /// Create a copy of Slot
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ItemCopyWith<$Res>? get item {
-    if (_self.item == null) {
-      return null;
-    }
-
-    return $ItemCopyWith<$Res>(_self.item!, (value) {
-      return _then(_self.copyWith(item: value));
-    });
   }
 }
 
@@ -316,17 +292,19 @@ extension SlotPatterns on Slot {
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(
             String id,
-            Pokemon? pokemon,
-            List<MovePoolEntry>? moves,
-            AbilityPoolEntry? ability,
-            Item? item,
+            String? teamId,
+            String? pokemonId,
+            List<String> movePoolEntryIds,
+            String? abilityPoolEntryId,
+            String? itemId,
             Nature nature,
             Map<Stat, int> ivs,
             Map<Stat, int> evs,
             PokemonType? teraType,
             bool isGigantamax,
             String? notes,
-            bool isDirty)?
+            bool isDirty,
+            int? teamPosition)?
         $default, {
     required TResult orElse(),
   }) {
@@ -335,17 +313,19 @@ extension SlotPatterns on Slot {
       case _Slot() when $default != null:
         return $default(
             _that.id,
-            _that.pokemon,
-            _that.moves,
-            _that.ability,
-            _that.item,
+            _that.teamId,
+            _that.pokemonId,
+            _that.movePoolEntryIds,
+            _that.abilityPoolEntryId,
+            _that.itemId,
             _that.nature,
             _that.ivs,
             _that.evs,
             _that.teraType,
             _that.isGigantamax,
             _that.notes,
-            _that.isDirty);
+            _that.isDirty,
+            _that.teamPosition);
       case _:
         return orElse();
     }
@@ -368,17 +348,19 @@ extension SlotPatterns on Slot {
   TResult when<TResult extends Object?>(
     TResult Function(
             String id,
-            Pokemon? pokemon,
-            List<MovePoolEntry>? moves,
-            AbilityPoolEntry? ability,
-            Item? item,
+            String? teamId,
+            String? pokemonId,
+            List<String> movePoolEntryIds,
+            String? abilityPoolEntryId,
+            String? itemId,
             Nature nature,
             Map<Stat, int> ivs,
             Map<Stat, int> evs,
             PokemonType? teraType,
             bool isGigantamax,
             String? notes,
-            bool isDirty)
+            bool isDirty,
+            int? teamPosition)
         $default,
   ) {
     final _that = this;
@@ -386,17 +368,19 @@ extension SlotPatterns on Slot {
       case _Slot():
         return $default(
             _that.id,
-            _that.pokemon,
-            _that.moves,
-            _that.ability,
-            _that.item,
+            _that.teamId,
+            _that.pokemonId,
+            _that.movePoolEntryIds,
+            _that.abilityPoolEntryId,
+            _that.itemId,
             _that.nature,
             _that.ivs,
             _that.evs,
             _that.teraType,
             _that.isGigantamax,
             _that.notes,
-            _that.isDirty);
+            _that.isDirty,
+            _that.teamPosition);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -418,17 +402,19 @@ extension SlotPatterns on Slot {
   TResult? whenOrNull<TResult extends Object?>(
     TResult? Function(
             String id,
-            Pokemon? pokemon,
-            List<MovePoolEntry>? moves,
-            AbilityPoolEntry? ability,
-            Item? item,
+            String? teamId,
+            String? pokemonId,
+            List<String> movePoolEntryIds,
+            String? abilityPoolEntryId,
+            String? itemId,
             Nature nature,
             Map<Stat, int> ivs,
             Map<Stat, int> evs,
             PokemonType? teraType,
             bool isGigantamax,
             String? notes,
-            bool isDirty)?
+            bool isDirty,
+            int? teamPosition)?
         $default,
   ) {
     final _that = this;
@@ -436,17 +422,19 @@ extension SlotPatterns on Slot {
       case _Slot() when $default != null:
         return $default(
             _that.id,
-            _that.pokemon,
-            _that.moves,
-            _that.ability,
-            _that.item,
+            _that.teamId,
+            _that.pokemonId,
+            _that.movePoolEntryIds,
+            _that.abilityPoolEntryId,
+            _that.itemId,
             _that.nature,
             _that.ivs,
             _that.evs,
             _that.teraType,
             _that.isGigantamax,
             _that.notes,
-            _that.isDirty);
+            _that.isDirty,
+            _that.teamPosition);
       case _:
         return null;
     }
@@ -458,10 +446,11 @@ extension SlotPatterns on Slot {
 class _Slot implements Slot {
   const _Slot(
       {required this.id,
-      this.pokemon,
-      final List<MovePoolEntry>? moves,
-      this.ability,
-      this.item,
+      this.teamId,
+      this.pokemonId,
+      final List<String> movePoolEntryIds = const [],
+      this.abilityPoolEntryId,
+      this.itemId,
       this.nature = Nature.docile,
       final Map<Stat, int> ivs = const {
         Stat.hp: 31,
@@ -482,29 +471,32 @@ class _Slot implements Slot {
       this.teraType,
       this.isGigantamax = false,
       this.notes,
-      this.isDirty = true})
-      : _moves = moves,
+      this.isDirty = true,
+      this.teamPosition})
+      : _movePoolEntryIds = movePoolEntryIds,
         _ivs = ivs,
         _evs = evs;
 
   @override
   final String id;
   @override
-  final Pokemon? pokemon;
-  final List<MovePoolEntry>? _moves;
+  final String? teamId;
   @override
-  List<MovePoolEntry>? get moves {
-    final value = _moves;
-    if (value == null) return null;
-    if (_moves is EqualUnmodifiableListView) return _moves;
+  final String? pokemonId;
+  final List<String> _movePoolEntryIds;
+  @override
+  @JsonKey()
+  List<String> get movePoolEntryIds {
+    if (_movePoolEntryIds is EqualUnmodifiableListView)
+      return _movePoolEntryIds;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_movePoolEntryIds);
   }
 
   @override
-  final AbilityPoolEntry? ability;
+  final String? abilityPoolEntryId;
   @override
-  final Item? item;
+  final String? itemId;
   @override
   @JsonKey()
   final Nature nature;
@@ -536,6 +528,8 @@ class _Slot implements Slot {
   @override
   @JsonKey()
   final bool isDirty;
+  @override
+  final int? teamPosition;
 
   /// Create a copy of Slot
   /// with the given fields replaced by the non-null parameter values.
@@ -551,10 +545,14 @@ class _Slot implements Slot {
         (other.runtimeType == runtimeType &&
             other is _Slot &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.pokemon, pokemon) || other.pokemon == pokemon) &&
-            const DeepCollectionEquality().equals(other._moves, _moves) &&
-            (identical(other.ability, ability) || other.ability == ability) &&
-            (identical(other.item, item) || other.item == item) &&
+            (identical(other.teamId, teamId) || other.teamId == teamId) &&
+            (identical(other.pokemonId, pokemonId) ||
+                other.pokemonId == pokemonId) &&
+            const DeepCollectionEquality()
+                .equals(other._movePoolEntryIds, _movePoolEntryIds) &&
+            (identical(other.abilityPoolEntryId, abilityPoolEntryId) ||
+                other.abilityPoolEntryId == abilityPoolEntryId) &&
+            (identical(other.itemId, itemId) || other.itemId == itemId) &&
             (identical(other.nature, nature) || other.nature == nature) &&
             const DeepCollectionEquality().equals(other._ivs, _ivs) &&
             const DeepCollectionEquality().equals(other._evs, _evs) &&
@@ -563,28 +561,32 @@ class _Slot implements Slot {
             (identical(other.isGigantamax, isGigantamax) ||
                 other.isGigantamax == isGigantamax) &&
             (identical(other.notes, notes) || other.notes == notes) &&
-            (identical(other.isDirty, isDirty) || other.isDirty == isDirty));
+            (identical(other.isDirty, isDirty) || other.isDirty == isDirty) &&
+            (identical(other.teamPosition, teamPosition) ||
+                other.teamPosition == teamPosition));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       id,
-      pokemon,
-      const DeepCollectionEquality().hash(_moves),
-      ability,
-      item,
+      teamId,
+      pokemonId,
+      const DeepCollectionEquality().hash(_movePoolEntryIds),
+      abilityPoolEntryId,
+      itemId,
       nature,
       const DeepCollectionEquality().hash(_ivs),
       const DeepCollectionEquality().hash(_evs),
       teraType,
       isGigantamax,
       notes,
-      isDirty);
+      isDirty,
+      teamPosition);
 
   @override
   String toString() {
-    return 'Slot(id: $id, pokemon: $pokemon, moves: $moves, ability: $ability, item: $item, nature: $nature, ivs: $ivs, evs: $evs, teraType: $teraType, isGigantamax: $isGigantamax, notes: $notes, isDirty: $isDirty)';
+    return 'Slot(id: $id, teamId: $teamId, pokemonId: $pokemonId, movePoolEntryIds: $movePoolEntryIds, abilityPoolEntryId: $abilityPoolEntryId, itemId: $itemId, nature: $nature, ivs: $ivs, evs: $evs, teraType: $teraType, isGigantamax: $isGigantamax, notes: $notes, isDirty: $isDirty, teamPosition: $teamPosition)';
   }
 }
 
@@ -596,24 +598,19 @@ abstract mixin class _$SlotCopyWith<$Res> implements $SlotCopyWith<$Res> {
   @useResult
   $Res call(
       {String id,
-      Pokemon? pokemon,
-      List<MovePoolEntry>? moves,
-      AbilityPoolEntry? ability,
-      Item? item,
+      String? teamId,
+      String? pokemonId,
+      List<String> movePoolEntryIds,
+      String? abilityPoolEntryId,
+      String? itemId,
       Nature nature,
       Map<Stat, int> ivs,
       Map<Stat, int> evs,
       PokemonType? teraType,
       bool isGigantamax,
       String? notes,
-      bool isDirty});
-
-  @override
-  $PokemonCopyWith<$Res>? get pokemon;
-  @override
-  $AbilityPoolEntryCopyWith<$Res>? get ability;
-  @override
-  $ItemCopyWith<$Res>? get item;
+      bool isDirty,
+      int? teamPosition});
 }
 
 /// @nodoc
@@ -629,10 +626,11 @@ class __$SlotCopyWithImpl<$Res> implements _$SlotCopyWith<$Res> {
   @pragma('vm:prefer-inline')
   $Res call({
     Object? id = null,
-    Object? pokemon = freezed,
-    Object? moves = freezed,
-    Object? ability = freezed,
-    Object? item = freezed,
+    Object? teamId = freezed,
+    Object? pokemonId = freezed,
+    Object? movePoolEntryIds = null,
+    Object? abilityPoolEntryId = freezed,
+    Object? itemId = freezed,
     Object? nature = null,
     Object? ivs = null,
     Object? evs = null,
@@ -640,28 +638,33 @@ class __$SlotCopyWithImpl<$Res> implements _$SlotCopyWith<$Res> {
     Object? isGigantamax = null,
     Object? notes = freezed,
     Object? isDirty = null,
+    Object? teamPosition = freezed,
   }) {
     return _then(_Slot(
       id: null == id
           ? _self.id
           : id // ignore: cast_nullable_to_non_nullable
               as String,
-      pokemon: freezed == pokemon
-          ? _self.pokemon
-          : pokemon // ignore: cast_nullable_to_non_nullable
-              as Pokemon?,
-      moves: freezed == moves
-          ? _self._moves
-          : moves // ignore: cast_nullable_to_non_nullable
-              as List<MovePoolEntry>?,
-      ability: freezed == ability
-          ? _self.ability
-          : ability // ignore: cast_nullable_to_non_nullable
-              as AbilityPoolEntry?,
-      item: freezed == item
-          ? _self.item
-          : item // ignore: cast_nullable_to_non_nullable
-              as Item?,
+      teamId: freezed == teamId
+          ? _self.teamId
+          : teamId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      pokemonId: freezed == pokemonId
+          ? _self.pokemonId
+          : pokemonId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      movePoolEntryIds: null == movePoolEntryIds
+          ? _self._movePoolEntryIds
+          : movePoolEntryIds // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+      abilityPoolEntryId: freezed == abilityPoolEntryId
+          ? _self.abilityPoolEntryId
+          : abilityPoolEntryId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      itemId: freezed == itemId
+          ? _self.itemId
+          : itemId // ignore: cast_nullable_to_non_nullable
+              as String?,
       nature: null == nature
           ? _self.nature
           : nature // ignore: cast_nullable_to_non_nullable
@@ -690,49 +693,11 @@ class __$SlotCopyWithImpl<$Res> implements _$SlotCopyWith<$Res> {
           ? _self.isDirty
           : isDirty // ignore: cast_nullable_to_non_nullable
               as bool,
+      teamPosition: freezed == teamPosition
+          ? _self.teamPosition
+          : teamPosition // ignore: cast_nullable_to_non_nullable
+              as int?,
     ));
-  }
-
-  /// Create a copy of Slot
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $PokemonCopyWith<$Res>? get pokemon {
-    if (_self.pokemon == null) {
-      return null;
-    }
-
-    return $PokemonCopyWith<$Res>(_self.pokemon!, (value) {
-      return _then(_self.copyWith(pokemon: value));
-    });
-  }
-
-  /// Create a copy of Slot
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $AbilityPoolEntryCopyWith<$Res>? get ability {
-    if (_self.ability == null) {
-      return null;
-    }
-
-    return $AbilityPoolEntryCopyWith<$Res>(_self.ability!, (value) {
-      return _then(_self.copyWith(ability: value));
-    });
-  }
-
-  /// Create a copy of Slot
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $ItemCopyWith<$Res>? get item {
-    if (_self.item == null) {
-      return null;
-    }
-
-    return $ItemCopyWith<$Res>(_self.item!, (value) {
-      return _then(_self.copyWith(item: value));
-    });
   }
 }
 

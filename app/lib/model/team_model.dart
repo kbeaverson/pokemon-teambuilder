@@ -1,6 +1,7 @@
 import 'package:app/model/slot_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:uuid/uuid.dart';
+import 'package:powersync/sqlite3.dart' as sqlite;
 
 part 'team_model.freezed.dart';
 /// Object that maintains all customizable components of a pokemon team
@@ -10,7 +11,7 @@ abstract class Team with _$Team{
     required String id,
     @Default("Untitled") String name,
     String? description,
-    required List<Slot> members,
+    @Default([]) List<String> memberIds,
     String? regulationId,
     String? rentalCode,
     @Default(true) bool isDirty,
@@ -30,7 +31,19 @@ abstract class Team with _$Team{
       regulationId: regulationId,
       rentalCode: rentalCode,
       isDirty: isDirty,
-      members: List.filled(6, Slot.newSlot()),
+      memberIds: List.filled(6, ''),
+    );
+  }
+
+  factory Team.fromRowWithMembers(sqlite.Row row, List<String> memberIds) {
+    return Team(
+      id: row['id'],
+      name: row['name'] ?? "Untitled",
+      description: row['description'],
+      memberIds: memberIds,
+      regulationId: row['regulation_id'],
+      rentalCode: row['rental_code'],
+      isDirty: row['is_dirty'] == 1,
     );
   }
 }
