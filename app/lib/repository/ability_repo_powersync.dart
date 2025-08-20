@@ -1,4 +1,4 @@
-import 'package:app/model/ability_model.dart';
+import 'package:app/model/static_models/ability_model.dart';
 import 'package:app/repository/repo_contracts/ability_repo.dart';
 
 class AbilityRepoPowersync extends AbilityRepo {

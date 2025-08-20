@@ -1,4 +1,4 @@
-import 'package:app/model/ability_model.dart';
+import 'package:app/model/static_models/ability_model.dart';
 
 abstract class AbilityRepo {
   /// Get all abilities from the database

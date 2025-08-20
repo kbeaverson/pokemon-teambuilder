@@ -1,4 +1,4 @@
-import 'package:app/model/ability_model.dart';
+import 'package:app/model/static_models/ability_model.dart';
 import 'package:app/utils/string_extension.dart';
 import 'package:flutter/material.dart';
 

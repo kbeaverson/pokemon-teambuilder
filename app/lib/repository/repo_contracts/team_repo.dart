@@ -1,4 +1,4 @@
-import 'package:app/model/team_model.dart';
+import 'package:app/model/user_defined_models/team_model.dart';
 
 abstract class TeamRepo {
   /// Get team by id

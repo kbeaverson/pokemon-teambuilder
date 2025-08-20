@@ -1,6 +1,6 @@
-import 'package:app/model/move_model.dart';
-import 'package:app/model/move_pool_entry.dart';
-import 'package:app/model/pokemon_model.dart';
+import 'package:app/model/static_models/move_model.dart';
+import 'package:app/model/static_models/move_pool_entry.dart';
+import 'package:app/model/static_models/pokemon_model.dart';
 import 'package:app/repository/repo_contracts/move_repo.dart';
 import 'package:app/repository/repo_contracts/pokemon_repo.dart';
 import 'package:app/utils/enums/learn_method.dart';

@@ -1,4 +1,4 @@
-import 'package:app/model/move_model.dart';
+import 'package:app/model/static_models/move_model.dart';
 import 'package:app/repository/repo_contracts/move_repo.dart';
 
 class MoveRepoPowersync extends MoveRepo {

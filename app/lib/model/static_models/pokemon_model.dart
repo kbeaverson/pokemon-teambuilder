@@ -1,7 +1,7 @@
 import 'dart:core';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:powersync/sqlite3.dart' as sqlite;
-import '../utils/enums/pokemon_type.dart';
+import '../../utils/enums/pokemon_type.dart';
 part 'pokemon_model.freezed.dart';
 
 /// Pokemon model that provides immutable, canonical data about a pokemon species

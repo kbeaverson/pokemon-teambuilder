@@ -1,4 +1,4 @@
-import 'package:app/model/item_model.dart';
+import 'package:app/model/static_models/item_model.dart';
 
 abstract class ItemRepo {
   /// Get all items from the database

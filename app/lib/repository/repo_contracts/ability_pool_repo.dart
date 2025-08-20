@@ -1,4 +1,4 @@
-import 'package:app/model/ability_pool_entry_model.dart';
+import 'package:app/model/static_models/ability_pool_entry_model.dart';
 
 abstract class AbilityPoolRepo {
   /// The ability pool entries for a pokemon.

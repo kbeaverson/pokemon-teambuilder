@@ -1,5 +1,5 @@
-import 'package:app/model/pokemon_model.dart';
-import 'package:app/model/slot_model.dart';
+import 'package:app/model/static_models/pokemon_model.dart';
+import 'package:app/model/user_defined_models/slot_model.dart';
 import 'package:app/repository/repo_contracts/ability_pool_repo.dart';
 import 'package:app/repository/repo_contracts/ability_repo.dart';
 import 'package:app/repository/repo_contracts/item_repo.dart';

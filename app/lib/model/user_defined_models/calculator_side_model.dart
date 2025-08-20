@@ -1,4 +1,4 @@
-import 'package:app/model/slot_model.dart';
+import 'package:app/model/user_defined_models/slot_model.dart';
 import 'package:app/utils/enums/status_condition.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';

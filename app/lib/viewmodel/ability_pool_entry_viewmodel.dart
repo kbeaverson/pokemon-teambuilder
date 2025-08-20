@@ -1,4 +1,4 @@
-import 'package:app/model/ability_pool_entry_model.dart';
+import 'package:app/model/static_models/ability_pool_entry_model.dart';
 import 'package:app/repository/repo_contracts/ability_repo.dart';
 import 'package:app/repository/repo_contracts/pokemon_repo.dart';
 import 'package:app/utils/string_extension.dart';
@@ -6,8 +6,8 @@ import 'package:app/viewmodel/ability_viewmodel.dart';
 import 'package:app/viewmodel/pokemon_viewmodel.dart';
 import 'package:flutter/material.dart';
 
-import '../model/ability_model.dart';
-import '../model/pokemon_model.dart';
+import '../model/static_models/ability_model.dart';
+import '../model/static_models/pokemon_model.dart';
 
 /// ViewModel for ability pool entry objects
 class AbilityPoolEntryViewModel extends ChangeNotifier {

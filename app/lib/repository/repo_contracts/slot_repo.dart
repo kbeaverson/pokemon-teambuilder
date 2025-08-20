@@ -1,4 +1,4 @@
-import 'package:app/model/slot_model.dart';
+import 'package:app/model/user_defined_models/slot_model.dart';
 
 abstract class SlotRepo {
   /// Get all slots for user

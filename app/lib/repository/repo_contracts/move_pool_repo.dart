@@ -1,4 +1,4 @@
-import 'package:app/model/move_pool_entry.dart';
+import 'package:app/model/static_models/move_pool_entry.dart';
 
 abstract class MovePoolRepo {
   /// The move pool entries for a pokemon.

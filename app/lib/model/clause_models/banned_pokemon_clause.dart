@@ -1,5 +1,5 @@
 import 'package:app/model/clause_models/clause_model.dart';
-import 'package:app/model/team_model.dart';
+import 'package:app/model/user_defined_models/team_model.dart';
 import 'package:app/utils/enums/clause_type.dart';
 
 /// Enforces a banned-pokemon rule for a Regulation

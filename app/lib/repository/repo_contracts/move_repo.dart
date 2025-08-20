@@ -1,4 +1,4 @@
-import 'package:app/model/move_model.dart';
+import 'package:app/model/static_models/move_model.dart';
 
 abstract class MoveRepo {
   /// Get all moves from database

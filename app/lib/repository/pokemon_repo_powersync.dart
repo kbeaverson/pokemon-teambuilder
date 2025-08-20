@@ -1,4 +1,4 @@
-import 'package:app/model/pokemon_model.dart';
+import 'package:app/model/static_models/pokemon_model.dart';
 import 'package:app/repository/repo_contracts/pokemon_repo.dart';
 import 'package:app/utils/powersync_util.dart';
 

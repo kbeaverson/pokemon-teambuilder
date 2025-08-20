@@ -1,4 +1,4 @@
-import 'package:app/model/regulation_model.dart';
+import 'package:app/model/static_models/regulation_model.dart';
 
 abstract class RegulationRepo {
   /// Get regulation by id

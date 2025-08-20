@@ -1,4 +1,4 @@
-import 'package:app/model/move_model.dart';
+import 'package:app/model/static_models/move_model.dart';
 import 'package:app/utils/enums/pokemon_type.dart';
 import 'package:app/utils/string_extension.dart';
 import 'package:flutter/material.dart';

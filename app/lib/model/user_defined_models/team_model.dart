@@ -1,4 +1,3 @@
-import 'package:app/model/slot_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:uuid/uuid.dart';
 import 'package:powersync/sqlite3.dart' as sqlite;

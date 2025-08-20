@@ -2,8 +2,8 @@ import 'dart:core';
 import 'package:app/utils/enums/pokemon_type.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:powersync/sqlite3.dart' as sqlite;
-import '../utils/enums/move_category.dart';
-import '../utils/enums/move_target.dart';
+import '../../utils/enums/move_category.dart';
+import '../../utils/enums/move_target.dart';
 part 'move_model.freezed.dart';
 
 /// Move model that provides immutable, canonical data about a pokemon move

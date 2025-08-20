@@ -1,5 +1,5 @@
-import 'package:app/model/calculator_side_model.dart';
-import 'package:app/model/move_model.dart';
+import 'package:app/model/user_defined_models/calculator_side_model.dart';
+import 'package:app/model/static_models/move_model.dart';
 import 'package:app/utils/enums/side_name.dart';
 import 'package:app/utils/enums/terrain.dart';
 import 'package:app/utils/enums/weather.dart';

@@ -1,4 +1,4 @@
-import 'package:app/model/item_model.dart';
+import 'package:app/model/static_models/item_model.dart';
 import 'package:app/utils/enums/item_category.dart';
 import 'package:app/utils/string_extension.dart';
 import 'package:flutter/material.dart';

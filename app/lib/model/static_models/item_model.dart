@@ -1,7 +1,7 @@
 import 'dart:core';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:powersync/sqlite3.dart' as sqlite;
-import '../utils/enums/item_category.dart';
+import '../../utils/enums/item_category.dart';
 
 part 'item_model.freezed.dart';
 

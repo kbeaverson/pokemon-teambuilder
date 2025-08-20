@@ -1,4 +1,4 @@
-import 'package:app/model/team_model.dart';
+import 'package:app/model/user_defined_models/team_model.dart';
 import 'package:app/utils/enums/clause_type.dart';
 
 /// Abstract class that validates for a single rule on a team
