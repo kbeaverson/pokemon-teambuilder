@@ -1,3 +1,5 @@
+import 'package:app/model/static_models/move_model.dart';
+import 'package:app/model/static_models/move_pool_entry.dart';
 import 'package:app/model/static_models/pokemon_model.dart';
 import 'package:app/model/user_defined_models/slot_model.dart';
 import 'package:app/repository/repo_contracts/ability_pool_repo.dart';
@@ -7,6 +9,7 @@ import 'package:app/repository/repo_contracts/move_pool_repo.dart';
 import 'package:app/repository/repo_contracts/move_repo.dart';
 import 'package:app/repository/repo_contracts/pokemon_repo.dart';
 import 'package:app/repository/repo_contracts/slot_repo.dart';
+import 'package:app/utils/enums/learn_method.dart';
 import 'package:app/utils/powersync_util.dart';
 import 'package:app/viewmodel/ability_pool_entry_viewmodel.dart';
 import 'package:app/viewmodel/item_viewmodel.dart';
@@ -41,8 +44,16 @@ class SlotViewModel extends ChangeNotifier {
   PokemonViewModel? _pokemonViewModel;
   PokemonViewModel? get pokemonViewModel => _pokemonViewModel;
 
-  List<MovePoolEntryViewModel> _movePoolEntryViewModels = [];
-  List<MovePoolEntryViewModel> get movePoolEntryViewModels => _movePoolEntryViewModels;
+  final Map<int, MovePoolEntryViewModel?> _movePoolEntryViewModels = {
+    0: null,
+    1: null,
+    2: null,
+    3: null,
+  };
+
+  MovePoolEntryViewModel? getMovePoolEntry(int index) {
+    return _movePoolEntryViewModels[index];
+  }
 
   ItemViewModel? _itemViewModel;
   AbilityPoolEntryViewModel? _abilityPoolEntryViewModel;
@@ -56,6 +67,8 @@ class SlotViewModel extends ChangeNotifier {
     // Reactive alternative:
     // await slotRepo.updateSlot(slot.copyWith(pokemonId: pokemon.id));
     // await loadPokemon();
+
+    // FIXME: Adding a pokemon needs to check if moves, abilities, items, and gimmicks are legal
   }
 
   Future<void> clearPokemon() async {
@@ -64,6 +77,36 @@ class SlotViewModel extends ChangeNotifier {
     _pokemonViewModel = null;
     slot = updatedSlot;
     notifyListeners();
+  }
+
+  Future<void> setMove(int index, Move move) async {
+    /// Need to handle the following cases:
+    /// - Pokemon selected before selecting move -> MovePoolEntry can be found for pokemon/move pair
+    if (_pokemonViewModel != null) {
+      final movePoolEntry = await movePoolRepo.getByPair(_pokemonViewModel!.pokemon.id, move.id);
+      if (movePoolEntry != null) {
+        final updatedSlot = slot.copyWith(movePoolEntryIds: {
+          ...slot.movePoolEntryIds,
+          index: movePoolEntry.id,
+        });
+        _movePoolEntryViewModels[index] = MovePoolEntryViewModel(movePoolEntry: movePoolEntry, moveRepo: moveRepo, pokemonRepo: pokemonRepo);
+        slot = updatedSlot;
+        notifyListeners();
+      }
+    }
+    /// - Move selected before selecting Pokemon -> MovePoolEntry won't have id in database, unless each move is entered into the database with pokemon ids being blank
+    else {
+      final movePoolEntry = await movePoolRepo.getNoPokemonEntry(move.id);
+      if (movePoolEntry != null) {
+        final updatedSlot = slot.copyWith(movePoolEntryIds: {
+          ...slot.movePoolEntryIds,
+          index: movePoolEntry.id,
+        });
+        _movePoolEntryViewModels[index] = MovePoolEntryViewModel(movePoolEntry: movePoolEntry, moveRepo: moveRepo, pokemonRepo: pokemonRepo);
+        slot = updatedSlot;
+        notifyListeners();
+      }
+    }
   }
   
   /// TODO: Loads related data for the slot, such as pokemon, moves, abilities, and items.
@@ -88,16 +131,48 @@ class SlotViewModel extends ChangeNotifier {
   }
 
   Future<void> loadMoves() async {
-    if (slot.movePoolEntryIds.isEmpty) {
-      _movePoolEntryViewModels = [];
-      notifyListeners();
-    }
-
-    for (String id in slot.movePoolEntryIds) {
-      final movePoolEntry = await movePoolRepo.getById(id);
-      if (movePoolEntry != null) { // Entry found, add to list
-        _movePoolEntryViewModels.add(MovePoolEntryViewModel(movePoolEntry: movePoolEntry, moveRepo: moveRepo, pokemonRepo: pokemonRepo));
+    for (var entry in slot.movePoolEntryIds.entries) {
+      final movePoolEntry = await movePoolRepo.getById((entry.value) ?? '');
+      if (movePoolEntry != null) {
+        _movePoolEntryViewModels[entry.key] = MovePoolEntryViewModel(movePoolEntry: movePoolEntry, moveRepo: moveRepo, pokemonRepo: pokemonRepo);
+        notifyListeners();
       }
     }
   }
+
+  Future<void> loadAbility() async {
+    if (slot.abilityPoolEntryId == null) {
+      _abilityPoolEntryViewModel = null;
+      notifyListeners();
+      return;
+    }
+
+    final abilityPoolEntry = await abilityPoolRepo.getById(slot.abilityPoolEntryId!);
+    if (abilityPoolEntry != null) {
+      _abilityPoolEntryViewModel = AbilityPoolEntryViewModel(abilityPoolEntry: abilityPoolEntry, abilityRepo: abilityRepo, pokemonRepo: pokemonRepo);
+      notifyListeners();
+    } else {
+      _abilityPoolEntryViewModel = null;
+      notifyListeners();
+    }
+  }
+
+  Future<void> loadItem() async {
+    if (slot.itemId == null) {
+      _itemViewModel = null;
+      notifyListeners();
+      return;
+    }
+
+    final item = await itemRepo.getById(slot.itemId!);
+    if (item != null) {
+      _itemViewModel = ItemViewModel(item: item);
+      notifyListeners();
+    } else {
+      _itemViewModel = null;
+      notifyListeners();
+    }
+  }
+
+  
 }

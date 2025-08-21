@@ -17,7 +17,7 @@ mixin _$Slot {
   String get id;
   String? get teamId;
   String? get pokemonId;
-  List<String> get movePoolEntryIds;
+  Map<int, String?> get movePoolEntryIds;
   String? get abilityPoolEntryId;
   String? get itemId;
   Nature get nature;
@@ -96,7 +96,7 @@ abstract mixin class $SlotCopyWith<$Res> {
       {String id,
       String? teamId,
       String? pokemonId,
-      List<String> movePoolEntryIds,
+      Map<int, String?> movePoolEntryIds,
       String? abilityPoolEntryId,
       String? itemId,
       Nature nature,
@@ -152,7 +152,7 @@ class _$SlotCopyWithImpl<$Res> implements $SlotCopyWith<$Res> {
       movePoolEntryIds: null == movePoolEntryIds
           ? _self.movePoolEntryIds
           : movePoolEntryIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as Map<int, String?>,
       abilityPoolEntryId: freezed == abilityPoolEntryId
           ? _self.abilityPoolEntryId
           : abilityPoolEntryId // ignore: cast_nullable_to_non_nullable
@@ -294,7 +294,7 @@ extension SlotPatterns on Slot {
             String id,
             String? teamId,
             String? pokemonId,
-            List<String> movePoolEntryIds,
+            Map<int, String?> movePoolEntryIds,
             String? abilityPoolEntryId,
             String? itemId,
             Nature nature,
@@ -350,7 +350,7 @@ extension SlotPatterns on Slot {
             String id,
             String? teamId,
             String? pokemonId,
-            List<String> movePoolEntryIds,
+            Map<int, String?> movePoolEntryIds,
             String? abilityPoolEntryId,
             String? itemId,
             Nature nature,
@@ -404,7 +404,7 @@ extension SlotPatterns on Slot {
             String id,
             String? teamId,
             String? pokemonId,
-            List<String> movePoolEntryIds,
+            Map<int, String?> movePoolEntryIds,
             String? abilityPoolEntryId,
             String? itemId,
             Nature nature,
@@ -448,7 +448,12 @@ class _Slot implements Slot {
       {required this.id,
       this.teamId,
       this.pokemonId,
-      final List<String> movePoolEntryIds = const [],
+      final Map<int, String?> movePoolEntryIds = const {
+        0: null,
+        1: null,
+        2: null,
+        3: null
+      },
       this.abilityPoolEntryId,
       this.itemId,
       this.nature = Nature.docile,
@@ -483,14 +488,13 @@ class _Slot implements Slot {
   final String? teamId;
   @override
   final String? pokemonId;
-  final List<String> _movePoolEntryIds;
+  final Map<int, String?> _movePoolEntryIds;
   @override
   @JsonKey()
-  List<String> get movePoolEntryIds {
-    if (_movePoolEntryIds is EqualUnmodifiableListView)
-      return _movePoolEntryIds;
+  Map<int, String?> get movePoolEntryIds {
+    if (_movePoolEntryIds is EqualUnmodifiableMapView) return _movePoolEntryIds;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_movePoolEntryIds);
+    return EqualUnmodifiableMapView(_movePoolEntryIds);
   }
 
   @override
@@ -600,7 +604,7 @@ abstract mixin class _$SlotCopyWith<$Res> implements $SlotCopyWith<$Res> {
       {String id,
       String? teamId,
       String? pokemonId,
-      List<String> movePoolEntryIds,
+      Map<int, String?> movePoolEntryIds,
       String? abilityPoolEntryId,
       String? itemId,
       Nature nature,
@@ -656,7 +660,7 @@ class __$SlotCopyWithImpl<$Res> implements _$SlotCopyWith<$Res> {
       movePoolEntryIds: null == movePoolEntryIds
           ? _self._movePoolEntryIds
           : movePoolEntryIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as Map<int, String?>,
       abilityPoolEntryId: freezed == abilityPoolEntryId
           ? _self.abilityPoolEntryId
           : abilityPoolEntryId // ignore: cast_nullable_to_non_nullable

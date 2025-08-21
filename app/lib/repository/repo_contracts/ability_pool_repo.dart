@@ -9,4 +9,7 @@ abstract class AbilityPoolRepo {
   /// 
   /// Produces list of AbilityPoolEntry for every pokemon that can have the ability corresponding to [abilityId].
   Future<List<AbilityPoolEntry>> getByAbility(String abilityId);
+
+  /// Gets an ability pool entry by its ID.
+  Future<AbilityPoolEntry?> getById(String id);
 }

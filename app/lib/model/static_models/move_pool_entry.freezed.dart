@@ -14,6 +14,7 @@ T _$identity<T>(T value) => value;
 
 /// @nodoc
 mixin _$MovePoolEntry {
+  String? get id;
   String? get moveId;
   String? get pokemonId;
   LearnMethod? get learnMethod;
@@ -32,6 +33,7 @@ mixin _$MovePoolEntry {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is MovePoolEntry &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.moveId, moveId) || other.moveId == moveId) &&
             (identical(other.pokemonId, pokemonId) ||
                 other.pokemonId == pokemonId) &&
@@ -42,12 +44,12 @@ mixin _$MovePoolEntry {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, moveId, pokemonId, learnMethod, levelupLevel);
+  int get hashCode => Object.hash(
+      runtimeType, id, moveId, pokemonId, learnMethod, levelupLevel);
 
   @override
   String toString() {
-    return 'MovePoolEntry(moveId: $moveId, pokemonId: $pokemonId, learnMethod: $learnMethod, levelupLevel: $levelupLevel)';
+    return 'MovePoolEntry(id: $id, moveId: $moveId, pokemonId: $pokemonId, learnMethod: $learnMethod, levelupLevel: $levelupLevel)';
   }
 }
 
@@ -58,7 +60,8 @@ abstract mixin class $MovePoolEntryCopyWith<$Res> {
       _$MovePoolEntryCopyWithImpl;
   @useResult
   $Res call(
-      {String? moveId,
+      {String? id,
+      String? moveId,
       String? pokemonId,
       LearnMethod? learnMethod,
       int? levelupLevel});
@@ -77,12 +80,17 @@ class _$MovePoolEntryCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? moveId = freezed,
     Object? pokemonId = freezed,
     Object? learnMethod = freezed,
     Object? levelupLevel = freezed,
   }) {
     return _then(_self.copyWith(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       moveId: freezed == moveId
           ? _self.moveId
           : moveId // ignore: cast_nullable_to_non_nullable
@@ -196,7 +204,7 @@ extension MovePoolEntryPatterns on MovePoolEntry {
 
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
-    TResult Function(String? moveId, String? pokemonId,
+    TResult Function(String? id, String? moveId, String? pokemonId,
             LearnMethod? learnMethod, int? levelupLevel)?
         $default, {
     required TResult orElse(),
@@ -204,8 +212,8 @@ extension MovePoolEntryPatterns on MovePoolEntry {
     final _that = this;
     switch (_that) {
       case _MovePoolEntry() when $default != null:
-        return $default(_that.moveId, _that.pokemonId, _that.learnMethod,
-            _that.levelupLevel);
+        return $default(_that.id, _that.moveId, _that.pokemonId,
+            _that.learnMethod, _that.levelupLevel);
       case _:
         return orElse();
     }
@@ -226,15 +234,15 @@ extension MovePoolEntryPatterns on MovePoolEntry {
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>(
-    TResult Function(String? moveId, String? pokemonId,
+    TResult Function(String? id, String? moveId, String? pokemonId,
             LearnMethod? learnMethod, int? levelupLevel)
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _MovePoolEntry():
-        return $default(_that.moveId, _that.pokemonId, _that.learnMethod,
-            _that.levelupLevel);
+        return $default(_that.id, _that.moveId, _that.pokemonId,
+            _that.learnMethod, _that.levelupLevel);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -254,15 +262,15 @@ extension MovePoolEntryPatterns on MovePoolEntry {
 
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>(
-    TResult? Function(String? moveId, String? pokemonId,
+    TResult? Function(String? id, String? moveId, String? pokemonId,
             LearnMethod? learnMethod, int? levelupLevel)?
         $default,
   ) {
     final _that = this;
     switch (_that) {
       case _MovePoolEntry() when $default != null:
-        return $default(_that.moveId, _that.pokemonId, _that.learnMethod,
-            _that.levelupLevel);
+        return $default(_that.id, _that.moveId, _that.pokemonId,
+            _that.learnMethod, _that.levelupLevel);
       case _:
         return null;
     }
@@ -273,8 +281,14 @@ extension MovePoolEntryPatterns on MovePoolEntry {
 
 class _MovePoolEntry implements MovePoolEntry {
   const _MovePoolEntry(
-      {this.moveId, this.pokemonId, this.learnMethod, this.levelupLevel});
+      {this.id,
+      this.moveId,
+      this.pokemonId,
+      this.learnMethod,
+      this.levelupLevel});
 
+  @override
+  final String? id;
   @override
   final String? moveId;
   @override
@@ -297,6 +311,7 @@ class _MovePoolEntry implements MovePoolEntry {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _MovePoolEntry &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.moveId, moveId) || other.moveId == moveId) &&
             (identical(other.pokemonId, pokemonId) ||
                 other.pokemonId == pokemonId) &&
@@ -307,12 +322,12 @@ class _MovePoolEntry implements MovePoolEntry {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, moveId, pokemonId, learnMethod, levelupLevel);
+  int get hashCode => Object.hash(
+      runtimeType, id, moveId, pokemonId, learnMethod, levelupLevel);
 
   @override
   String toString() {
-    return 'MovePoolEntry(moveId: $moveId, pokemonId: $pokemonId, learnMethod: $learnMethod, levelupLevel: $levelupLevel)';
+    return 'MovePoolEntry(id: $id, moveId: $moveId, pokemonId: $pokemonId, learnMethod: $learnMethod, levelupLevel: $levelupLevel)';
   }
 }
 
@@ -325,7 +340,8 @@ abstract mixin class _$MovePoolEntryCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String? moveId,
+      {String? id,
+      String? moveId,
       String? pokemonId,
       LearnMethod? learnMethod,
       int? levelupLevel});
@@ -344,12 +360,17 @@ class __$MovePoolEntryCopyWithImpl<$Res>
   @override
   @pragma('vm:prefer-inline')
   $Res call({
+    Object? id = freezed,
     Object? moveId = freezed,
     Object? pokemonId = freezed,
     Object? learnMethod = freezed,
     Object? levelupLevel = freezed,
   }) {
     return _then(_MovePoolEntry(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
       moveId: freezed == moveId
           ? _self.moveId
           : moveId // ignore: cast_nullable_to_non_nullable

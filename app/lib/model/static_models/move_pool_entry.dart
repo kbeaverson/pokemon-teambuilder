@@ -7,6 +7,7 @@ part 'move_pool_entry.freezed.dart';
 @freezed
 abstract class MovePoolEntry with _$MovePoolEntry{
   const factory MovePoolEntry ({
+    String? id,
     String? moveId,
     String? pokemonId,
     LearnMethod? learnMethod,
@@ -20,6 +21,6 @@ abstract class MovePoolEntry with _$MovePoolEntry{
     } else if (row['is_levelup_move'] == 1) {
       learnMethod = LearnMethod.levelup;
     }
-    return MovePoolEntry(moveId: row['move_id'], pokemonId: row['pokemon_id'], learnMethod: learnMethod, levelupLevel: row['levelup_level']);
+    return MovePoolEntry(id: row['id'], moveId: row['move_id'], pokemonId: row['pokemon_id'], learnMethod: learnMethod, levelupLevel: row['levelup_level']);
   }
 }

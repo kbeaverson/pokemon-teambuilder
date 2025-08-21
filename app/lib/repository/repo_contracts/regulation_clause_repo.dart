@@ -1,4 +1,4 @@
-import 'package:app/model/clause_models/clause_model.dart';
+import 'package:app/model/static_models/clause_models/clause_model.dart';
 
 abstract class RegulationClauseRepo {
   /// Get all clauses

@@ -12,4 +12,10 @@ abstract class MovePoolRepo {
 
   /// The move pool entry corresponding to the entry id, if it exists.
   Future<MovePoolEntry?> getById(String movePoolEntryId);
+
+  /// The move pool entry corresponding to the pokemon and move pair, if it exists.
+  Future<MovePoolEntry?> getByPair(String pokemonId, String moveId);
+
+  /// The move pool entry corresponding to the move with no attached pokemon, if it exists.
+  Future<MovePoolEntry?> getNoPokemonEntry(String moveId);
 }

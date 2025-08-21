@@ -15,7 +15,12 @@ abstract class Slot with _$Slot {
     required String id,
     String? teamId,
     String? pokemonId,
-    @Default([]) List<String> movePoolEntryIds,
+    @Default({
+      0 : null,
+      1 : null,
+      2 : null,
+      3 : null,
+    }) Map<int, String?> movePoolEntryIds,
     String? abilityPoolEntryId,
     String? itemId,
     @Default(Nature.docile) Nature nature,
@@ -45,7 +50,12 @@ abstract class Slot with _$Slot {
   factory Slot.newSlot({
     String? pokemonId,
     String? teamId,
-    List<String>? movePoolEntryIds,
+    Map<int, String?> movePoolEntryIds = const {
+      0 : null,
+      1 : null,
+      2 : null,
+      3 : null,
+    },
     String? abilityPoolEntryId,
     String? itemId,
     Nature nature = Nature.docile,
@@ -75,7 +85,7 @@ abstract class Slot with _$Slot {
       id: const Uuid().v4(),
       teamId: teamId,
       pokemonId: pokemonId,
-      movePoolEntryIds: movePoolEntryIds ?? [],
+      movePoolEntryIds: movePoolEntryIds,
       abilityPoolEntryId: abilityPoolEntryId,
       itemId: itemId,
       nature: nature,
@@ -94,9 +104,16 @@ abstract class Slot with _$Slot {
       id: row['id'],
       teamId: row['team_id'],
       pokemonId: row['pokemon_id'],
-      movePoolEntryIds: (row['move_ids'] != null)
-        ? (jsonDecode(row['move_ids']) as List<dynamic>).map((e) => e as String).toList()
-        : [],
+      movePoolEntryIds: row['move_ids']
+        ? (jsonDecode(row['move_ids']) as Map<String, dynamic>).map(
+            (key, value) => MapEntry(int.parse(key), value as String?),
+          )
+        : const {
+          0 : null,
+          1 : null,
+          2 : null,
+          3 : null,
+        },
       abilityPoolEntryId: row['ability_id'],
       itemId: row['item_id'],
       nature: (row['nature'] != null)
