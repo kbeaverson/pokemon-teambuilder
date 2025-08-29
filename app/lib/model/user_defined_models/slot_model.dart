@@ -44,7 +44,6 @@ abstract class Slot with _$Slot {
     @Default(false) bool isGigantamax,
     String? notes,
     @Default(true) bool isDirty,
-    int? teamPosition, // Optional position for ordering within a team
   }) = _Slot;
 
   factory Slot.newSlot({
@@ -79,7 +78,6 @@ abstract class Slot with _$Slot {
     bool isGigantamax = false,
     String? notes,
     bool isDirty = true,
-    int? teamPosition,
   }) {
     return Slot(
       id: const Uuid().v4(),
@@ -95,7 +93,6 @@ abstract class Slot with _$Slot {
       isGigantamax: isGigantamax,
       notes: notes,
       isDirty: isDirty,
-      teamPosition: teamPosition,
     );
   }
 
@@ -149,7 +146,6 @@ abstract class Slot with _$Slot {
       isGigantamax: row['is_gigantamax'] == 1,
       notes: row['notes'],
       isDirty: row['is_dirty'] == 1,
-      teamPosition: row['team_position'], // Optional position for ordering within a team
     );
   }
 }

@@ -12,4 +12,10 @@ abstract class AbilityPoolRepo {
 
   /// Gets an ability pool entry by its ID.
   Future<AbilityPoolEntry?> getById(String id);
+
+  /// Gets an ability pool entry by its Pokemon and Ability IDs.
+  Future<AbilityPoolEntry?> getByPair(String pokemonId, String abilityId);
+
+  /// Gets an ability pool entry with no associated Pokemon.
+  Future<AbilityPoolEntry?> getNoPokemonEntry(String abilityId);
 }

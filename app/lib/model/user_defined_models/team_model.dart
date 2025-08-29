@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:uuid/uuid.dart';
 import 'package:powersync/sqlite3.dart' as sqlite;
@@ -10,7 +12,14 @@ abstract class Team with _$Team{
     required String id,
     @Default("Untitled") String name,
     String? description,
-    @Default([]) List<String> memberIds,
+    @Default({
+      0: null,
+      1: null,
+      2: null,
+      3: null,
+      4: null,
+      5: null,
+    }) Map<int, String?> memberIds,
     String? regulationId,
     String? rentalCode,
     @Default(true) bool isDirty,
@@ -22,7 +31,7 @@ abstract class Team with _$Team{
     String? regulationId,
     String? rentalCode,
     bool isDirty = true,
-  }) { 
+  }) {
     return Team(
       id: const Uuid().v4(),
       name: name,
@@ -30,16 +39,23 @@ abstract class Team with _$Team{
       regulationId: regulationId,
       rentalCode: rentalCode,
       isDirty: isDirty,
-      memberIds: List.filled(6, ''),
+      memberIds: {
+        0: null,
+        1: null,
+        2: null,
+        3: null,
+        4: null,
+        5: null,
+      },
     );
   }
 
-  factory Team.fromRowWithMembers(sqlite.Row row, List<String> memberIds) {
+  factory Team.fromRow(sqlite.Row row) {
     return Team(
       id: row['id'],
       name: row['name'] ?? "Untitled",
       description: row['description'],
-      memberIds: memberIds,
+      memberIds: Map<int, String?>.from((jsonDecode(row['member_ids']) as Map).map((key, value) => MapEntry(int.parse(key), value))),
       regulationId: row['regulation_id'],
       rentalCode: row['rental_code'],
       isDirty: row['is_dirty'] == 1,

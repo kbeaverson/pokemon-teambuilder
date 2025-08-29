@@ -17,7 +17,7 @@ mixin _$Team {
   String get id;
   String get name;
   String? get description;
-  List<String> get memberIds;
+  Map<int, String?> get memberIds;
   String? get regulationId;
   String? get rentalCode;
   bool get isDirty;
@@ -72,7 +72,7 @@ abstract mixin class $TeamCopyWith<$Res> {
       {String id,
       String name,
       String? description,
-      List<String> memberIds,
+      Map<int, String?> memberIds,
       String? regulationId,
       String? rentalCode,
       bool isDirty});
@@ -114,7 +114,7 @@ class _$TeamCopyWithImpl<$Res> implements $TeamCopyWith<$Res> {
       memberIds: null == memberIds
           ? _self.memberIds
           : memberIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as Map<int, String?>,
       regulationId: freezed == regulationId
           ? _self.regulationId
           : regulationId // ignore: cast_nullable_to_non_nullable
@@ -228,7 +228,7 @@ extension TeamPatterns on Team {
             String id,
             String name,
             String? description,
-            List<String> memberIds,
+            Map<int, String?> memberIds,
             String? regulationId,
             String? rentalCode,
             bool isDirty)?
@@ -270,7 +270,7 @@ extension TeamPatterns on Team {
             String id,
             String name,
             String? description,
-            List<String> memberIds,
+            Map<int, String?> memberIds,
             String? regulationId,
             String? rentalCode,
             bool isDirty)
@@ -310,7 +310,7 @@ extension TeamPatterns on Team {
             String id,
             String name,
             String? description,
-            List<String> memberIds,
+            Map<int, String?> memberIds,
             String? regulationId,
             String? rentalCode,
             bool isDirty)?
@@ -340,7 +340,14 @@ class _Team implements Team {
       {required this.id,
       this.name = "Untitled",
       this.description,
-      final List<String> memberIds = const [],
+      final Map<int, String?> memberIds = const {
+        0: null,
+        1: null,
+        2: null,
+        3: null,
+        4: null,
+        5: null
+      },
       this.regulationId,
       this.rentalCode,
       this.isDirty = true})
@@ -353,13 +360,13 @@ class _Team implements Team {
   final String name;
   @override
   final String? description;
-  final List<String> _memberIds;
+  final Map<int, String?> _memberIds;
   @override
   @JsonKey()
-  List<String> get memberIds {
-    if (_memberIds is EqualUnmodifiableListView) return _memberIds;
+  Map<int, String?> get memberIds {
+    if (_memberIds is EqualUnmodifiableMapView) return _memberIds;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_memberIds);
+    return EqualUnmodifiableMapView(_memberIds);
   }
 
   @override
@@ -423,7 +430,7 @@ abstract mixin class _$TeamCopyWith<$Res> implements $TeamCopyWith<$Res> {
       {String id,
       String name,
       String? description,
-      List<String> memberIds,
+      Map<int, String?> memberIds,
       String? regulationId,
       String? rentalCode,
       bool isDirty});
@@ -465,7 +472,7 @@ class __$TeamCopyWithImpl<$Res> implements _$TeamCopyWith<$Res> {
       memberIds: null == memberIds
           ? _self._memberIds
           : memberIds // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as Map<int, String?>,
       regulationId: freezed == regulationId
           ? _self.regulationId
           : regulationId // ignore: cast_nullable_to_non_nullable

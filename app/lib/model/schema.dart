@@ -94,7 +94,8 @@ const schema = Schema([
     Column.text('name'),
     Column.text('regulation_id'),
     Column.text('description'),
-    Column.text('rental_code')
+    Column.text('rental_code'),
+    Column.text('member_ids'),
   ]),
   Table('slots', [
     Column.text('created_at'),
@@ -109,8 +110,6 @@ const schema = Schema([
     Column.text('ivs'),
     Column.text('evs'),
     Column.text('team_id'),
-    Column.text('user_id'),
-    Column.text('position'),
   ]),
   Table('bank', [
     Column.text('user_id'),

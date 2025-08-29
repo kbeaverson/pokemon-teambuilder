@@ -27,7 +27,6 @@ mixin _$Slot {
   bool get isGigantamax;
   String? get notes;
   bool get isDirty;
-  int? get teamPosition;
 
   /// Create a copy of Slot
   /// with the given fields replaced by the non-null parameter values.
@@ -58,9 +57,7 @@ mixin _$Slot {
             (identical(other.isGigantamax, isGigantamax) ||
                 other.isGigantamax == isGigantamax) &&
             (identical(other.notes, notes) || other.notes == notes) &&
-            (identical(other.isDirty, isDirty) || other.isDirty == isDirty) &&
-            (identical(other.teamPosition, teamPosition) ||
-                other.teamPosition == teamPosition));
+            (identical(other.isDirty, isDirty) || other.isDirty == isDirty));
   }
 
   @override
@@ -78,12 +75,11 @@ mixin _$Slot {
       teraType,
       isGigantamax,
       notes,
-      isDirty,
-      teamPosition);
+      isDirty);
 
   @override
   String toString() {
-    return 'Slot(id: $id, teamId: $teamId, pokemonId: $pokemonId, movePoolEntryIds: $movePoolEntryIds, abilityPoolEntryId: $abilityPoolEntryId, itemId: $itemId, nature: $nature, ivs: $ivs, evs: $evs, teraType: $teraType, isGigantamax: $isGigantamax, notes: $notes, isDirty: $isDirty, teamPosition: $teamPosition)';
+    return 'Slot(id: $id, teamId: $teamId, pokemonId: $pokemonId, movePoolEntryIds: $movePoolEntryIds, abilityPoolEntryId: $abilityPoolEntryId, itemId: $itemId, nature: $nature, ivs: $ivs, evs: $evs, teraType: $teraType, isGigantamax: $isGigantamax, notes: $notes, isDirty: $isDirty)';
   }
 }
 
@@ -105,8 +101,7 @@ abstract mixin class $SlotCopyWith<$Res> {
       PokemonType? teraType,
       bool isGigantamax,
       String? notes,
-      bool isDirty,
-      int? teamPosition});
+      bool isDirty});
 }
 
 /// @nodoc
@@ -134,7 +129,6 @@ class _$SlotCopyWithImpl<$Res> implements $SlotCopyWith<$Res> {
     Object? isGigantamax = null,
     Object? notes = freezed,
     Object? isDirty = null,
-    Object? teamPosition = freezed,
   }) {
     return _then(_self.copyWith(
       id: null == id
@@ -189,10 +183,6 @@ class _$SlotCopyWithImpl<$Res> implements $SlotCopyWith<$Res> {
           ? _self.isDirty
           : isDirty // ignore: cast_nullable_to_non_nullable
               as bool,
-      teamPosition: freezed == teamPosition
-          ? _self.teamPosition
-          : teamPosition // ignore: cast_nullable_to_non_nullable
-              as int?,
     ));
   }
 }
@@ -303,8 +293,7 @@ extension SlotPatterns on Slot {
             PokemonType? teraType,
             bool isGigantamax,
             String? notes,
-            bool isDirty,
-            int? teamPosition)?
+            bool isDirty)?
         $default, {
     required TResult orElse(),
   }) {
@@ -324,8 +313,7 @@ extension SlotPatterns on Slot {
             _that.teraType,
             _that.isGigantamax,
             _that.notes,
-            _that.isDirty,
-            _that.teamPosition);
+            _that.isDirty);
       case _:
         return orElse();
     }
@@ -359,8 +347,7 @@ extension SlotPatterns on Slot {
             PokemonType? teraType,
             bool isGigantamax,
             String? notes,
-            bool isDirty,
-            int? teamPosition)
+            bool isDirty)
         $default,
   ) {
     final _that = this;
@@ -379,8 +366,7 @@ extension SlotPatterns on Slot {
             _that.teraType,
             _that.isGigantamax,
             _that.notes,
-            _that.isDirty,
-            _that.teamPosition);
+            _that.isDirty);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -413,8 +399,7 @@ extension SlotPatterns on Slot {
             PokemonType? teraType,
             bool isGigantamax,
             String? notes,
-            bool isDirty,
-            int? teamPosition)?
+            bool isDirty)?
         $default,
   ) {
     final _that = this;
@@ -433,8 +418,7 @@ extension SlotPatterns on Slot {
             _that.teraType,
             _that.isGigantamax,
             _that.notes,
-            _that.isDirty,
-            _that.teamPosition);
+            _that.isDirty);
       case _:
         return null;
     }
@@ -476,8 +460,7 @@ class _Slot implements Slot {
       this.teraType,
       this.isGigantamax = false,
       this.notes,
-      this.isDirty = true,
-      this.teamPosition})
+      this.isDirty = true})
       : _movePoolEntryIds = movePoolEntryIds,
         _ivs = ivs,
         _evs = evs;
@@ -532,8 +515,6 @@ class _Slot implements Slot {
   @override
   @JsonKey()
   final bool isDirty;
-  @override
-  final int? teamPosition;
 
   /// Create a copy of Slot
   /// with the given fields replaced by the non-null parameter values.
@@ -565,9 +546,7 @@ class _Slot implements Slot {
             (identical(other.isGigantamax, isGigantamax) ||
                 other.isGigantamax == isGigantamax) &&
             (identical(other.notes, notes) || other.notes == notes) &&
-            (identical(other.isDirty, isDirty) || other.isDirty == isDirty) &&
-            (identical(other.teamPosition, teamPosition) ||
-                other.teamPosition == teamPosition));
+            (identical(other.isDirty, isDirty) || other.isDirty == isDirty));
   }
 
   @override
@@ -585,12 +564,11 @@ class _Slot implements Slot {
       teraType,
       isGigantamax,
       notes,
-      isDirty,
-      teamPosition);
+      isDirty);
 
   @override
   String toString() {
-    return 'Slot(id: $id, teamId: $teamId, pokemonId: $pokemonId, movePoolEntryIds: $movePoolEntryIds, abilityPoolEntryId: $abilityPoolEntryId, itemId: $itemId, nature: $nature, ivs: $ivs, evs: $evs, teraType: $teraType, isGigantamax: $isGigantamax, notes: $notes, isDirty: $isDirty, teamPosition: $teamPosition)';
+    return 'Slot(id: $id, teamId: $teamId, pokemonId: $pokemonId, movePoolEntryIds: $movePoolEntryIds, abilityPoolEntryId: $abilityPoolEntryId, itemId: $itemId, nature: $nature, ivs: $ivs, evs: $evs, teraType: $teraType, isGigantamax: $isGigantamax, notes: $notes, isDirty: $isDirty)';
   }
 }
 
@@ -613,8 +591,7 @@ abstract mixin class _$SlotCopyWith<$Res> implements $SlotCopyWith<$Res> {
       PokemonType? teraType,
       bool isGigantamax,
       String? notes,
-      bool isDirty,
-      int? teamPosition});
+      bool isDirty});
 }
 
 /// @nodoc
@@ -642,7 +619,6 @@ class __$SlotCopyWithImpl<$Res> implements _$SlotCopyWith<$Res> {
     Object? isGigantamax = null,
     Object? notes = freezed,
     Object? isDirty = null,
-    Object? teamPosition = freezed,
   }) {
     return _then(_Slot(
       id: null == id
@@ -697,10 +673,6 @@ class __$SlotCopyWithImpl<$Res> implements _$SlotCopyWith<$Res> {
           ? _self.isDirty
           : isDirty // ignore: cast_nullable_to_non_nullable
               as bool,
-      teamPosition: freezed == teamPosition
-          ? _self.teamPosition
-          : teamPosition // ignore: cast_nullable_to_non_nullable
-              as int?,
     ));
   }
 }
