@@ -7,7 +7,7 @@ const schema = Schema([
     Column.text('type'),
     Column.integer('is_pre_evolution'),
     Column.real('weight'),
-    Column.integer('gender_ratio'),
+    Column.real('gender_ratio'),
     Column.integer('is_mythical'),
     Column.integer('is_legendary'),
     Column.integer('is_max'),

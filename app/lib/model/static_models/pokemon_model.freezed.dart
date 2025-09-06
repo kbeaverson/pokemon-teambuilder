@@ -20,7 +20,7 @@ mixin _$Pokemon {
   List<PokemonType> get type;
   bool get isPreEvolution;
   double get weight;
-  int get genderRatio;
+  double get genderRatio;
   bool get isMythical;
   bool get isLegendary;
   bool get isMax;
@@ -110,7 +110,7 @@ abstract mixin class $PokemonCopyWith<$Res> {
       List<PokemonType> type,
       bool isPreEvolution,
       double weight,
-      int genderRatio,
+      double genderRatio,
       bool isMythical,
       bool isLegendary,
       bool isMax,
@@ -183,7 +183,7 @@ class _$PokemonCopyWithImpl<$Res> implements $PokemonCopyWith<$Res> {
       genderRatio: null == genderRatio
           ? _self.genderRatio
           : genderRatio // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       isMythical: null == isMythical
           ? _self.isMythical
           : isMythical // ignore: cast_nullable_to_non_nullable
@@ -332,7 +332,7 @@ extension PokemonPatterns on Pokemon {
             List<PokemonType> type,
             bool isPreEvolution,
             double weight,
-            int genderRatio,
+            double genderRatio,
             bool isMythical,
             bool isLegendary,
             bool isMax,
@@ -396,7 +396,7 @@ extension PokemonPatterns on Pokemon {
             List<PokemonType> type,
             bool isPreEvolution,
             double weight,
-            int genderRatio,
+            double genderRatio,
             bool isMythical,
             bool isLegendary,
             bool isMax,
@@ -458,7 +458,7 @@ extension PokemonPatterns on Pokemon {
             List<PokemonType> type,
             bool isPreEvolution,
             double weight,
-            int genderRatio,
+            double genderRatio,
             bool isMythical,
             bool isLegendary,
             bool isMax,
@@ -543,7 +543,7 @@ class _Pokemon implements Pokemon {
   @override
   final double weight;
   @override
-  final int genderRatio;
+  final double genderRatio;
   @override
   final bool isMythical;
   @override
@@ -646,7 +646,7 @@ abstract mixin class _$PokemonCopyWith<$Res> implements $PokemonCopyWith<$Res> {
       List<PokemonType> type,
       bool isPreEvolution,
       double weight,
-      int genderRatio,
+      double genderRatio,
       bool isMythical,
       bool isLegendary,
       bool isMax,
@@ -719,7 +719,7 @@ class __$PokemonCopyWithImpl<$Res> implements _$PokemonCopyWith<$Res> {
       genderRatio: null == genderRatio
           ? _self.genderRatio
           : genderRatio // ignore: cast_nullable_to_non_nullable
-              as int,
+              as double,
       isMythical: null == isMythical
           ? _self.isMythical
           : isMythical // ignore: cast_nullable_to_non_nullable

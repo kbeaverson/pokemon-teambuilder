@@ -14,7 +14,7 @@ abstract class Pokemon with _$Pokemon {
     required List<PokemonType> type, 
     required bool isPreEvolution, 
     required double weight, 
-    required int genderRatio, 
+    required double genderRatio, 
     required bool isMythical, 
     required bool isLegendary, 
     required bool isMax, 
@@ -33,7 +33,7 @@ abstract class Pokemon with _$Pokemon {
       id: row['id'],
       name: row['name'],
       dexNum: row['dex_num'],
-      type: (row['type'] != null)
+      type: (row['type'] != null) // FIXME: Need to decode from json
           ? (row['type'] as String).split(',').map(PokemonType.fromString).toList()
           : [],
       isPreEvolution: row['is_pre_evolution'] == 1,

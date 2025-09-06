@@ -17,7 +17,7 @@ class PokemonViewModel extends ChangeNotifier {
   List<PokemonType> get type => _pokemon.type;
   bool get isPreEvolution => _pokemon.isPreEvolution;
   double get weight => _pokemon.weight;
-  int get genderRatio => _pokemon.genderRatio;
+  double get genderRatio => _pokemon.genderRatio;
   bool get isMythical => _pokemon.isMythical;
   bool get isLegendary => _pokemon.isLegendary;
   bool get isMax => _pokemon.isMax;
