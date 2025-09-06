@@ -4,6 +4,7 @@ import 'package:powersync/sqlite3.dart' as sqlite;
 import '../../utils/enums/item_category.dart';
 
 part 'item_model.freezed.dart';
+part 'item_model.g.dart';
 
 /// Item model that provides immutable, canonical data about a held item
 @freezed
@@ -31,4 +32,6 @@ abstract class Item with _$Item {
           : [],
     );
   }
+
+  factory Item.fromJson(Map<String, Object?> json) => _$ItemFromJson(json);
 }

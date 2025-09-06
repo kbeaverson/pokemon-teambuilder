@@ -27,6 +27,9 @@ mixin _$AbilityPoolEntry {
       _$AbilityPoolEntryCopyWithImpl<AbilityPoolEntry>(
           this as AbilityPoolEntry, _$identity);
 
+  /// Serializes this AbilityPoolEntry to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
@@ -41,6 +44,7 @@ mixin _$AbilityPoolEntry {
                 other.isHidden == isHidden));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, id, abilityId, pokemonId, isHidden);
@@ -266,13 +270,15 @@ extension AbilityPoolEntryPatterns on AbilityPoolEntry {
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _AbilityPoolEntry implements AbilityPoolEntry {
   const _AbilityPoolEntry(
       {required this.id,
       this.abilityId,
       this.pokemonId,
       required this.isHidden});
+  factory _AbilityPoolEntry.fromJson(Map<String, dynamic> json) =>
+      _$AbilityPoolEntryFromJson(json);
 
   @override
   final String id;
@@ -292,6 +298,13 @@ class _AbilityPoolEntry implements AbilityPoolEntry {
       __$AbilityPoolEntryCopyWithImpl<_AbilityPoolEntry>(this, _$identity);
 
   @override
+  Map<String, dynamic> toJson() {
+    return _$AbilityPoolEntryToJson(
+      this,
+    );
+  }
+
+  @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
@@ -305,6 +318,7 @@ class _AbilityPoolEntry implements AbilityPoolEntry {
                 other.isHidden == isHidden));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
       Object.hash(runtimeType, id, abilityId, pokemonId, isHidden);

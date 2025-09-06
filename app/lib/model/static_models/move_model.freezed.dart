@@ -57,6 +57,9 @@ mixin _$Move {
   $MoveCopyWith<Move> get copyWith =>
       _$MoveCopyWithImpl<Move>(this as Move, _$identity);
 
+  /// Serializes this Move to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
@@ -113,6 +116,7 @@ mixin _$Move {
             (identical(other.isLegal, isLegal) || other.isLegal == isLegal));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,
@@ -766,7 +770,7 @@ extension MovePatterns on Move {
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _Move implements Move {
   const _Move(
       {required this.id,
@@ -805,6 +809,7 @@ class _Move implements Move {
       required this.isMaxMove,
       required this.isLegal})
       : _type = type;
+  factory _Move.fromJson(Map<String, dynamic> json) => _$MoveFromJson(json);
 
   @override
   final String id;
@@ -892,6 +897,13 @@ class _Move implements Move {
       __$MoveCopyWithImpl<_Move>(this, _$identity);
 
   @override
+  Map<String, dynamic> toJson() {
+    return _$MoveToJson(
+      this,
+    );
+  }
+
+  @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
@@ -947,6 +959,7 @@ class _Move implements Move {
             (identical(other.isLegal, isLegal) || other.isLegal == isLegal));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hashAll([
         runtimeType,

@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:powersync/sqlite3.dart' as sqlite;
 
 part 'ability_model.freezed.dart';
+part 'ability_model.g.dart';
 
 /// Ability model that provides immutable, canonical data about a pokemon ability
 @freezed
@@ -26,4 +27,6 @@ abstract class Ability with _$Ability {
       ignored: row['ignored'] == 1,
     );
   }
+
+  factory Ability.fromJson(Map<String, Object?> json) => _$AbilityFromJson(json);
 }

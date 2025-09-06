@@ -28,6 +28,9 @@ mixin _$MovePoolEntry {
       _$MovePoolEntryCopyWithImpl<MovePoolEntry>(
           this as MovePoolEntry, _$identity);
 
+  /// Serializes this MovePoolEntry to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
@@ -43,6 +46,7 @@ mixin _$MovePoolEntry {
                 other.levelupLevel == levelupLevel));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, id, moveId, pokemonId, learnMethod, levelupLevel);
@@ -278,7 +282,7 @@ extension MovePoolEntryPatterns on MovePoolEntry {
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _MovePoolEntry implements MovePoolEntry {
   const _MovePoolEntry(
       {this.id,
@@ -286,6 +290,8 @@ class _MovePoolEntry implements MovePoolEntry {
       this.pokemonId,
       this.learnMethod,
       this.levelupLevel});
+  factory _MovePoolEntry.fromJson(Map<String, dynamic> json) =>
+      _$MovePoolEntryFromJson(json);
 
   @override
   final String? id;
@@ -307,6 +313,13 @@ class _MovePoolEntry implements MovePoolEntry {
       __$MovePoolEntryCopyWithImpl<_MovePoolEntry>(this, _$identity);
 
   @override
+  Map<String, dynamic> toJson() {
+    return _$MovePoolEntryToJson(
+      this,
+    );
+  }
+
+  @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
@@ -321,6 +334,7 @@ class _MovePoolEntry implements MovePoolEntry {
                 other.levelupLevel == levelupLevel));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, id, moveId, pokemonId, learnMethod, levelupLevel);

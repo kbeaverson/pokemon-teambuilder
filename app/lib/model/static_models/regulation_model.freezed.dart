@@ -28,6 +28,9 @@ mixin _$Regulation {
   $RegulationCopyWith<Regulation> get copyWith =>
       _$RegulationCopyWithImpl<Regulation>(this as Regulation, _$identity);
 
+  /// Serializes this Regulation to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
@@ -44,6 +47,7 @@ mixin _$Regulation {
                 other.isTeraLegal == isTeraLegal));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -290,7 +294,7 @@ extension RegulationPatterns on Regulation {
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _Regulation implements Regulation {
   const _Regulation(
       {required this.id,
@@ -300,6 +304,8 @@ class _Regulation implements Regulation {
       required this.isMegaLegal,
       required this.isTeraLegal})
       : _clauseIds = clauseIds;
+  factory _Regulation.fromJson(Map<String, dynamic> json) =>
+      _$RegulationFromJson(json);
 
   @override
   final String id;
@@ -329,6 +335,13 @@ class _Regulation implements Regulation {
       __$RegulationCopyWithImpl<_Regulation>(this, _$identity);
 
   @override
+  Map<String, dynamic> toJson() {
+    return _$RegulationToJson(
+      this,
+    );
+  }
+
+  @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
@@ -345,6 +358,7 @@ class _Regulation implements Regulation {
                 other.isTeraLegal == isTeraLegal));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,

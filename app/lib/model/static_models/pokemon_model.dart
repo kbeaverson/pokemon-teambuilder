@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:powersync/sqlite3.dart' as sqlite;
 import '../../utils/enums/pokemon_type.dart';
 part 'pokemon_model.freezed.dart';
+part 'pokemon_model.g.dart';
 
 /// Pokemon model that provides immutable, canonical data about a pokemon species
 @freezed
@@ -52,4 +53,6 @@ abstract class Pokemon with _$Pokemon {
       baseSpe: row['base_spe'],
     );
   }
+
+  factory Pokemon.fromJson(Map<String, dynamic> json) => _$PokemonFromJson(json);
 }

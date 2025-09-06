@@ -40,6 +40,9 @@ mixin _$Pokemon {
   $PokemonCopyWith<Pokemon> get copyWith =>
       _$PokemonCopyWithImpl<Pokemon>(this as Pokemon, _$identity);
 
+  /// Serializes this Pokemon to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
@@ -70,6 +73,7 @@ mixin _$Pokemon {
             (identical(other.baseSpe, baseSpe) || other.baseSpe == baseSpe));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -501,7 +505,7 @@ extension PokemonPatterns on Pokemon {
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _Pokemon implements Pokemon {
   const _Pokemon(
       {required this.id,
@@ -523,6 +527,8 @@ class _Pokemon implements Pokemon {
       required this.baseSpD,
       required this.baseSpe})
       : _type = type;
+  factory _Pokemon.fromJson(Map<String, dynamic> json) =>
+      _$PokemonFromJson(json);
 
   @override
   final String id;
@@ -576,6 +582,13 @@ class _Pokemon implements Pokemon {
       __$PokemonCopyWithImpl<_Pokemon>(this, _$identity);
 
   @override
+  Map<String, dynamic> toJson() {
+    return _$PokemonToJson(
+      this,
+    );
+  }
+
+  @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
@@ -605,6 +618,7 @@ class _Pokemon implements Pokemon {
             (identical(other.baseSpe, baseSpe) || other.baseSpe == baseSpe));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,

@@ -5,6 +5,7 @@ import 'package:powersync/sqlite3.dart' as sqlite;
 import '../../utils/enums/move_category.dart';
 import '../../utils/enums/move_target.dart';
 part 'move_model.freezed.dart';
+part 'move_model.g.dart';
 
 /// Move model that provides immutable, canonical data about a pokemon move
 @freezed
@@ -92,4 +93,6 @@ abstract class Move with _$Move {
       isLegal: row['is_legal'] == 1,
     );
   }
+
+  factory Move.fromJson(Map<String, dynamic> json) => _$MoveFromJson(json);
 }

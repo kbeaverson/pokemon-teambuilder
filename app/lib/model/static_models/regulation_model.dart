@@ -2,6 +2,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:powersync/sqlite3.dart' as sqlite;
 
 part 'regulation_model.freezed.dart';
+part 'regulation_model.g.dart';
+
 /// Object that defines legality of pokemon, items, moves, etc. for a ruleset
 @freezed
 abstract class Regulation with _$Regulation {
@@ -24,4 +26,6 @@ abstract class Regulation with _$Regulation {
       isTeraLegal: row['is_tera_legal'] == 1,
     );
   }
+
+  factory Regulation.fromJson(Map<String, dynamic> json) => _$RegulationFromJson(json);
 }

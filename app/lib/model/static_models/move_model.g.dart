@@ -1,0 +1,126 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'move_model.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_Move _$MoveFromJson(Map<String, dynamic> json) => _Move(
+      id: json['id'] as String,
+      name: json['name'] as String,
+      dexNum: (json['dexNum'] as num).toInt(),
+      type: (json['type'] as List<dynamic>)
+          .map((e) => $enumDecode(_$PokemonTypeEnumMap, e))
+          .toList(),
+      category: $enumDecode(_$MoveCategoryEnumMap, json['category']),
+      target: $enumDecode(_$MoveTargetEnumMap, json['target']),
+      power: (json['power'] as num).toInt(),
+      accuracy: (json['accuracy'] as num).toInt(),
+      priority: (json['priority'] as num).toInt(),
+      pp: (json['pp'] as num).toInt(),
+      shortDescription: json['shortDescription'] as String,
+      longDescription: json['longDescription'] as String,
+      hasSecondaryEffect: json['hasSecondaryEffect'] as bool,
+      isMultiHit: json['isMultiHit'] as bool,
+      multiHitHigh: (json['multiHitHigh'] as num?)?.toInt(),
+      multiHitLow: (json['multiHitLow'] as num?)?.toInt(),
+      ignoresSubstitute: json['ignoresSubstitute'] as bool,
+      ignoresProtect: json['ignoresProtect'] as bool,
+      bounceable: json['bounceable'] as bool,
+      bite: json['bite'] as bool,
+      bullet: json['bullet'] as bool,
+      contact: json['contact'] as bool,
+      dance: json['dance'] as bool,
+      heal: json['heal'] as bool,
+      powder: json['powder'] as bool,
+      pulse: json['pulse'] as bool,
+      punch: json['punch'] as bool,
+      slice: json['slice'] as bool,
+      sound: json['sound'] as bool,
+      wind: json['wind'] as bool,
+      boostedBySheerForce: json['boostedBySheerForce'] as bool,
+      ohko: json['ohko'] as bool,
+      isZmove: json['isZmove'] as bool,
+      isMaxMove: json['isMaxMove'] as bool,
+      isLegal: json['isLegal'] as bool,
+    );
+
+Map<String, dynamic> _$MoveToJson(_Move instance) => <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'dexNum': instance.dexNum,
+      'type': instance.type.map((e) => _$PokemonTypeEnumMap[e]!).toList(),
+      'category': _$MoveCategoryEnumMap[instance.category]!,
+      'target': _$MoveTargetEnumMap[instance.target]!,
+      'power': instance.power,
+      'accuracy': instance.accuracy,
+      'priority': instance.priority,
+      'pp': instance.pp,
+      'shortDescription': instance.shortDescription,
+      'longDescription': instance.longDescription,
+      'hasSecondaryEffect': instance.hasSecondaryEffect,
+      'isMultiHit': instance.isMultiHit,
+      'multiHitHigh': instance.multiHitHigh,
+      'multiHitLow': instance.multiHitLow,
+      'ignoresSubstitute': instance.ignoresSubstitute,
+      'ignoresProtect': instance.ignoresProtect,
+      'bounceable': instance.bounceable,
+      'bite': instance.bite,
+      'bullet': instance.bullet,
+      'contact': instance.contact,
+      'dance': instance.dance,
+      'heal': instance.heal,
+      'powder': instance.powder,
+      'pulse': instance.pulse,
+      'punch': instance.punch,
+      'slice': instance.slice,
+      'sound': instance.sound,
+      'wind': instance.wind,
+      'boostedBySheerForce': instance.boostedBySheerForce,
+      'ohko': instance.ohko,
+      'isZmove': instance.isZmove,
+      'isMaxMove': instance.isMaxMove,
+      'isLegal': instance.isLegal,
+    };
+
+const _$PokemonTypeEnumMap = {
+  PokemonType.normal: 'normal',
+  PokemonType.fire: 'fire',
+  PokemonType.water: 'water',
+  PokemonType.grass: 'grass',
+  PokemonType.electric: 'electric',
+  PokemonType.ice: 'ice',
+  PokemonType.fighting: 'fighting',
+  PokemonType.poison: 'poison',
+  PokemonType.ground: 'ground',
+  PokemonType.flying: 'flying',
+  PokemonType.psychic: 'psychic',
+  PokemonType.bug: 'bug',
+  PokemonType.rock: 'rock',
+  PokemonType.ghost: 'ghost',
+  PokemonType.dragon: 'dragon',
+  PokemonType.dark: 'dark',
+  PokemonType.steel: 'steel',
+  PokemonType.fairy: 'fairy',
+  PokemonType.stellar: 'stellar',
+  PokemonType.typeless: 'typeless',
+};
+
+const _$MoveCategoryEnumMap = {
+  MoveCategory.physical: 'physical',
+  MoveCategory.special: 'special',
+  MoveCategory.status: 'status',
+  MoveCategory.error: 'error',
+};
+
+const _$MoveTargetEnumMap = {
+  MoveTarget.all: 'all',
+  MoveTarget.allFoes: 'allFoes',
+  MoveTarget.allAllies: 'allAllies',
+  MoveTarget.ally: 'ally',
+  MoveTarget.user: 'user',
+  MoveTarget.foe: 'foe',
+  MoveTarget.any: 'any',
+  MoveTarget.error: 'error',
+};

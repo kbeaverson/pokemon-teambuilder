@@ -3,6 +3,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:powersync/sqlite3.dart' as sqlite;
 
 part 'move_pool_entry.freezed.dart';
+part 'move_pool_entry.g.dart';
+
 /// A move/pokemon pair that contains the learn method of the move for the pokemon
 @freezed
 abstract class MovePoolEntry with _$MovePoolEntry{
@@ -23,4 +25,6 @@ abstract class MovePoolEntry with _$MovePoolEntry{
     }
     return MovePoolEntry(id: row['id'], moveId: row['move_id'], pokemonId: row['pokemon_id'], learnMethod: learnMethod, levelupLevel: row['levelup_level']);
   }
+
+  factory MovePoolEntry.fromJson(Map<String, dynamic> json) => _$MovePoolEntryFromJson(json);
 }

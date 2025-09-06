@@ -29,6 +29,9 @@ mixin _$Item {
   $ItemCopyWith<Item> get copyWith =>
       _$ItemCopyWithImpl<Item>(this as Item, _$identity);
 
+  /// Serializes this Item to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
@@ -46,6 +49,7 @@ mixin _$Item {
             const DeepCollectionEquality().equals(other.category, category));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,
@@ -298,7 +302,7 @@ extension ItemPatterns on Item {
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _Item implements Item {
   const _Item(
       {required this.id,
@@ -309,6 +313,7 @@ class _Item implements Item {
       required this.ignoredByKlutz,
       required final List<ItemCategory> category})
       : _category = category;
+  factory _Item.fromJson(Map<String, dynamic> json) => _$ItemFromJson(json);
 
   @override
   final String id;
@@ -339,6 +344,13 @@ class _Item implements Item {
       __$ItemCopyWithImpl<_Item>(this, _$identity);
 
   @override
+  Map<String, dynamic> toJson() {
+    return _$ItemToJson(
+      this,
+    );
+  }
+
+  @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
@@ -355,6 +367,7 @@ class _Item implements Item {
             const DeepCollectionEquality().equals(other._category, _category));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType,

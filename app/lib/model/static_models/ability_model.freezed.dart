@@ -28,6 +28,9 @@ mixin _$Ability {
   $AbilityCopyWith<Ability> get copyWith =>
       _$AbilityCopyWithImpl<Ability>(this as Ability, _$identity);
 
+  /// Serializes this Ability to a JSON map.
+  Map<String, dynamic> toJson();
+
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
@@ -43,6 +46,7 @@ mixin _$Ability {
             (identical(other.ignored, ignored) || other.ignored == ignored));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, id, name, dexNum, description, blockedByNeutGas, ignored);
@@ -282,7 +286,7 @@ extension AbilityPatterns on Ability {
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _Ability implements Ability {
   const _Ability(
       {required this.id,
@@ -291,6 +295,8 @@ class _Ability implements Ability {
       required this.description,
       required this.blockedByNeutGas,
       required this.ignored});
+  factory _Ability.fromJson(Map<String, dynamic> json) =>
+      _$AbilityFromJson(json);
 
   @override
   final String id;
@@ -314,6 +320,13 @@ class _Ability implements Ability {
       __$AbilityCopyWithImpl<_Ability>(this, _$identity);
 
   @override
+  Map<String, dynamic> toJson() {
+    return _$AbilityToJson(
+      this,
+    );
+  }
+
+  @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
@@ -328,6 +341,7 @@ class _Ability implements Ability {
             (identical(other.ignored, ignored) || other.ignored == ignored));
   }
 
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode => Object.hash(
       runtimeType, id, name, dexNum, description, blockedByNeutGas, ignored);
