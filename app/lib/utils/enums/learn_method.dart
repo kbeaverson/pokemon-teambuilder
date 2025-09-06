@@ -2,7 +2,8 @@
 enum LearnMethod {
   levelup,
   egg,
-  tm;
+  tm,
+  none;
 
   String get spritePath {
     switch (this) {
@@ -12,6 +13,8 @@ enum LearnMethod {
         return 'assets/move_sprites/learn_method/egg.png';
       case LearnMethod.tm:
         return 'assets/move_sprites/learn_method/tm.png';
+      default:
+        return 'assets/move_sprites/learn_method/none.png'; 
     }
   }
 }

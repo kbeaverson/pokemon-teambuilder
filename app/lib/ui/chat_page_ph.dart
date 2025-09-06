@@ -35,6 +35,7 @@ class _ChatPageState extends State<ChatPage> {
             itemCount: abilities.length,
             itemBuilder: (context, index) {
               final ability = abilities[index];
+              debugPrint(ability.toJson().toString());
               return ListTile(
                 title: Text(ability.name),
                 subtitle: Text(ability.description),
