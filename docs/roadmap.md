@@ -9,7 +9,7 @@ This roadmap outlines the major development milestones, features, and priorities
 - [x] Set up project directory structure (`app/`, `docs/`, `README.md`, etc.)
 - [x] Create initial devlog and architecture documentation
 - [x] Complete written OOD process elements
-- [ ] Define full scope of MVP features
+- [x] Define full scope of MVP features
 - [ ] Write method contracts
 - [ ] Write test cases according to method contracts
 - [ ] Set up local static game data (Pokémon, moves, abilities)
@@ -18,10 +18,10 @@ This roadmap outlines the major development milestones, features, and priorities
 
 ## Phase 2: Core App Architecture
 
-- [ ] Implement MVVM structure with ViewModels and Repositories
+- [x] Implement MVVM structure with ViewModels and Repositories
 - [ ] Set up routing/navigation system
-- [ ] Define shared models (Pokemon, Move, Team, etc.)
-- [ ] Implement static data loader + caching
+- [x] Define shared models (Pokemon, Move, Team, etc.)
+- [x] Implement static data loader + caching
 
 ---
 
@@ -67,4 +67,4 @@ This roadmap outlines the major development milestones, features, and priorities
 
 ---
 
-_Last updated: 2025-08-03_
+_Last updated: 2025-09-10_
