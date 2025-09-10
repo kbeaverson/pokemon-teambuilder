@@ -37,9 +37,9 @@ The app follows the **MVVM (Model-View-ViewModel)** pattern for a clean separati
 
 ## Data Source Strategy
 
-- **Static JSON files** for game data (Pokémon, moves, abilities, items)
+- **Static JSON files** for initial game data (Pokémon, moves, abilities, items)
 - **Local storage** for saved teams (likely using `sqflite` package)
-- **Cloud backend** (planned) for syncing teams and user data
+- **Cloud backend** (planned) for syncing teams, user data, and game data updates
 
 ---
 
@@ -59,4 +59,4 @@ The app follows the **MVVM (Model-View-ViewModel)** pattern for a clean separati
 
 ---
 
-_Last updated: 2025-08-03_
+_Last updated: 2025-09-10_
