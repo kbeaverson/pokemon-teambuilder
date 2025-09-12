@@ -24,7 +24,7 @@ This version is a **complete overhaul** of my original app, with goals including
 - **Dynamic support for new formats and mechanics** (e.g. Terastallization, Dynamax, Mega Evolution, etc.)
 - **Better team analysis and visualization**
 - **Improved search, filtering, and usability**
-- **Optional account system to sync teams across devices**
+- **Account system to sync teams across devices**
 
 ---
 
