@@ -42,18 +42,30 @@ abstract class Pokemon with _$Pokemon {
           : [],
       isPreEvolution: row['is_pre_evolution'] == 1,
       weight: row['weight'],
-      genderRatio: row['gender_ratio'],
+      genderRatio: row['gender_ratio'] ?? 0,
       isMythical: row['is_mythical'] == 1,
       isLegendary: row['is_legendary'] == 1,
       isMax: row['is_max'] == 1,
       isMega: row['is_mega'] == 1,
       mandatoryItemName: row['mandatory_item_name'],
-      baseHP: row['base_hp'],
-      baseAtk: row['base_atk'],
-      baseDef: row['base_def'],
-      baseSpA: row['base_spa'],
-      baseSpD: row['base_spd'],
-      baseSpe: row['base_spe'],
+      baseHP: row['base_stats'] != null
+          ? (jsonDecode(row['base_stats'])['hp'] ?? 1000)
+          : 1000,
+      baseAtk: row['base_stats'] != null
+          ? (jsonDecode(row['base_stats'])['atk'] ?? 1000)
+          : 1000,
+      baseDef: row['base_stats'] != null
+          ? (jsonDecode(row['base_stats'])['def'] ?? 1000)
+          : 1000,
+      baseSpA: row['base_stats'] != null
+          ? (jsonDecode(row['base_stats'])['spa'] ?? 1000)
+          : 1000,
+      baseSpD: row['base_stats'] != null
+          ? (jsonDecode(row['base_stats'])['spd'] ?? 1000)
+          : 1000,
+      baseSpe: row['base_stats'] != null
+          ? (jsonDecode(row['base_stats'])['spe'] ?? 1000)
+          : 1000,
     );
   }
 

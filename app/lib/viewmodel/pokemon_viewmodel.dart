@@ -11,7 +11,7 @@ class PokemonViewModel extends ChangeNotifier {
   
   Pokemon get pokemon => _pokemon; // Expose the underlying model when needed for selection from a list
   String get id => _pokemon.id;
-  String get spritePath => 'assets/pokemon_sprites/${_pokemon.name}.png';
+  String get spritePath => 'assets/pokemon_sprites/unprocessed/${_pokemon.dexNum}.png';
   String get name => _pokemon.name;
   int get dexNum => _pokemon.dexNum;
   List<PokemonType> get type => _pokemon.type;
@@ -29,6 +29,7 @@ class PokemonViewModel extends ChangeNotifier {
   int get baseSpA => _pokemon.baseSpA;
   int get baseSpD => _pokemon.baseSpD;
   int get baseSpe => _pokemon.baseSpe;
+  int get baseStatsTotal => _pokemon.baseHP + _pokemon.baseAtk + _pokemon.baseDef + _pokemon.baseSpA + _pokemon.baseSpD + _pokemon.baseSpe;
 
   String get formattedName => _pokemon.name.toTitleCase();
 

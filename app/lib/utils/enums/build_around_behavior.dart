@@ -1,0 +1,4 @@
+enum BuildAroundBehavior {
+  enabled,
+  disabled,
+}
