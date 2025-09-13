@@ -45,3 +45,4 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 app/.env
+/app/assets/pokemon_sprites/unprocessed
