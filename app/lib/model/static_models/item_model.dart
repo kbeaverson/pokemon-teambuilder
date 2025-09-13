@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:core';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:powersync/sqlite3.dart' as sqlite;
@@ -28,7 +29,9 @@ abstract class Item with _$Item {
       description: row['description'],
       ignoredByKlutz: row['ignored_by_klutz'] == 1, 
       category: (row['category'] != null)
-          ? (row['category'] as String).split(',').map((e) => ItemCategory.values.firstWhere((c) => c.toString() == 'ItemCategory.$e')).toList()
+          ? (jsonDecode(row['category']) as List)
+            .map((e) => ItemCategory.values.firstWhere((c) => c.toString() == 'ItemCategory.$e'))
+            .toList()
           : [],
     );
   }

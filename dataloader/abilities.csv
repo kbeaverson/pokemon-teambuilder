@@ -1,0 +1,315 @@
+name,dex_num,description,blocked_by_neut_gas,ignored
+No Ability,0,Does nothing.,0,0
+Adaptability,91,This Pokemon's same-type attack bonus (STAB) is 2 instead of 1.5.,0,0
+Aerilate,184,This Pokemon's Normal-type moves become Flying type and have 1.2x power.,0,0
+Aftermath,106,"If this Pokemon is KOed with a contact move, that move's user loses 1/4 its max HP.",0,0
+Air Lock,76,"While this Pokemon is active, the effects of weather conditions are disabled.",0,0
+Analytic,148,This Pokemon's attacks have 1.3x power if it is the last to move in a turn.,0,0
+Anger Point,83,"If this Pokemon (not its substitute) takes a critical hit, its Attack is raised 12 stages.",0,0
+Anger Shell,271,"At 1/2 or less of this Pokemon's max HP: +1 Atk, Sp. Atk, Spe, and -1 Def, Sp. Def.",0,0
+Anticipation,107,"On switch-in, this Pokemon shudders if any foe has a supereffective or OHKO move.",0,0
+Arena Trap,71,Prevents opposing Pokemon from choosing to switch out unless they are airborne.,0,0
+Armor Tail,296,This Pokemon and its allies are protected from opposing priority moves.,0,0
+Aroma Veil,165,"Protects user/allies from Attract, Disable, Encore, Heal Block, Taunt, and Torment.",0,0
+As One (Glastrier),266,Combination of the Unnerve and Chilling Neigh Abilities.,1,0
+As One (Spectrier),267,Combination of the Unnerve and Grim Neigh Abilities.,1,0
+Aura Break,188,"While this Pokemon is active, the Dark Aura and Fairy Aura power modifier is 0.75x.",0,0
+Bad Dreams,123,Causes sleeping foes to lose 1/8 of their max HP at the end of each turn.,0,0
+Ball Fetch,237,No competitive use.,0,0
+Battery,217,This Pokemon's allies have the power of their special attacks multiplied by 1.3.,0,0
+Battle Armor,4,This Pokemon cannot be struck by a critical hit.,0,0
+Battle Bond,210,"After KOing a Pokemon: raises Attack, Sp. Atk, Speed by 1 stage. Once per battle.",1,0
+Beads of Ruin,284,Active Pokemon without this Ability have their Special Defense multiplied by 0.75.,0,0
+Beast Boost,224,This Pokemon's highest stat is raised by 1 if it attacks and KOes another Pokemon.,0,0
+Berserk,201,This Pokemon's Sp. Atk is raised by 1 when it reaches 1/2 or less of its max HP.,0,0
+Big Pecks,145,Prevents other Pokemon from lowering this Pokemon's Defense stat stage.,0,0
+Blaze,66,"At 1/3 or less of its max HP, this Pokemon's offensive stat is 1.5x with Fire attacks.",0,0
+Bulletproof,171,This Pokemon is immune to bullet moves.,0,0
+Cheek Pouch,167,"If this Pokemon eats a Berry, it restores 1/3 of its max HP after the Berry's effect.",0,0
+Chilling Neigh,264,This Pokemon's Attack is raised by 1 stage if it attacks and KOes another Pokemon.,0,0
+Chlorophyll,34,"If Sunny Day is active, this Pokemon's Speed is doubled.",0,0
+Clear Body,29,Prevents other Pokemon from lowering this Pokemon's stat stages.,0,0
+Cloud Nine,13,"While this Pokemon is active, the effects of weather conditions are disabled.",0,0
+Color Change,16,"This Pokemon's type changes to the type of a move it's hit by, unless it has the type.",0,0
+Comatose,213,"This Pokemon cannot be statused, and is considered to be asleep.",1,0
+Commander,279,"If ally is Dondozo: this Pokemon cannot act or be hit, +2 to all Dondozo's stats.",0,0
+Competitive,172,This Pokemon's Sp. Atk is raised by 2 for each of its stats that is lowered by a foe.,0,0
+Compound Eyes,14,This Pokemon's moves have their accuracy multiplied by 1.3.,0,0
+Contrary,126,"If this Pokemon has a stat stage raised it is lowered instead, and vice versa.",0,0
+Corrosion,212,This Pokemon can poison or badly poison a Pokemon regardless of its typing.,0,0
+Costar,294,"On switch-in, this Pokemon copies all of its ally's stat stage changes.",0,0
+Cotton Down,238,"If this Pokemon is hit, it lowers the Speed of all other Pokemon on the field 1 stage.",0,0
+Cud Chew,291,"If this Pokemon eats a Berry, it will eat that Berry again at the end of the next turn.",0,0
+Curious Medicine,261,"On switch-in, this Pokemon's allies have their stat stages reset to 0.",0,0
+Cursed Body,130,"If this Pokemon is hit by an attack, there is a 30% chance that move gets disabled.",0,0
+Cute Charm,56,30% chance of infatuating Pokemon of the opposite gender if they make contact.,0,0
+Damp,6,Prevents Explosion/Mind Blown/Misty Explosion/Self-Destruct/Aftermath while active.,0,0
+Dancer,216,"After another Pokemon uses a dance move, this Pokemon uses the same move.",0,0
+Dark Aura,186,"While this Pokemon is active, a Dark move used by any Pokemon has 1.33x power.",0,0
+Dauntless Shield,235,"On switch-in, this Pokemon's Defense is raised by 1 stage. Once per battle.",0,0
+Dazzling,219,This Pokemon and its allies are protected from opposing priority moves.,0,0
+Defeatist,129,"While this Pokemon has 1/2 or less of its max HP, its Attack and Sp. Atk are halved.",0,0
+Defiant,128,This Pokemon's Attack is raised by 2 for each of its stats that is lowered by a foe.,0,0
+Delta Stream,191,"On switch-in, strong winds begin until this Ability is not active in battle.",0,0
+Desolate Land,190,"On switch-in, extremely harsh sunlight begins until this Ability is not active in battle.",0,0
+Disguise,209,"(Mimikyu only) The first hit it takes is blocked, and it takes 1/8 HP damage instead.",1,0
+Download,88,"On switch-in, Attack or Sp. Atk is raised 1 stage based on the foes' weaker Defense.",0,0
+Dragon's Maw,263,This Pokemon's offensive stat is multiplied by 1.5 while using a Dragon-type attack.,0,0
+Drizzle,2,"On switch-in, this Pokemon summons Rain Dance.",0,0
+Drought,70,"On switch-in, this Pokemon summons Sunny Day.",0,0
+Dry Skin,87,"This Pokemon is healed 1/4 by Water, 1/8 by Rain; is hurt 1.25x by Fire, 1/8 by Sun.",0,0
+Early Bird,48,This Pokemon's sleep counter drops by 2 instead of 1.,0,0
+Earth Eater,297,This Pokemon heals 1/4 of its max HP when hit by Ground moves; Ground immunity.,0,0
+Effect Spore,27,30% chance of poison/paralysis/sleep on others making contact with this Pokemon.,0,0
+Electric Surge,226,"On switch-in, this Pokemon summons Electric Terrain.",0,0
+Electromorphosis,280,This Pokemon gains the Charge effect when it takes a hit from an attack.,0,0
+Embody Aspect (Cornerstone),304,"On switch-in, this Pokemon's Defense is raised by 1 stage.",0,0
+Embody Aspect (Hearthflame),303,"On switch-in, this Pokemon's Attack is raised by 1 stage.",0,0
+Embody Aspect (Teal),301,"On switch-in, this Pokemon's Speed is raised by 1 stage.",0,0
+Embody Aspect (Wellspring),302,"On switch-in, this Pokemon's Special Defense is raised by 1 stage.",0,0
+Emergency Exit,194,This Pokemon switches out when it reaches 1/2 or less of its maximum HP.,0,0
+Fairy Aura,187,"While this Pokemon is active, a Fairy move used by any Pokemon has 1.33x power.",0,0
+Filter,111,This Pokemon receives 3/4 damage from supereffective attacks.,0,0
+Flame Body,49,30% chance a Pokemon making contact with this Pokemon will be burned.,0,0
+Flare Boost,138,"While this Pokemon is burned, its special attacks have 1.5x power.",0,0
+Flash Fire,18,This Pokemon's Fire attacks do 1.5x damage if hit by one Fire move; Fire immunity.,0,0
+Flower Gift,122,"If user is Cherrim and Sunny Day is active, it and allies' Attack and Sp. Def are 1.5x.",0,0
+Flower Veil,166,This side's Grass types can't have stats lowered or status inflicted by other Pokemon.,0,0
+Fluffy,218,"This Pokemon takes 1/2 damage from contact moves, 2x damage from Fire moves.",0,0
+Forecast,59,"Castform's type changes to the current weather condition's type, except Sandstorm.",0,0
+Forewarn,108,"On switch-in, this Pokemon is alerted to the foes' move with the highest power.",0,0
+Friend Guard,132,This Pokemon's allies receive 3/4 damage from other Pokemon's attacks.,0,0
+Frisk,119,"On switch-in, this Pokemon identifies the held items of all opposing Pokemon.",0,0
+Full Metal Body,230,Prevents other Pokemon from lowering this Pokemon's stat stages.,0,0
+Fur Coat,169,This Pokemon's Defense is doubled.,0,0
+Gale Wings,177,"If this Pokemon is at full HP, its Flying-type moves have their priority increased by 1.",0,0
+Galvanize,206,This Pokemon's Normal-type moves become Electric type and have 1.2x power.,0,0
+Gluttony,82,This Pokemon eats Berries at 1/2 max HP or less instead of their usual 1/4 max HP.,0,0
+Good as Gold,283,This Pokemon is immune to Status moves.,0,0
+Gooey,183,Pokemon making contact with this Pokemon have their Speed lowered by 1 stage.,0,0
+Gorilla Tactics,255,"This Pokemon's Attack is 1.5x, but it can only select the first move it executes.",0,0
+Grass Pelt,179,"If Grassy Terrain is active, this Pokemon's Defense is multiplied by 1.5.",0,0
+Grassy Surge,229,"On switch-in, this Pokemon summons Grassy Terrain.",0,0
+Grim Neigh,265,This Pokemon's Sp. Atk is raised by 1 stage if it attacks and KOes another Pokemon.,0,0
+Guard Dog,275,Immune to Intimidate. Intimidated: +1 Attack. Cannot be forced to switch out.,0,0
+Gulp Missile,241,"When hit after Surf/Dive, attacker takes 1/4 max HP and -1 Defense or paralysis.",1,0
+Guts,62,"If this Pokemon is statused, its Attack is 1.5x; ignores burn halving physical damage.",0,0
+Hadron Engine,289,"On switch-in, summons Electric Terrain. During Electric Terrain, Sp. Atk is 1.3333x.",0,0
+Harvest,139,"If last item used is a Berry, 50% chance to restore it each end of turn. 100% in Sun.",0,0
+Healer,131,30% chance this Pokemon's ally has its status cured at the end of each turn.,0,0
+Heatproof,85,Fire damage against this Pokemon is dealt with 1/2 offensive stat; 1/2 burn damage.,0,0
+Heavy Metal,134,This Pokemon's weight is doubled.,0,0
+Honey Gather,118,No competitive use.,0,0
+Hospitality,299,"On switch-in, this Pokemon restores 1/4 of its ally's maximum HP, rounded down.",0,0
+Huge Power,37,This Pokemon's Attack is doubled.,0,0
+Hunger Switch,258,"If Morpeko, it changes between Full Belly and Hangry Mode at the end of each turn.",0,0
+Hustle,55,This Pokemon's Attack is 1.5x and accuracy of its physical attacks is 0.8x.,0,0
+Hydration,93,This Pokemon has its status cured at the end of each turn if Rain Dance is active.,0,0
+Hyper Cutter,52,Prevents other Pokemon from lowering this Pokemon's Attack stat stage.,0,0
+Ice Body,115,"If Snow is active, this Pokemon heals 1/16 of its max HP each turn.",0,0
+Ice Face,248,"If Eiscue, the first physical hit it takes deals 0 damage. Effect is restored in Snow.",1,0
+Ice Scales,246,This Pokemon receives 1/2 damage from special attacks.,0,0
+Illuminate,35,This Pokemon's accuracy can't be lowered by others; ignores their evasiveness stat.,0,0
+Illusion,149,This Pokemon appears as the last Pokemon in the party until it takes direct damage.,0,0
+Immunity,17,This Pokemon cannot be poisoned. Gaining this Ability while poisoned cures it.,0,0
+Imposter,150,"On switch-in, this Pokemon Transforms into the opposing Pokemon that is facing it.",0,0
+Infiltrator,151,Moves ignore substitutes and foe's Reflect/Light Screen/Safeguard/Mist/Aurora Veil.,0,0
+Innards Out,215,"If this Pokemon is KOed with a move, that move's user loses an equal amount of HP.",0,0
+Inner Focus,39,This Pokemon cannot be made to flinch. Immune to Intimidate.,0,0
+Insomnia,15,This Pokemon cannot fall asleep. Gaining this Ability while asleep cures it.,0,0
+Intimidate,22,"On switch-in, this Pokemon lowers the Attack of opponents by 1 stage.",0,0
+Intrepid Sword,234,"On switch-in, this Pokemon's Attack is raised by 1 stage. Once per battle.",0,0
+Iron Barbs,160,Pokemon making contact with this Pokemon lose 1/8 of their max HP.,0,0
+Iron Fist,89,This Pokemon's punch-based attacks have 1.2x power. Sucker Punch is not boosted.,0,0
+Justified,154,This Pokemon's Attack is raised by 1 stage after it is damaged by a Dark-type move.,0,0
+Keen Eye,51,This Pokemon's accuracy can't be lowered by others; ignores their evasiveness stat.,0,0
+Klutz,103,"This Pokemon's held item has no effect, except Macho Brace. Fling cannot be used.",0,0
+Leaf Guard,102,"If Sunny Day is active, this Pokemon cannot be statused and Rest will fail for it.",0,0
+Levitate,26,This Pokemon is immune to Ground; Gravity/Ingrain/Smack Down/Iron Ball nullify it.,0,0
+Libero,236,This Pokemon's type changes to the type of the move it is using. Once per switch-in.,0,0
+Light Metal,135,This Pokemon's weight is halved.,0,0
+Lightning Rod,31,This Pokemon draws Electric moves to itself to raise Sp. Atk by 1; Electric immunity.,0,0
+Limber,7,This Pokemon cannot be paralyzed. Gaining this Ability while paralyzed cures it.,0,0
+Lingering Aroma,268,Making contact with this Pokemon has the attacker's Ability become Lingering Aroma.,0,0
+Liquid Ooze,64,This Pokemon damages those draining HP from it for as much as they would heal.,0,0
+Liquid Voice,204,This Pokemon's sound-based moves become Water type.,0,0
+Long Reach,203,This Pokemon's attacks do not make contact with the target.,0,0
+Magic Bounce,156,This Pokemon blocks certain Status moves and bounces them back to the user.,0,0
+Magic Guard,98,This Pokemon can only be damaged by direct attacks.,0,0
+Magician,170,"If this Pokemon has no item, it steals the item off a Pokemon it hits with an attack.",0,0
+Magma Armor,40,This Pokemon cannot be frozen. Gaining this Ability while frozen cures it.,0,0
+Magnet Pull,42,Prevents opposing Steel-type Pokemon from choosing to switch out.,0,0
+Marvel Scale,63,"If this Pokemon has a non-volatile status condition, its Defense is multiplied by 1.5.",0,0
+Mega Launcher,178,This Pokemon's pulse moves have 1.5x power. Heal Pulse heals 3/4 target's max HP.,0,0
+Merciless,196,This Pokemon's attacks are critical hits if the target is poisoned.,0,0
+Mimicry,250,This Pokemon's types change to match the Terrain. Type reverts when Terrain ends.,0,0
+Mind's Eye,300,"Fighting, Normal moves hit Ghost. Accuracy can't be lowered, ignores evasiveness.",0,0
+Minus,58,"If an active ally has this Ability or the Plus Ability, this Pokemon's Sp. Atk is 1.5x.",0,0
+Mirror Armor,240,"If this Pokemon's stat stages would be lowered, the attacker's are lowered instead.",0,0
+Misty Surge,228,"On switch-in, this Pokemon summons Misty Terrain.",0,0
+Mold Breaker,104,This Pokemon's moves and their effects ignore the Abilities of other Pokemon.,0,0
+Moody,141,Boosts a random stat (except accuracy/evasion) +2 and another stat -1 every turn.,0,0
+Motor Drive,78,This Pokemon's Speed is raised 1 stage if hit by an Electric move; Electric immunity.,0,0
+Moxie,153,This Pokemon's Attack is raised by 1 stage if it attacks and KOes another Pokemon.,0,0
+Multiscale,136,"If this Pokemon is at full HP, damage taken from attacks is halved.",0,0
+Multitype,121,"If this Pokemon is an Arceus, its type changes to match its held Plate.",1,0
+Mummy,152,Pokemon making contact with this Pokemon have their Ability changed to Mummy.,0,0
+Mycelium Might,298,This Pokemon's Status moves go last in their priority bracket and ignore Abilities.,0,0
+Natural Cure,30,This Pokemon has its non-volatile status condition cured when it switches out.,0,0
+Neuroforce,233,This Pokemon's attacks that are super effective against the target do 1.25x damage.,0,0
+Neutralizing Gas,256,"While this Pokemon is active, Abilities have no effect.",0,0
+No Guard,99,Every move used by or against this Pokemon will always hit.,0,0
+Normalize,96,This Pokemon's moves are changed to be Normal type and have 1.2x power.,0,0
+Oblivious,12,This Pokemon cannot be infatuated or taunted. Immune to Intimidate.,0,0
+Opportunist,290,"When an opposing Pokemon has a stat stage raised, this Pokemon copies the effect.",0,0
+Orichalcum Pulse,288,"On switch-in, summons Sunny Day. During Sunny Day, Attack is 1.3333x.",0,0
+Overcoat,142,"This Pokemon is immune to powder moves, Sandstorm damage, and Effect Spore.",0,0
+Overgrow,65,"At 1/3 or less of its max HP, this Pokemon's offensive stat is 1.5x with Grass attacks.",0,0
+Own Tempo,20,This Pokemon cannot be confused. Immune to Intimidate.,0,0
+Parental Bond,185,This Pokemon's damaging moves hit twice. The second hit has its damage quartered.,0,0
+Pastel Veil,257,"This Pokemon and its allies cannot be poisoned. On switch-in, cures poisoned allies.",0,0
+Perish Body,253,Making contact with this Pokemon starts the Perish Song effect for it and the attacker.,0,0
+Pickpocket,124,"If this Pokemon has no item and is hit by a contact move, it steals the attacker's item.",0,0
+Pickup,53,"If this Pokemon has no item, it finds one used by an adjacent Pokemon this turn.",0,0
+Pixilate,182,This Pokemon's Normal-type moves become Fairy type and have 1.2x power.,0,0
+Plus,57,"If an active ally has this Ability or the Minus Ability, this Pokemon's Sp. Atk is 1.5x.",0,0
+Poison Heal,90,This Pokemon is healed by 1/8 of its max HP each turn when poisoned; no HP loss.,0,0
+Poison Point,38,30% chance a Pokemon making contact with this Pokemon will be poisoned.,0,0
+Poison Puppeteer,310,"Pecharunt: If this Pokemon poisons a target, the target also becomes confused.",0,0
+Poison Touch,143,This Pokemon's contact moves have a 30% chance of poisoning.,0,0
+Power Construct,211,"If Zygarde 10%/50%, changes to Complete if at 1/2 max HP or less at end of turn.",1,0
+Power of Alchemy,223,This Pokemon copies the Ability of an ally that faints.,0,0
+Power Spot,249,This Pokemon's allies have the power of their moves multiplied by 1.3.,0,0
+Prankster,158,"This Pokemon's Status moves have priority raised by 1, but Dark types are immune.",0,0
+Pressure,46,"If this Pokemon is the target of a foe's move, that move loses one additional PP.",0,0
+Primordial Sea,189,"On switch-in, heavy rain begins until this Ability is not active in battle.",0,0
+Prism Armor,232,This Pokemon receives 3/4 damage from supereffective attacks.,0,0
+Propeller Tail,239,This Pokemon's moves cannot be redirected to a different target by any effect.,0,0
+Protean,168,This Pokemon's type changes to the type of the move it is using. Once per switch-in.,0,0
+Protosynthesis,281,"Sunny Day active or Booster Energy used: highest stat is 1.3x, or 1.5x if Speed.",0,0
+Psychic Surge,227,"On switch-in, this Pokemon summons Psychic Terrain.",0,0
+Punk Rock,244,This Pokemon receives 1/2 damage from sound moves. Its own have 1.3x power.,0,0
+Pure Power,74,This Pokemon's Attack is doubled.,0,0
+Purifying Salt,272,Ghost damage to this Pokemon dealt with a halved offensive stat; can't be statused.,0,0
+Quark Drive,282,"Electric Terrain active or Booster Energy used: highest stat is 1.3x, or 1.5x if Speed.",0,0
+Queenly Majesty,214,This Pokemon and its allies are protected from opposing priority moves.,0,0
+Quick Draw,259,This Pokemon has a 30% chance to move first in its priority bracket with attacking moves.,0,0
+Quick Feet,95,"If this Pokemon is statused, its Speed is 1.5x; ignores Speed drop from paralysis.",0,0
+Rain Dish,44,"If Rain Dance is active, this Pokemon heals 1/16 of its max HP each turn.",0,0
+Rattled,155,"Speed is raised 1 stage if hit by a Bug-, Dark-, or Ghost-type attack, or Intimidated.",0,0
+Receiver,222,This Pokemon copies the Ability of an ally that faints.,0,0
+Reckless,120,This Pokemon's attacks with recoil or crash damage have 1.2x power; not Struggle.,0,0
+Refrigerate,174,This Pokemon's Normal-type moves become Ice type and have 1.2x power.,0,0
+Regenerator,144,"This Pokemon restores 1/3 of its maximum HP, rounded down, when it switches out.",0,0
+Ripen,247,"When this Pokemon eats certain Berries, the effects are doubled.",0,0
+Rivalry,79,This Pokemon's attacks do 1.25x on same gender targets; 0.75x on opposite gender.,0,0
+RKS System,225,"If this Pokemon is a Silvally, its type changes to match its held Memory.",1,0
+Rock Head,69,This Pokemon does not take recoil damage besides Struggle/Life Orb/crash damage.,0,0
+Rocky Payload,276,This Pokemon's offensive stat is multiplied by 1.5 while using a Rock-type attack.,0,0
+Rough Skin,24,Pokemon making contact with this Pokemon lose 1/8 of their max HP.,0,0
+Run Away,50,No competitive use.,0,0
+Sand Force,159,This Pokemon's Ground/Rock/Steel attacks do 1.3x in Sandstorm; immunity to it.,0,0
+Sand Rush,146,"If Sandstorm is active, this Pokemon's Speed is doubled; immunity to Sandstorm.",0,0
+Sand Spit,245,"When this Pokemon is hit by an attack, the effect of Sandstorm begins.",0,0
+Sand Stream,45,"On switch-in, this Pokemon summons Sandstorm.",0,0
+Sand Veil,8,"If Sandstorm is active, this Pokemon's evasiveness is 1.25x; immunity to Sandstorm.",0,0
+Sap Sipper,157,This Pokemon's Attack is raised 1 stage if hit by a Grass move; Grass immunity.,0,0
+Schooling,208,"If user is Wishiwashi, changes to School Form if it has > 1/4 max HP, else Solo Form.",1,0
+Scrappy,113,"Fighting, Normal moves hit Ghost. Immune to Intimidate.",0,0
+Screen Cleaner,251,"On switch-in, the effects of Aurora Veil, Light Screen, and Reflect end for both sides.",0,0
+Seed Sower,269,"When this Pokemon is hit by an attack, the effect of Grassy Terrain begins.",0,0
+Serene Grace,32,This Pokemon's moves have their secondary effect chance doubled.,0,0
+Shadow Shield,231,"If this Pokemon is at full HP, damage taken from attacks is halved.",0,0
+Shadow Tag,23,Prevents foes from choosing to switch unless they also have this Ability.,0,0
+Sharpness,292,This Pokemon's slicing moves have their power multiplied by 1.5.,0,0
+Shed Skin,61,This Pokemon has a 33% chance to have its status cured at the end of each turn.,0,0
+Sheer Force,125,This Pokemon's attacks with secondary effects have 1.3x power; nullifies the effects.,0,0
+Shell Armor,75,This Pokemon cannot be struck by a critical hit.,0,0
+Shield Dust,19,This Pokemon is not affected by the secondary effect of another Pokemon's attack.,0,0
+Shields Down,197,"If Minior, switch-in/end of turn it changes to Core at 1/2 max HP or less, else Meteor.",1,0
+Simple,86,"When one of this Pokemon's stat stages is raised or lowered, the amount is doubled.",0,0
+Skill Link,92,This Pokemon's multi-hit attacks always hit the maximum number of times.,0,0
+Slow Start,112,"On switch-in, this Pokemon's Attack and Speed are halved for 5 turns.",0,0
+Slush Rush,202,"If Snow is active, this Pokemon's Speed is doubled.",0,0
+Sniper,97,"If this Pokemon strikes with a critical hit, the damage is multiplied by 1.5.",0,0
+Snow Cloak,81,"If Snow is active, this Pokemon's evasiveness is 1.25x.",0,0
+Snow Warning,117,"On switch-in, this Pokemon summons Snow.",0,0
+Solar Power,94,"If Sunny Day is active, this Pokemon's Sp. Atk is 1.5x; loses 1/8 max HP per turn.",0,0
+Solid Rock,116,This Pokemon receives 3/4 damage from supereffective attacks.,0,0
+Soul-Heart,220,This Pokemon's Special Attack is raised by 1 stage when another Pokemon faints.,0,0
+Soundproof,43,"This Pokemon is immune to sound-based moves, unless it used the move.",0,0
+Speed Boost,3,This Pokemon's Speed is raised 1 stage at the end of each full turn on the field.,0,0
+Stakeout,198,This Pokemon's offensive stat is doubled against a target that switched in this turn.,0,0
+Stall,100,This Pokemon moves last among Pokemon using the same or greater priority moves.,0,0
+Stalwart,242,This Pokemon's moves cannot be redirected to a different target by any effect.,0,0
+Stamina,192,This Pokemon's Defense is raised by 1 stage after it is damaged by a move.,0,0
+Stance Change,176,"If Aegislash, changes Forme to Blade before attacks and Shield before King's Shield.",1,0
+Static,9,30% chance a Pokemon making contact with this Pokemon will be paralyzed.,0,0
+Steadfast,80,"If this Pokemon flinches, its Speed is raised by 1 stage.",0,0
+Steam Engine,243,This Pokemon's Speed is raised by 6 stages after it is damaged by Fire/Water moves.,0,0
+Steelworker,200,This Pokemon's offensive stat is multiplied by 1.5 while using a Steel-type attack.,0,0
+Steely Spirit,252,This Pokemon and its allies' Steel-type moves have their power multiplied by 1.5.,0,0
+Stench,1,This Pokemon's attacks without a chance to flinch gain a 10% chance to flinch.,0,0
+Sticky Hold,60,This Pokemon cannot lose its held item due to another Pokemon's Ability or attack.,0,0
+Storm Drain,114,This Pokemon draws Water moves to itself to raise Sp. Atk by 1; Water immunity.,0,0
+Strong Jaw,173,This Pokemon's bite-based attacks have 1.5x power. Bug Bite is not boosted.,0,0
+Sturdy,5,"If this Pokemon is at full HP, it survives one hit with at least 1 HP. Immune to OHKO.",0,0
+Suction Cups,21,This Pokemon cannot be forced to switch out by another Pokemon's attack or item.,0,0
+Super Luck,105,This Pokemon's critical hit ratio is raised by 1 stage.,0,0
+Supersweet Syrup,306,"On switch-in, this Pokemon lowers the evasiveness of opponents 1 stage. Once per battle.",0,0
+Supreme Overlord,293,"This Pokemon's moves have 10% more power for each fainted ally, up to 5 allies.",0,0
+Surge Surfer,207,"If Electric Terrain is active, this Pokemon's Speed is doubled.",0,0
+Swarm,68,"At 1/3 or less of its max HP, this Pokemon's offensive stat is 1.5x with Bug attacks.",0,0
+Sweet Veil,175,This Pokemon and its allies cannot fall asleep; those already asleep do not wake up.,0,0
+Swift Swim,33,"If Rain Dance is active, this Pokemon's Speed is doubled.",0,0
+Symbiosis,180,"If an ally uses its item, this Pokemon gives its item to that ally immediately.",0,0
+Synchronize,28,"If another Pokemon burns/poisons/paralyzes this Pokemon, it also gets that status.",0,0
+Sword of Ruin,285,Active Pokemon without this Ability have their Defense multiplied by 0.75.,0,0
+Tablets of Ruin,284,Active Pokemon without this Ability have their Attack multiplied by 0.75.,0,0
+Tangled Feet,77,This Pokemon's evasiveness is doubled as long as it is confused.,0,0
+Tangling Hair,221,Pokemon making contact with this Pokemon have their Speed lowered by 1 stage.,0,0
+Technician,101,"This Pokemon's moves of 60 power or less have 1.5x power, including Struggle.",0,0
+Telepathy,140,This Pokemon does not take damage from attacks made by its allies.,0,0
+Teraform Zero,309,Terapagos: Terastallizing ends the effects of weather and terrain. Once per battle.,0,0
+Tera Shell,308,"Terapagos: If full HP, attacks taken have 0.5x effectiveness unless naturally immune.",0,0
+Tera Shift,307,"If this Pokemon is a Terapagos, it transforms into its Terastal Form on entry.",1,0
+Teravolt,164,This Pokemon's moves and their effects ignore the Abilities of other Pokemon.,0,0
+Thermal Exchange,270,This Pokemon's Attack is raised by 1 when damaged by Fire moves; can't be burned.,0,0
+Thick Fat,47,Fire-/Ice-type moves against this Pokemon deal damage with a halved offensive stat.,0,0
+Tinted Lens,110,This Pokemon's attacks that are not very effective on a target deal double damage.,0,0
+Torrent,67,"At 1/3 or less of its max HP, this Pokemon's offensive stat is 1.5x with Water attacks.",0,0
+Tough Claws,181,This Pokemon's contact moves have their power multiplied by 1.3.,0,0
+Toxic Boost,137,"While this Pokemon is poisoned, its physical attacks have 1.5x power.",0,0
+Toxic Chain,305,This Pokemon's attacks have a 30% chance of badly poisoning.,0,0
+Toxic Debris,295,"If this Pokemon is hit by a physical attack, Toxic Spikes are set on the opposing side.",0,0
+Trace,36,"On switch-in, or when it can, this Pokemon copies a random adjacent foe's Ability.",0,0
+Transistor,262,This Pokemon's offensive stat is multiplied by 1.3 while using an Electric-type attack.,0,0
+Triage,205,This Pokemon's healing moves have their priority increased by 3.,0,0
+Truant,54,This Pokemon skips every other turn instead of using a move.,0,0
+Turboblaze,163,This Pokemon's moves and their effects ignore the Abilities of other Pokemon.,0,0
+Unaware,109,This Pokemon ignores other Pokemon's stat stages when taking or doing damage.,0,0
+Unburden,84,"Speed is doubled on held item loss; boost is lost if it switches, gets new item/Ability.",0,0
+Unnerve,127,"While this Pokemon is active, it prevents opposing Pokemon from using their Berries.",0,0
+Unseen Fist,260,"This Pokemon's contact moves ignore the target's protection, except Max Guard.",0,0
+Vessel of Ruin,284,Active Pokemon without this Ability have their Special Attack multiplied by 0.75.,0,0
+Victory Star,162,This Pokemon and its allies' moves have their accuracy multiplied by 1.1.,0,0
+Vital Spirit,72,This Pokemon cannot fall asleep. Gaining this Ability while asleep cures it.,0,0
+Volt Absorb,10,This Pokemon heals 1/4 of its max HP when hit by Electric moves; Electric immunity.,0,0
+Wandering Spirit,254,Pokemon making contact with this Pokemon have their Ability swapped with this one.,0,0
+Water Absorb,11,This Pokemon heals 1/4 of its max HP when hit by Water moves; Water immunity.,0,0
+Water Bubble,199,This Pokemon's Water power is 2x; it can't be burned; Fire power against it is halved.,0,0
+Water Compaction,195,This Pokemon's Defense is raised 2 stages after it is damaged by a Water-type move.,0,0
+Water Veil,41,This Pokemon cannot be burned. Gaining this Ability while burned cures it.,0,0
+Weak Armor,133,"If a physical attack hits this Pokemon, Defense is lowered by 1, Speed is raised by 2.",0,0
+Well-Baked Body,273,This Pokemon's Defense is raised 2 stages if hit by a Fire move; Fire immunity.,0,0
+White Smoke,73,Prevents other Pokemon from lowering this Pokemon's stat stages.,0,0
+Wimp Out,193,This Pokemon switches out when it reaches 1/2 or less of its maximum HP.,0,0
+Wind Power,277,This Pokemon gains the Charge effect when hit by a wind move or Tailwind begins.,0,0
+Wind Rider,274,Attack raised by 1 if hit by a wind move or Tailwind begins. Wind move immunity.,0,0
+Wonder Guard,25,This Pokemon can only be damaged by supereffective moves and indirect damage.,0,0
+Wonder Skin,147,Status moves with accuracy checks are 50% accurate when used on this Pokemon.,0,0
+Zen Mode,161,"If Darmanitan, at end of turn changes Mode to Standard if > 1/2 max HP, else Zen.",1,0
+Zero to Hero,278,"If this Pokemon is a Palafin in Zero Form, switching out has it change to Hero Form.",1,0
+Mountaineer,-1,"On switch-in, this Pokemon avoids all Rock-type attacks and Stealth Rock.",0,0
+Rebound,-2,"On switch-in, blocks certain status moves and bounces them back to the user.",0,0
+Persistent,-3,"When used, Gravity/Heal Block/Safeguard/Tailwind/Room effects last 2 more turns.",0,0

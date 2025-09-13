@@ -1,3 +1,4 @@
+import 'package:app/ui/home_page.dart';
 import 'package:flutter/material.dart';
 import './chat_page_ph.dart';
 import './register_powersync_template.dart';
@@ -30,7 +31,7 @@ class SplashPageState extends State<SplashPage> {
       Navigator.push(
         context,
         MaterialPageRoute<void>(
-          builder: (context) => const ChatPage(),
+          builder: (context) => const HomePage(),
         ),
       );
       // Navigator.of(context)

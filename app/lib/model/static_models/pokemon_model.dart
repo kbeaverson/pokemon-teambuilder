@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:core';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:powersync/sqlite3.dart' as sqlite;
@@ -34,8 +35,10 @@ abstract class Pokemon with _$Pokemon {
       id: row['id'],
       name: row['name'],
       dexNum: row['dex_num'],
-      type: (row['type'] != null) // FIXME: Need to decode from json
-          ? (row['type'] as String).split(',').map(PokemonType.fromString).toList()
+      type: (row['type'] != null)
+          ? (jsonDecode(row['type']) as List)
+            .map((e) => PokemonType.fromString(e as String))
+            .toList()
           : [],
       isPreEvolution: row['is_pre_evolution'] == 1,
       weight: row['weight'],

@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:core';
 import 'package:app/utils/enums/pokemon_type.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -54,7 +55,9 @@ abstract class Move with _$Move {
       name: row['name'],
       dexNum: row['dex_num'],
       type: (row['type'] != null)
-          ? (row['type'] as String).split(',').map((e) => PokemonType.fromString(e)).toList()
+          ? (jsonDecode(row['type']) as List)
+            .map((e) => PokemonType.fromString(e))
+            .toList()
           : <PokemonType>[],
       category: (row['category'] != null)
           ? MoveCategory.values.firstWhere((e) => e.toString().split('.').last == row['category'])
