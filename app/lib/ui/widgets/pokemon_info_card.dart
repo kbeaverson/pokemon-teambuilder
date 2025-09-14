@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 
 class PokemonInfoCard extends StatelessWidget {
   final PokemonViewModel viewModel;
-  final PokemonCardContext context;
-  const PokemonInfoCard({super.key, required this.viewModel, required this.context});
+  final PokemonCardContext pokemonCardContext;
+  const PokemonInfoCard({super.key, required this.viewModel, required this.pokemonCardContext});
 
   @override
   Widget build(BuildContext context) {
@@ -29,16 +29,16 @@ class PokemonInfoCard extends StatelessWidget {
                 padding: const EdgeInsets.all(5.0), // Thickness of gradient border
                 child: Container(
                   decoration: BoxDecoration(
-                    color: Theme.of(context).cardColor,
+                    color: Theme.of(context).colorScheme.surfaceContainer,
                     borderRadius: BorderRadius.circular(9),
                   ),
                   child: Column(
                     children: [
                       Row(
                         children: [
+                          // Pokemon sprite - 18% of screen width
                           SizedBox(
-                            width: constraints.maxWidth * 0.2,
-                            height: constraints.maxWidth * 0.2,
+                            width: constraints.maxWidth * 0.18,
                             child: Image.asset(
                               viewModel.spritePath,
                               errorBuilder: (context, error, stackTrace) {
@@ -46,12 +46,17 @@ class PokemonInfoCard extends StatelessWidget {
                               },
                             ),
                           ),
-                          Text(viewModel.name),
-                          Spacer(),
-                          _buildTypeBars(),
+                          // Spacing
+                          SizedBox(width: constraints.maxWidth * 0.02),
+                          // Pokemon name - up to 40% of screen width with dynamic sizing
+                          _buildPokemonName(context, constraints),
+                          // Flexible spacer for remaining space
+                          Expanded(child: SizedBox()),
+                          // Type images - 10% of screen width total
+                          _buildTypeBars(context, constraints),
                         ],
                       ),
-                      _buildStatCard(),
+                      _buildStatCard(context, constraints),
                     ],
                   ),
                 ),
@@ -65,49 +70,81 @@ class PokemonInfoCard extends StatelessWidget {
     });
   }
 
-  Widget _buildStatCell(String label, int value) {
-    return Column(
-      children: [
-        Text(label, style: const TextStyle(fontWeight: FontWeight.bold)),
-        Text(value.toString()),
-      ],
+  Widget _buildPokemonName(BuildContext context, BoxConstraints constraints) {
+    return Container(
+      width: constraints.maxWidth * 0.4, // Max 40% of screen width
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        alignment: Alignment.centerLeft,
+        child: Text(
+          viewModel.name,
+          style: Theme.of(context).textTheme.headlineSmall,
+          maxLines: 1,
+        ),
+      ),
     );
   }
 
-  Widget _buildStatCard() {
+  Widget _buildStatCell(String label, int value, BuildContext context, double width) {
+    return SizedBox(
+      width: width,
+      child: Column(
+        children: [
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(label, style: Theme.of(context).textTheme.labelLarge),
+          ),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(value.toString(), style: Theme.of(context).textTheme.bodySmall),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildTypeBars(BuildContext context, BoxConstraints constraints) {
+    // Each type image takes 10% of screen width
+    double typeImageWidth = constraints.maxWidth * 0.1;
+    
+    return Row(
+      children: viewModel.type
+          .map((type) => Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 2.0),
+                child: SizedBox(
+                  width: typeImageWidth,
+                  height: typeImageWidth,
+                  child: Image.asset(
+                    type.iconSpritePath, 
+                    color: type.color,
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ))
+          .toList(),
+    );
+  }
+
+  Widget _buildStatCard(BuildContext context, BoxConstraints constraints) {
+    // Each stat gets roughly 12% of screen width (7 stats = 84% total, leaving 16% for padding/spacing)
+    double statWidth = constraints.maxWidth * 0.12;
+    
     return Container(
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            _buildStatCell('HP', viewModel.baseHP),
-            Padding(padding: const EdgeInsets.symmetric(horizontal: 2.0)),
-            _buildStatCell('Atk', viewModel.baseAtk),
-            Padding(padding: const EdgeInsets.symmetric(horizontal: 2.0)),
-            _buildStatCell('Def', viewModel.baseDef),
-            Padding(padding: const EdgeInsets.symmetric(horizontal: 2.0)),
-            _buildStatCell('SpA', viewModel.baseSpA),
-            Padding(padding: const EdgeInsets.symmetric(horizontal: 2.0)),
-            _buildStatCell('SpD', viewModel.baseSpD),
-            Padding(padding: const EdgeInsets.symmetric(horizontal: 2.0)),
-            _buildStatCell('Spe', viewModel.baseSpe),
-            Padding(padding: const EdgeInsets.symmetric(horizontal: 4.0)),
-            _buildStatCell('BST', viewModel.baseStatsTotal)
+            _buildStatCell('HP', viewModel.baseHP, context, statWidth),
+            _buildStatCell('Atk', viewModel.baseAtk, context, statWidth),
+            _buildStatCell('Def', viewModel.baseDef, context, statWidth),
+            _buildStatCell('SpA', viewModel.baseSpA, context, statWidth),
+            _buildStatCell('SpD', viewModel.baseSpD, context, statWidth),
+            _buildStatCell('Spe', viewModel.baseSpe, context, statWidth),
+            _buildStatCell('BST', viewModel.baseStatsTotal, context, statWidth)
           ],
         ),
       ),
-    );
-  }
-
-  Widget _buildTypeBars() {
-    return Row(
-      children: viewModel.type
-          .map((type) => Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 4.0),
-                child: Image.asset(type.iconSpritePath, width: 60, color: Colors.grey[800])
-              ))
-          .toList(),
     );
   }
 }
