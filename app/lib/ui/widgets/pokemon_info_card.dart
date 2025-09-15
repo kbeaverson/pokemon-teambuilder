@@ -65,6 +65,8 @@ class PokemonInfoCard extends StatelessWidget {
           ),
         onTap:() {
           // Handle tap
+          // If context is FromPokedex, open detailed view
+          // If context is FromTeamBuilder, select this Pokemon and close the modal
         },
       );
     });
@@ -78,7 +80,7 @@ class PokemonInfoCard extends StatelessWidget {
         alignment: Alignment.centerLeft,
         child: Text(
           viewModel.name,
-          style: Theme.of(context).textTheme.headlineSmall,
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
           maxLines: 1,
         ),
       ),

@@ -9,7 +9,7 @@ class ItemViewModel extends ChangeNotifier {
 
   final Item item;
 
-  String get spritePath => 'assets/item_sprites/${item.name}.png';
+  String get spritePath => 'assets/item_sprites/${item.name.toLowerCase().replaceAll(' ', '-')}.png';
 
   String get name => item.name;
   String get id => item.id;

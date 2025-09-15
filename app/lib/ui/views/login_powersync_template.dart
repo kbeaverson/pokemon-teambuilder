@@ -1,5 +1,5 @@
+import 'package:app/ui/views/home_page.dart';
 import 'package:flutter/material.dart';
-import 'chat_page_ph.dart';
 import '../../utils/constants_powersync.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -31,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
       Navigator.push(
         context,
         MaterialPageRoute<void>(
-          builder: (context) => const ChatPage(),
+          builder: (context) => const HomePage(),
         ),
       );
       // Navigator.of(context)

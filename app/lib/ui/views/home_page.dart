@@ -1,7 +1,8 @@
 import 'package:app/repository/repo_contracts/ability_repo.dart';
 import 'package:app/repository/repo_contracts/item_repo.dart';
 import 'package:app/repository/repo_contracts/move_repo.dart';
-import 'package:app/ui/views/chat_page_ph.dart';
+import 'package:app/ui/views/abilitydex_view.dart';
+import 'package:app/ui/views/itemdex_view.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../repository/repo_contracts/pokemon_repo.dart';
@@ -27,6 +28,7 @@ class HomePage extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: const Text('Teambuilder Home'),
+          automaticallyImplyLeading: false,
           actions: [
             PopupMenuButton<String>(
               onSelected: (value) {
@@ -57,21 +59,25 @@ class HomePage extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  // TODO: Navigate to Itemdex
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const ItemdexView()),
+                  );
                 },
                 child: const Text('Itemdex'),
               ),
               ElevatedButton(
                 onPressed: () {
                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: (_) => const ChatPage()),
+                    MaterialPageRoute(builder: (_) => const AbilitydexView()),
                   );
                 },
                 child: const Text('Abilitydex'),
               ),
               ElevatedButton(
                 onPressed: () {
-                  // TODO: Navigate to Movedex
+                  // Navigator.of(context).push(
+                  //   MaterialPageRoute(builder: (_) => const MovedexView()),
+                  // );
                 },
                 child: const Text('Movedex'),
               ),

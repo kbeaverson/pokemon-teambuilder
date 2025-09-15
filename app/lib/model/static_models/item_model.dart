@@ -28,11 +28,12 @@ abstract class Item with _$Item {
       flingPower: row['fling_power'], 
       description: row['description'],
       ignoredByKlutz: row['ignored_by_klutz'] == 1, 
-      category: (row['category'] != null)
-          ? (jsonDecode(row['category']) as List)
-            .map((e) => ItemCategory.values.firstWhere((c) => c.toString() == 'ItemCategory.$e'))
-            .toList()
-          : [],
+      // category: (row['category'] != null)
+      //     ? (jsonDecode(row['category']) as List)
+      //       .map((e) => ItemCategory.values.firstWhere((c) => c.toString() == 'ItemCategory.$e'))
+      //       .toList()
+      //     : [],
+      category: [], //FIXME Item categories non-functional currently
     );
   }
 
