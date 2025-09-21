@@ -27,6 +27,8 @@ _Pokemon _$PokemonFromJson(Map<String, dynamic> json) => _Pokemon(
       baseSpA: (json['baseSpA'] as num).toInt(),
       baseSpD: (json['baseSpD'] as num).toInt(),
       baseSpe: (json['baseSpe'] as num).toInt(),
+      baseSpeciesId: json['baseSpeciesId'] as String?,
+      prevoId: json['prevoId'] as String?,
     );
 
 Map<String, dynamic> _$PokemonToJson(_Pokemon instance) => <String, dynamic>{
@@ -48,6 +50,8 @@ Map<String, dynamic> _$PokemonToJson(_Pokemon instance) => <String, dynamic>{
       'baseSpA': instance.baseSpA,
       'baseSpD': instance.baseSpD,
       'baseSpe': instance.baseSpe,
+      'baseSpeciesId': instance.baseSpeciesId,
+      'prevoId': instance.prevoId,
     };
 
 const _$PokemonTypeEnumMap = {

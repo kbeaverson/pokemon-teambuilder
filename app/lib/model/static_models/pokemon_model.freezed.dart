@@ -32,6 +32,8 @@ mixin _$Pokemon {
   int get baseSpA;
   int get baseSpD;
   int get baseSpe;
+  String? get baseSpeciesId;
+  String? get prevoId;
 
   /// Create a copy of Pokemon
   /// with the given fields replaced by the non-null parameter values.
@@ -70,35 +72,41 @@ mixin _$Pokemon {
             (identical(other.baseDef, baseDef) || other.baseDef == baseDef) &&
             (identical(other.baseSpA, baseSpA) || other.baseSpA == baseSpA) &&
             (identical(other.baseSpD, baseSpD) || other.baseSpD == baseSpD) &&
-            (identical(other.baseSpe, baseSpe) || other.baseSpe == baseSpe));
+            (identical(other.baseSpe, baseSpe) || other.baseSpe == baseSpe) &&
+            (identical(other.baseSpeciesId, baseSpeciesId) ||
+                other.baseSpeciesId == baseSpeciesId) &&
+            (identical(other.prevoId, prevoId) || other.prevoId == prevoId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      dexNum,
-      const DeepCollectionEquality().hash(type),
-      isPreEvolution,
-      weight,
-      genderRatio,
-      isMythical,
-      isLegendary,
-      isMax,
-      isMega,
-      mandatoryItemName,
-      baseHP,
-      baseAtk,
-      baseDef,
-      baseSpA,
-      baseSpD,
-      baseSpe);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        name,
+        dexNum,
+        const DeepCollectionEquality().hash(type),
+        isPreEvolution,
+        weight,
+        genderRatio,
+        isMythical,
+        isLegendary,
+        isMax,
+        isMega,
+        mandatoryItemName,
+        baseHP,
+        baseAtk,
+        baseDef,
+        baseSpA,
+        baseSpD,
+        baseSpe,
+        baseSpeciesId,
+        prevoId
+      ]);
 
   @override
   String toString() {
-    return 'Pokemon(id: $id, name: $name, dexNum: $dexNum, type: $type, isPreEvolution: $isPreEvolution, weight: $weight, genderRatio: $genderRatio, isMythical: $isMythical, isLegendary: $isLegendary, isMax: $isMax, isMega: $isMega, mandatoryItemName: $mandatoryItemName, baseHP: $baseHP, baseAtk: $baseAtk, baseDef: $baseDef, baseSpA: $baseSpA, baseSpD: $baseSpD, baseSpe: $baseSpe)';
+    return 'Pokemon(id: $id, name: $name, dexNum: $dexNum, type: $type, isPreEvolution: $isPreEvolution, weight: $weight, genderRatio: $genderRatio, isMythical: $isMythical, isLegendary: $isLegendary, isMax: $isMax, isMega: $isMega, mandatoryItemName: $mandatoryItemName, baseHP: $baseHP, baseAtk: $baseAtk, baseDef: $baseDef, baseSpA: $baseSpA, baseSpD: $baseSpD, baseSpe: $baseSpe, baseSpeciesId: $baseSpeciesId, prevoId: $prevoId)';
   }
 }
 
@@ -125,7 +133,9 @@ abstract mixin class $PokemonCopyWith<$Res> {
       int baseDef,
       int baseSpA,
       int baseSpD,
-      int baseSpe});
+      int baseSpe,
+      String? baseSpeciesId,
+      String? prevoId});
 }
 
 /// @nodoc
@@ -158,6 +168,8 @@ class _$PokemonCopyWithImpl<$Res> implements $PokemonCopyWith<$Res> {
     Object? baseSpA = null,
     Object? baseSpD = null,
     Object? baseSpe = null,
+    Object? baseSpeciesId = freezed,
+    Object? prevoId = freezed,
   }) {
     return _then(_self.copyWith(
       id: null == id
@@ -232,6 +244,14 @@ class _$PokemonCopyWithImpl<$Res> implements $PokemonCopyWith<$Res> {
           ? _self.baseSpe
           : baseSpe // ignore: cast_nullable_to_non_nullable
               as int,
+      baseSpeciesId: freezed == baseSpeciesId
+          ? _self.baseSpeciesId
+          : baseSpeciesId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      prevoId: freezed == prevoId
+          ? _self.prevoId
+          : prevoId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -347,7 +367,9 @@ extension PokemonPatterns on Pokemon {
             int baseDef,
             int baseSpA,
             int baseSpD,
-            int baseSpe)?
+            int baseSpe,
+            String? baseSpeciesId,
+            String? prevoId)?
         $default, {
     required TResult orElse(),
   }) {
@@ -372,7 +394,9 @@ extension PokemonPatterns on Pokemon {
             _that.baseDef,
             _that.baseSpA,
             _that.baseSpD,
-            _that.baseSpe);
+            _that.baseSpe,
+            _that.baseSpeciesId,
+            _that.prevoId);
       case _:
         return orElse();
     }
@@ -411,7 +435,9 @@ extension PokemonPatterns on Pokemon {
             int baseDef,
             int baseSpA,
             int baseSpD,
-            int baseSpe)
+            int baseSpe,
+            String? baseSpeciesId,
+            String? prevoId)
         $default,
   ) {
     final _that = this;
@@ -435,7 +461,9 @@ extension PokemonPatterns on Pokemon {
             _that.baseDef,
             _that.baseSpA,
             _that.baseSpD,
-            _that.baseSpe);
+            _that.baseSpe,
+            _that.baseSpeciesId,
+            _that.prevoId);
       case _:
         throw StateError('Unexpected subclass');
     }
@@ -473,7 +501,9 @@ extension PokemonPatterns on Pokemon {
             int baseDef,
             int baseSpA,
             int baseSpD,
-            int baseSpe)?
+            int baseSpe,
+            String? baseSpeciesId,
+            String? prevoId)?
         $default,
   ) {
     final _that = this;
@@ -497,7 +527,9 @@ extension PokemonPatterns on Pokemon {
             _that.baseDef,
             _that.baseSpA,
             _that.baseSpD,
-            _that.baseSpe);
+            _that.baseSpe,
+            _that.baseSpeciesId,
+            _that.prevoId);
       case _:
         return null;
     }
@@ -525,7 +557,9 @@ class _Pokemon implements Pokemon {
       required this.baseDef,
       required this.baseSpA,
       required this.baseSpD,
-      required this.baseSpe})
+      required this.baseSpe,
+      this.baseSpeciesId,
+      this.prevoId})
       : _type = type;
   factory _Pokemon.fromJson(Map<String, dynamic> json) =>
       _$PokemonFromJson(json);
@@ -572,6 +606,10 @@ class _Pokemon implements Pokemon {
   final int baseSpD;
   @override
   final int baseSpe;
+  @override
+  final String? baseSpeciesId;
+  @override
+  final String? prevoId;
 
   /// Create a copy of Pokemon
   /// with the given fields replaced by the non-null parameter values.
@@ -615,35 +653,41 @@ class _Pokemon implements Pokemon {
             (identical(other.baseDef, baseDef) || other.baseDef == baseDef) &&
             (identical(other.baseSpA, baseSpA) || other.baseSpA == baseSpA) &&
             (identical(other.baseSpD, baseSpD) || other.baseSpD == baseSpD) &&
-            (identical(other.baseSpe, baseSpe) || other.baseSpe == baseSpe));
+            (identical(other.baseSpe, baseSpe) || other.baseSpe == baseSpe) &&
+            (identical(other.baseSpeciesId, baseSpeciesId) ||
+                other.baseSpeciesId == baseSpeciesId) &&
+            (identical(other.prevoId, prevoId) || other.prevoId == prevoId));
   }
 
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      name,
-      dexNum,
-      const DeepCollectionEquality().hash(_type),
-      isPreEvolution,
-      weight,
-      genderRatio,
-      isMythical,
-      isLegendary,
-      isMax,
-      isMega,
-      mandatoryItemName,
-      baseHP,
-      baseAtk,
-      baseDef,
-      baseSpA,
-      baseSpD,
-      baseSpe);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        id,
+        name,
+        dexNum,
+        const DeepCollectionEquality().hash(_type),
+        isPreEvolution,
+        weight,
+        genderRatio,
+        isMythical,
+        isLegendary,
+        isMax,
+        isMega,
+        mandatoryItemName,
+        baseHP,
+        baseAtk,
+        baseDef,
+        baseSpA,
+        baseSpD,
+        baseSpe,
+        baseSpeciesId,
+        prevoId
+      ]);
 
   @override
   String toString() {
-    return 'Pokemon(id: $id, name: $name, dexNum: $dexNum, type: $type, isPreEvolution: $isPreEvolution, weight: $weight, genderRatio: $genderRatio, isMythical: $isMythical, isLegendary: $isLegendary, isMax: $isMax, isMega: $isMega, mandatoryItemName: $mandatoryItemName, baseHP: $baseHP, baseAtk: $baseAtk, baseDef: $baseDef, baseSpA: $baseSpA, baseSpD: $baseSpD, baseSpe: $baseSpe)';
+    return 'Pokemon(id: $id, name: $name, dexNum: $dexNum, type: $type, isPreEvolution: $isPreEvolution, weight: $weight, genderRatio: $genderRatio, isMythical: $isMythical, isLegendary: $isLegendary, isMax: $isMax, isMega: $isMega, mandatoryItemName: $mandatoryItemName, baseHP: $baseHP, baseAtk: $baseAtk, baseDef: $baseDef, baseSpA: $baseSpA, baseSpD: $baseSpD, baseSpe: $baseSpe, baseSpeciesId: $baseSpeciesId, prevoId: $prevoId)';
   }
 }
 
@@ -671,7 +715,9 @@ abstract mixin class _$PokemonCopyWith<$Res> implements $PokemonCopyWith<$Res> {
       int baseDef,
       int baseSpA,
       int baseSpD,
-      int baseSpe});
+      int baseSpe,
+      String? baseSpeciesId,
+      String? prevoId});
 }
 
 /// @nodoc
@@ -704,6 +750,8 @@ class __$PokemonCopyWithImpl<$Res> implements _$PokemonCopyWith<$Res> {
     Object? baseSpA = null,
     Object? baseSpD = null,
     Object? baseSpe = null,
+    Object? baseSpeciesId = freezed,
+    Object? prevoId = freezed,
   }) {
     return _then(_Pokemon(
       id: null == id
@@ -778,6 +826,14 @@ class __$PokemonCopyWithImpl<$Res> implements _$PokemonCopyWith<$Res> {
           ? _self.baseSpe
           : baseSpe // ignore: cast_nullable_to_non_nullable
               as int,
+      baseSpeciesId: freezed == baseSpeciesId
+          ? _self.baseSpeciesId
+          : baseSpeciesId // ignore: cast_nullable_to_non_nullable
+              as String?,
+      prevoId: freezed == prevoId
+          ? _self.prevoId
+          : prevoId // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }

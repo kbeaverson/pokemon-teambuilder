@@ -1,6 +1,7 @@
+// JSON decoding for DB fields
 import 'dart:convert';
-import 'dart:core';
 import 'package:app/utils/enums/pokemon_type.dart';
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:powersync/sqlite3.dart' as sqlite;
 import '../../utils/enums/move_category.dart';
@@ -15,7 +16,7 @@ abstract class Move with _$Move {
     required String id,
     required String name,
     required int dexNum,
-    required List<PokemonType> type,
+    required PokemonType type,
     required MoveCategory category,
     required MoveTarget target,
     required int power,
@@ -54,16 +55,24 @@ abstract class Move with _$Move {
       id: row['id'],
       name: row['name'],
       dexNum: row['dex_num'],
-      type: (row['type'] != null)
-          ? (jsonDecode(row['type']) as List)
-            .map((e) => PokemonType.fromString(e))
-            .toList()
-          : <PokemonType>[],
+      type: jsonDecode(row['type']) is String
+        ? PokemonType.values.firstWhere(
+            (e) => e.toString().split('.').last.toLowerCase() ==
+                (jsonDecode(row['type']) as String).replaceAll(' ', '').toLowerCase(),
+            orElse: () => PokemonType.typeless,
+          )
+        : PokemonType.typeless,
       category: (row['category'] != null)
-          ? MoveCategory.values.firstWhere((e) => e.toString().split('.').last == row['category'])
+          ? MoveCategory.values.firstWhere(
+              (e) => e.toString().split('.').last == row['category'].toLowerCase(),
+              orElse: () => MoveCategory.error,
+            )
           : MoveCategory.error,
       target: row['target'] != null
-          ? MoveTarget.values.firstWhere((e) => e.toString().split('.').last == row['target'])
+          ? MoveTarget.values.firstWhere(
+              (e) => e.toString().split('.').last == row['target'].toLowerCase(),
+              orElse: () => MoveTarget.error,
+            )
           : MoveTarget.error,
       power: row['power'],
       accuracy: row['accuracy'],

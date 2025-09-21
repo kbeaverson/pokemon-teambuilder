@@ -29,5 +29,6 @@ const _$LearnMethodEnumMap = {
   LearnMethod.levelup: 'levelup',
   LearnMethod.egg: 'egg',
   LearnMethod.tm: 'tm',
+  LearnMethod.tutor: 'tutor',
   LearnMethod.none: 'none',
 };

@@ -1,0 +1,56 @@
+move_id,pokemon_id,is_egg_move,is_levelup_move,is_tm_move,levelup_level,move_name
+bb2f2e02-65ff-4fa0-a8dd-62f36d04b185,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM001,Take Down
+98030f49-256b-4ad3-be74-e831f0ff3e7c,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM002,Charm
+d636e77b-c156-4764-910d-8cf00dc2d75f,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM003,Fake Tears
+1e702e73-3e19-4c5d-9f77-5b19071ede02,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM004,Agility
+9efe1543-aefc-4629-b882-e153c3e6c067,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM007,Protect
+6f226b12-c6c4-4196-b829-d3a37d9a738b,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM018,Thief
+0f9132a7-2f3b-45c6-bbce-1118b1fb220c,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM019,Disarming Voice
+48de3326-8d6e-4fa7-8687-b1bb7dc5013a,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM020,Trailblaze
+a39bdded-d3be-4019-ac66-4c103260692e,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM023,Charge Beam
+3e043ff4-e17d-4c27-87e4-2b2d43c62120,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM025,Facade
+351f9ab2-42d9-41ab-81ce-43dabb0c5526,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM032,Swift
+951c3fd4-92e7-49dc-934c-ecf24b23634b,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM037,Draining Kiss
+780d8e3f-5ad8-4880-a0bf-8766b9a00ff4,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM043,Fling
+8f5956e5-02df-49bb-8718-ce302f706faf,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM047,Endure
+e12e5fbe-1d8f-4379-92bc-ab961ecf82e2,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM048,Volt Switch
+c48d9b61-3f6b-4d17-bfbb-c9ad1310d4c2,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM050,Rain Dance
+0c24d6ff-b78a-4d11-99c1-62b00658518a,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM055,Dig
+08e29ed9-0451-4bb1-89ec-ba0ceb5699ef,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM058,Brick Break
+81794f76-5f78-4857-9158-22e8ab964057,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM066,Body Slam
+ae8d22be-90d5-4744-9897-0a95e238e799,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM068,Thunder Punch
+3dc62bcb-0a2b-4a62-9c6b-d1199e922250,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM070,Sleep Talk
+0f0d6e32-6810-4067-aa1d-d5259da9076d,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM072,Electro Ball
+2938ef65-2121-4ce1-ac01-a8516924affc,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM074,Reflect
+53e66cad-8725-4d44-82bb-94f45d0b6b07,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM075,Light Screen
+bce69204-7897-4e89-bed5-b30eaab52a3d,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM081,Grass Knot
+e57959d2-1a09-4fb4-bf72-e41319e0edf6,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM082,Thunder Wave
+4daa875f-3837-4a23-919f-91b2c6967ae6,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM085,Rest
+402ef05e-eb3c-4cd8-b5d3-2f1a058a9a9f,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM096,Eerie Impulse
+29ee0561-0490-479c-adb3-3699bf348308,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM103,Substitute
+ae8aefe9-f6ea-4a03-8cb2-18a7d4f5e8cd,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM122,Encore
+9da48ee1-9cf5-4b67-b46d-12f2a2065bd4,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM123,Surf
+c74071c7-e1a5-49ef-9efe-228eb901f500,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM126,Thunderbolt
+9ac72a8c-db0e-4cf1-8aa2-1597b110563e,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM127,Play Rough
+a0367aaf-98b2-48d4-b370-0dfa009b4477,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM130,Helping Hand
+33673436-93df-4059-8587-e3f06e568d24,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM134,Reversal
+a46e906b-1398-41c5-87f1-d21b944f1f55,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM136,Electric Terrain
+3836a7be-9d59-4e9a-a129-a03c5cde8685,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM140,Nasty Plot
+1a181458-5a97-478a-9126-83c040575d2d,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM147,Wild Charge
+48c56005-be46-4066-956e-8b3db4826dbf,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM166,Thunder
+2eb79191-62e2-4bd5-a549-ae4f054b6cfd,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM171,Tera Blast
+7c649ed3-8d8b-4c2f-864b-b5a779fd39e3,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM173,Charge
+8dbd8130-baab-4607-a177-34d04c135aae,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM181,Knock Off
+29b72ed3-03f5-454e-92db-38d96cf0b40b,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM192,Focus Punch
+7b580be7-4515-4873-9376-0ca2bfbd9f42,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM205,Endeavor
+50860312-c410-46e2-9c60-e413f1680fbb,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM211,Electroweb
+303edc1c-49d7-4e36-a0a6-d56ae8d54fda,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM227,Alluring Voice
+35a14272-fb45-4789-b306-cc04e368adbd,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,true,false,TM229,Upper Hand
+2d16fcdc-482e-4c4f-835f-e73ecc5c89e1,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,false,true,,Flail
+1a357153-9e6b-4648-ab8d-4fb361d9b3f8,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,false,true,,Present
+56fb7032-76b1-4f23-a4bd-9b78729f83f7,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,false,true,,Fake Out
+7c649ed3-8d8b-4c2f-864b-b5a779fd39e3,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,false,true,,Charge
+d8ce167d-3523-46f9-a7e3-1b10703e298f,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,false,true,,Wish
+3a7a81f2-e699-40de-942f-fcaba1e43a99,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,false,true,,Tickle
+0f9132a7-2f3b-45c6-bbce-1118b1fb220c,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,false,true,,Disarming Voice
+8f2e8bf4-86be-4ab1-9827-1a0af6c2858a,e78f3717-20b5-4564-824d-ce6dbb3a10ac,false,false,true,,Volt Tackle

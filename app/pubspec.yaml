@@ -78,6 +78,8 @@ flutter:
     - assets/type_sprites/type_bars/
     - assets/type_sprites/type_icons/
     - assets/item_sprites/
+    - assets/move_sprites/move_category/
+    - assets/move_sprites/learn_method/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

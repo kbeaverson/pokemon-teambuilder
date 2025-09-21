@@ -22,7 +22,7 @@ class ItemInfoCard extends StatelessWidget {
                 color: Theme.of(context).colorScheme.outline,
               ),
               child: Padding(
-                padding: const EdgeInsets.all(3.0), // Thickness of gradient border
+                padding: const EdgeInsets.all(3.0),
                 child: Container(
                   decoration: BoxDecoration(
                     color: Theme.of(context).colorScheme.surfaceContainer,

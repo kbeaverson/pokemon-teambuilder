@@ -37,10 +37,10 @@ class MovePoolEntryViewModel extends ChangeNotifier {
   bool get pokmeonIsPresent => _pokemon != null;
   String get moveName => _move?.name ?? 'Loading...'; // FIXME: Handle loading state properly
   String get pokemonName => _pokemon?.name ?? 'Loading...';
-  MaterialColor? get moveTypeColor => _move?.type.first.color;
+  MaterialColor? get moveTypeColor => _move?.type.color;
   String? get learnMethodSpritePath => movePoolEntry.learnMethod?.spritePath;
-  String? get moveTypeIconPath => _move?.type.first.iconSpritePath;
-  String? get moveTypeBarPath => _move?.type.first.barSpritePath;
+  String? get moveTypeIconPath => _move?.type.iconSpritePath;
+  String? get moveTypeBarPath => _move?.type.barSpritePath;
   String? get moveCategorySpritePath => _move?.category.spritePath;
 
   String get formattedMoveName => _move?.name.toTitleCase() ?? 'Loading...'; // FIXME: Also handle loading state here

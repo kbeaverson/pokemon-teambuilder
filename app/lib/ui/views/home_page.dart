@@ -3,6 +3,7 @@ import 'package:app/repository/repo_contracts/item_repo.dart';
 import 'package:app/repository/repo_contracts/move_repo.dart';
 import 'package:app/ui/views/abilitydex_view.dart';
 import 'package:app/ui/views/itemdex_view.dart';
+import 'package:app/ui/views/movedex_view.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../repository/repo_contracts/pokemon_repo.dart';
@@ -75,9 +76,9 @@ class HomePage extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  // Navigator.of(context).push(
-                  //   MaterialPageRoute(builder: (_) => const MovedexView()),
-                  // );
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => const MovedexView()),
+                  );
                 },
                 child: const Text('Movedex'),
               ),

@@ -28,6 +28,8 @@ abstract class Pokemon with _$Pokemon {
     required int baseSpA, 
     required int baseSpD, 
     required int baseSpe,
+    String? baseSpeciesId,
+    String? prevoId,
   }) = _Pokemon;
 
   factory Pokemon.fromRow(sqlite.Row row) {
@@ -66,6 +68,8 @@ abstract class Pokemon with _$Pokemon {
       baseSpe: row['base_stats'] != null
           ? (jsonDecode(row['base_stats'])['spe'] ?? 1000)
           : 1000,
+      baseSpeciesId: row['base_species_id'],
+      prevoId: row['prevo_id'],
     );
   }
 

@@ -13,7 +13,9 @@ const schema = Schema([
     Column.integer('is_max'),
     Column.integer('is_mega'),
     Column.text('mandatory_item_name'),
-    Column.text('base_stats')
+    Column.text('base_stats'),
+    Column.text('base_species_id'),
+    Column.text('prevo_id'),
   ]),
   Table('moves', [
     Column.text('name'),
@@ -81,6 +83,7 @@ const schema = Schema([
     Column.text('move_id'),
     Column.integer('is_egg_move'),
     Column.integer('is_tm_move'),
+    Column.integer('is_tutor_move'),
     Column.integer('is_levelup_move'),
     Column.integer('levelup_level')
   ]),

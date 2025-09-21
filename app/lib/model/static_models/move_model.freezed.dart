@@ -17,7 +17,7 @@ mixin _$Move {
   String get id;
   String get name;
   int get dexNum;
-  List<PokemonType> get type;
+  PokemonType get type;
   MoveCategory get category;
   MoveTarget get target;
   int get power;
@@ -68,7 +68,7 @@ mixin _$Move {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.dexNum, dexNum) || other.dexNum == dexNum) &&
-            const DeepCollectionEquality().equals(other.type, type) &&
+            (identical(other.type, type) || other.type == type) &&
             (identical(other.category, category) ||
                 other.category == category) &&
             (identical(other.target, target) || other.target == target) &&
@@ -123,7 +123,7 @@ mixin _$Move {
         id,
         name,
         dexNum,
-        const DeepCollectionEquality().hash(type),
+        type,
         category,
         target,
         power,
@@ -172,7 +172,7 @@ abstract mixin class $MoveCopyWith<$Res> {
       {String id,
       String name,
       int dexNum,
-      List<PokemonType> type,
+      PokemonType type,
       MoveCategory category,
       MoveTarget target,
       int power,
@@ -270,7 +270,7 @@ class _$MoveCopyWithImpl<$Res> implements $MoveCopyWith<$Res> {
       type: null == type
           ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
-              as List<PokemonType>,
+              as PokemonType,
       category: null == category
           ? _self.category
           : category // ignore: cast_nullable_to_non_nullable
@@ -496,7 +496,7 @@ extension MovePatterns on Move {
             String id,
             String name,
             int dexNum,
-            List<PokemonType> type,
+            PokemonType type,
             MoveCategory category,
             MoveTarget target,
             int power,
@@ -594,7 +594,7 @@ extension MovePatterns on Move {
             String id,
             String name,
             int dexNum,
-            List<PokemonType> type,
+            PokemonType type,
             MoveCategory category,
             MoveTarget target,
             int power,
@@ -690,7 +690,7 @@ extension MovePatterns on Move {
             String id,
             String name,
             int dexNum,
-            List<PokemonType> type,
+            PokemonType type,
             MoveCategory category,
             MoveTarget target,
             int power,
@@ -776,7 +776,7 @@ class _Move implements Move {
       {required this.id,
       required this.name,
       required this.dexNum,
-      required final List<PokemonType> type,
+      required this.type,
       required this.category,
       required this.target,
       required this.power,
@@ -807,8 +807,7 @@ class _Move implements Move {
       required this.ohko,
       required this.isZmove,
       required this.isMaxMove,
-      required this.isLegal})
-      : _type = type;
+      required this.isLegal});
   factory _Move.fromJson(Map<String, dynamic> json) => _$MoveFromJson(json);
 
   @override
@@ -817,14 +816,8 @@ class _Move implements Move {
   final String name;
   @override
   final int dexNum;
-  final List<PokemonType> _type;
   @override
-  List<PokemonType> get type {
-    if (_type is EqualUnmodifiableListView) return _type;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_type);
-  }
-
+  final PokemonType type;
   @override
   final MoveCategory category;
   @override
@@ -911,7 +904,7 @@ class _Move implements Move {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.dexNum, dexNum) || other.dexNum == dexNum) &&
-            const DeepCollectionEquality().equals(other._type, _type) &&
+            (identical(other.type, type) || other.type == type) &&
             (identical(other.category, category) ||
                 other.category == category) &&
             (identical(other.target, target) || other.target == target) &&
@@ -966,7 +959,7 @@ class _Move implements Move {
         id,
         name,
         dexNum,
-        const DeepCollectionEquality().hash(_type),
+        type,
         category,
         target,
         power,
@@ -1016,7 +1009,7 @@ abstract mixin class _$MoveCopyWith<$Res> implements $MoveCopyWith<$Res> {
       {String id,
       String name,
       int dexNum,
-      List<PokemonType> type,
+      PokemonType type,
       MoveCategory category,
       MoveTarget target,
       int power,
@@ -1112,9 +1105,9 @@ class __$MoveCopyWithImpl<$Res> implements _$MoveCopyWith<$Res> {
           : dexNum // ignore: cast_nullable_to_non_nullable
               as int,
       type: null == type
-          ? _self._type
+          ? _self.type
           : type // ignore: cast_nullable_to_non_nullable
-              as List<PokemonType>,
+              as PokemonType,
       category: null == category
           ? _self.category
           : category // ignore: cast_nullable_to_non_nullable

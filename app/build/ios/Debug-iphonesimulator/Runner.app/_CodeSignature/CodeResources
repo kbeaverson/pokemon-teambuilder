@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		ycS4fByhcjSoKPwqcUUP3Hk/C9o=
+		KxffvI36pI281poCBr2jhsDyjS4=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		7ifKttQLSC9vtd91rq4OooBtE3Q=
+		cRKyFPI3X/FqS596xPU5zZYRPS4=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/.env</key>
 		<data>
@@ -7694,7 +7694,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		MwZPJqm3IUMHRBWMKJUhkYXzAkI=
+		Mobk/yrz9IL399CvqOjRCXAdVdQ=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/libpowersync.dylib</key>
 		<data>
@@ -8029,7 +8029,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tySjpWntxyfc5mPIu4KLB8SjQGxn5idYrW89OCoQug4=
+			zguzofIrtKt3t67u1MnQnlC9X48PqECH7DjmKOoLXOs=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -8043,7 +8043,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			12El4W4Az2WIXoGohovcMkn/GphkwVxrGDPQH2jKsPk=
+			8H2C/PtyJQ4lkTxA+qxyabNkbsaEzikf9f7Kmtu3gfs=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/.env</key>
@@ -21413,7 +21413,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/nCQoOqFUL3ng1Dappft/BTeQmsxzr4k0edFaZCASvs=
+			q0Yn+sp4zgkh4d4g9C1OSwaZnuEOnXZHJBjTPEaOyrg=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/libpowersync.dylib</key>

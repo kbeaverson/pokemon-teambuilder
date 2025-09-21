@@ -10,9 +10,7 @@ _Move _$MoveFromJson(Map<String, dynamic> json) => _Move(
       id: json['id'] as String,
       name: json['name'] as String,
       dexNum: (json['dexNum'] as num).toInt(),
-      type: (json['type'] as List<dynamic>)
-          .map((e) => $enumDecode(_$PokemonTypeEnumMap, e))
-          .toList(),
+      type: $enumDecode(_$PokemonTypeEnumMap, json['type']),
       category: $enumDecode(_$MoveCategoryEnumMap, json['category']),
       target: $enumDecode(_$MoveTargetEnumMap, json['target']),
       power: (json['power'] as num).toInt(),
@@ -50,7 +48,7 @@ Map<String, dynamic> _$MoveToJson(_Move instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
       'dexNum': instance.dexNum,
-      'type': instance.type.map((e) => _$PokemonTypeEnumMap[e]!).toList(),
+      'type': _$PokemonTypeEnumMap[instance.type]!,
       'category': _$MoveCategoryEnumMap[instance.category]!,
       'target': _$MoveTargetEnumMap[instance.target]!,
       'power': instance.power,

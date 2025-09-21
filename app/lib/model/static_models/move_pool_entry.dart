@@ -18,12 +18,15 @@ abstract class MovePoolEntry with _$MovePoolEntry{
 
   factory MovePoolEntry.fromRow(sqlite.Row row) {
     LearnMethod learnMethod = LearnMethod.none;
-    if (row['is_tm_move'] == 1) {
-      learnMethod = LearnMethod.tm;
-    } else if (row['is_levelup_move'] == 1) {
+    // FIXME: This logic assumes that only one of these fields is set to 1 (which is not strictly true, see Machamp Bulk Up), favoring levelup > tm > egg > tutor
+    if (row['is_levelup_move'] == 1) {
       learnMethod = LearnMethod.levelup;
+    } else if (row['is_tm_move'] == 1) {
+      learnMethod = LearnMethod.tm;
     } else if (row['is_egg_move'] == 1) {
       learnMethod = LearnMethod.egg;
+    } else if (row['is_tutor_move'] == 1) {
+      learnMethod = LearnMethod.tutor;
     }
     return MovePoolEntry(id: row['id'], moveId: row['move_id'], pokemonId: row['pokemon_id'], learnMethod: learnMethod, levelupLevel: row['levelup_level']);
   }

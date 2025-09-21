@@ -16,7 +16,7 @@ class MoveViewModel extends ChangeNotifier {
   String get name => move.name;
   String get id => move.id;
   int get dexNum => move.dexNum;
-  List<PokemonType> get type => move.type;
+  PokemonType get type => move.type;
   String get shortDescription => move.shortDescription;
   String get longDescription => move.longDescription;
   MoveCategory get category => move.category;
@@ -62,5 +62,5 @@ class MoveViewModel extends ChangeNotifier {
   }
 
   String get categorySpritePath => move.category.spritePath;
-  MaterialColor get typeColor => PokedexColors.getByName(move.type.first.name);
+  MaterialColor get typeColor => PokedexColors.getByName(move.type.name);
 }

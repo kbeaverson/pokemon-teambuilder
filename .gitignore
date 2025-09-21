@@ -55,3 +55,5 @@ app/.env
 /app/build/ios/Debug-iphonesimulator/App.framework/flutter_assets/assets/type_sprites/type_icons
 /app/build/ios/Debug-iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/type_sprites/type_bars
 /app/build/ios/iphonesimulator/Runner.app/Frameworks/App.framework/flutter_assets/assets/type_sprites/type_bars
+/app/build/ios/Release-iphoneos/App.framework/flutter_assets
+/app/build/ios/Release-iphoneos

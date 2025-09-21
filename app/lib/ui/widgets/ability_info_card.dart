@@ -11,18 +11,19 @@ class AbilityInfoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        return InkWell(
-          child: Card(
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-            elevation: 4,
-            clipBehavior: Clip.antiAlias,
-            child: Container(
+        return Card(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          elevation: 4,
+          clipBehavior: Clip.antiAlias,
+          child: InkWell(
+            onTap: () {},
+            child: Ink(
               decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
                 color: Theme.of(context).colorScheme.outline,
               ),
               child: Padding(
-                padding: const EdgeInsets.all(3.0), // Thickness of gradient border
+                padding: const EdgeInsets.all(3.0),
                 child: Container(
                   decoration: BoxDecoration(
                     color: Theme.of(context).colorScheme.surfaceContainer,
@@ -52,12 +53,7 @@ class AbilityInfoCard extends StatelessWidget {
               ),
             ),
           ),
-        onTap:() {
-          // Handle tap
-          // If context is FromAbilitydex, open detailed view
-          // If context is FromTeamBuilder, select this Ability and close the modal
-        },
-      );
+        );
     });
   }
 }
