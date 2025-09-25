@@ -1,5 +1,8 @@
 import 'package:app/model/static_models/ability_pool_entry_model.dart';
+import 'package:app/model/static_models/move_model.dart';
+import 'package:app/repository/repo_contracts/ability_pool_repo.dart';
 import 'package:app/repository/repo_contracts/ability_repo.dart';
+import 'package:app/repository/repo_contracts/move_pool_repo.dart';
 import 'package:app/repository/repo_contracts/pokemon_repo.dart';
 import 'package:app/utils/string_extension.dart';
 import 'package:app/viewmodel/ability_viewmodel.dart';
@@ -15,11 +18,15 @@ class AbilityPoolEntryViewModel extends ChangeNotifier {
     required this.abilityPoolEntry,
     required this.pokemonRepo,
     required this.abilityRepo,
+    required this.movePoolRepo,
+    required this.abilityPoolRepo,
   }) {_loadRelatedData();}
 
   final AbilityPoolEntry abilityPoolEntry;
   final PokemonRepo pokemonRepo;
   final AbilityRepo abilityRepo;
+  final MovePoolRepo movePoolRepo;
+  final AbilityPoolRepo abilityPoolRepo;
 
   Pokemon? _pokemon;
   Ability? _ability;
@@ -27,7 +34,7 @@ class AbilityPoolEntryViewModel extends ChangeNotifier {
   bool get isHidden => abilityPoolEntry.isHidden;
   String get abilityName => _ability?.name ?? 'Loading...'; // FIXME: Handle loading state properly
   String get pokemonName => _pokemon?.name ?? 'Loading...';
-  PokemonViewModel? get pokemonViewModel => _pokemon != null ? PokemonViewModel(pokemon: _pokemon!) : null;
+  PokemonViewModel? get pokemonViewModel => _pokemon != null ? PokemonViewModel(pokemon: _pokemon!, movePoolRepo: movePoolRepo, pokemonRepo: pokemonRepo, abilityPoolRepo: abilityPoolRepo) : null;
   AbilityViewModel? get abilityViewModel => _ability != null ? AbilityViewModel(ability: _ability!) : null;
 
   bool get abilityIsPresent => _ability != null;

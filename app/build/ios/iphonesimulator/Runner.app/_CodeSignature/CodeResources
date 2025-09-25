@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		KxffvI36pI281poCBr2jhsDyjS4=
+		RReHmQRPmbBIY1BxMqaKqEzUh0M=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		cRKyFPI3X/FqS596xPU5zZYRPS4=
+		3QqD1zE0lYte9OmnwlAKXK0v7Ns=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/.env</key>
 		<data>
@@ -62,11 +62,11 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		LNEfOquai6X4cGMdQOHPP8wFeC8=
+		jufvrl3kwwIf60LPeTvOGlqo+F4=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		SYLwSwTc/vlU/X0dg1ljlqorhsk=
+		x5aMT6EYx75mkNu68W2wn6dO+0A=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -1411,6 +1411,38 @@
 		<key>Frameworks/App.framework/flutter_assets/assets/item_sprites/zoom-lens.png</key>
 		<data>
 		laM+Sb0G8x+U12CR/vgAnmd0FzM=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/move_sprites/learn_method/egg.png</key>
+		<data>
+		mLgi8yuHOtDuYP8qJBLMTH1S9i0=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/move_sprites/learn_method/egg_old.png</key>
+		<data>
+		37Zaz0u6EmQ8KCLVf8nnIdpUJCk=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/move_sprites/learn_method/levelup.png</key>
+		<data>
+		QQ6C6xSCnjbKiP7VsQOyuBjx5EU=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/move_sprites/learn_method/none.png</key>
+		<data>
+		e1jc8cmWQsdvI+yXcg58MUM10gs=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/move_sprites/learn_method/tm.png</key>
+		<data>
+		JECwegFsJQqam90mn3Sxla8BlyY=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/move_sprites/move_category/physical.png</key>
+		<data>
+		WVF2j3mpdxFRDfxD00JLBUndjAY=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/move_sprites/move_category/special.png</key>
+		<data>
+		/FHAxbGSiinirQ3dMfWlOvOl+gA=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/move_sprites/move_category/status.png</key>
+		<data>
+		juFl82gRZkEkIIciSyWjrwEZGF0=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/pokemon_sprites/substitute.png</key>
 		<data>
@@ -7694,7 +7726,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		Mobk/yrz9IL399CvqOjRCXAdVdQ=
+		nWQFKXvh00GuUFOBkF9zDez7F8M=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/libpowersync.dylib</key>
 		<data>
@@ -8029,7 +8061,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zguzofIrtKt3t67u1MnQnlC9X48PqECH7DjmKOoLXOs=
+			NGZREkUtNSAVY8GTRHt4TwGbcSTrVManyAhTo1gPLEo=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -8043,7 +8075,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8H2C/PtyJQ4lkTxA+qxyabNkbsaEzikf9f7Kmtu3gfs=
+			PDzVydMPCUtaDV+Ioduj7AlareE/2z28kR2RqLnEwB0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/.env</key>
@@ -8057,14 +8089,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			EtuhsDfL3REXjhh2Zvy8ocjkyOMDUt1nNYIEZh73w8k=
+			Jkasy8P3H4q2enhk+XZgBej9R9oS3VXIpi4/cqEvbaY=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SEd75rZxfqtLt3Pd6F+R2GhST2RKLe2kJyk1LxuGA/A=
+			9p/ZtO1zYd7ZvH+NetYAWUMgcf5DjNEVOSz16rsCUC0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -10417,6 +10449,62 @@
 			<key>hash2</key>
 			<data>
 			IAmi1L91KhZZWgEKbIpayCkz+TbsPHbhkjbxaZ4FjaQ=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/move_sprites/learn_method/egg.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			I6NAs6iKnr2tj+j/feOwhlTv3EuOMyuTESb/bB8kFSg=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/move_sprites/learn_method/egg_old.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			4iRQ+kLVXCV3cjKKAPOEUXM8cHstltSQr145c/bJRfI=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/move_sprites/learn_method/levelup.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			2lPiRDTEKiJr/Flit2kZS3Be7r0HRxiaTIRm5vLzHUk=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/move_sprites/learn_method/none.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			BpjSPZ/l/o4bCLI1CcL8G7q5ahUHKY/tQc+9Hy94BW8=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/move_sprites/learn_method/tm.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			M8EjQ6IAYrgzcFhpIlJ8qTDX4B3+MA+eXoaQ6Tb4H30=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/move_sprites/move_category/physical.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			xpCc0tGsfX41JByBbECztWeC9EoM4kVzVkGMc98NBrU=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/move_sprites/move_category/special.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			fCB/8/aBCQ+30anlBpFAoFj2EWfSTxW3PSsutMM6j0k=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/move_sprites/move_category/status.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			EKyJN81RdiwQILxmc9j56fvJANa6yh4Vhjbq2x9Hi+o=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/pokemon_sprites/substitute.png</key>
@@ -21413,7 +21501,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			q0Yn+sp4zgkh4d4g9C1OSwaZnuEOnXZHJBjTPEaOyrg=
+			oaWXlF0nXuZUcBiGZUo7UGltgaw7/q4YBqPBIdcx9EI=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/libpowersync.dylib</key>

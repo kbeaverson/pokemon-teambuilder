@@ -15,7 +15,19 @@ abstract class AbilityPoolEntry with _$AbilityPoolEntry {
   }) = _AbilityPoolEntry;
 
   factory AbilityPoolEntry.fromRow(sqlite.Row row) {
-    return AbilityPoolEntry(id: row['id'], abilityId: row['ability_id'], pokemonId: row['pokemon_id'], isHidden: row['is_hidden']);
+    // SQLite rows may store boolean-like values as integers (0/1) or null.
+    // Convert to a Dart `bool` and provide a sensible default.
+    final dynamic rawIsHidden = row['is_hidden'];
+    final bool isHidden = rawIsHidden == null
+        ? false
+        : (rawIsHidden is int ? rawIsHidden == 1 : rawIsHidden == true);
+
+    // Ensure id and string fields are treated as strings (some sqlite drivers return ints)
+    final idVal = row['id']?.toString() ?? '';
+    final abilityIdVal = row['ability_id']?.toString();
+    final pokemonIdVal = row['pokemon_id']?.toString();
+
+    return AbilityPoolEntry(id: idVal, abilityId: abilityIdVal, pokemonId: pokemonIdVal, isHidden: isHidden);
   }
 
   factory AbilityPoolEntry.fromJson(Map<String, Object?> json) => _$AbilityPoolEntryFromJson(json);

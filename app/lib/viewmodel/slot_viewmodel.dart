@@ -83,7 +83,7 @@ class SlotViewModel extends ChangeNotifier {
   Future<void> setPokemon(Pokemon pokemon) async {
     final updatedSlot = slot.copyWith(pokemonId: pokemon.id);
     await slotRepo.updateSlot(updatedSlot);
-    _pokemonViewModel = PokemonViewModel(pokemon: pokemon);
+    _pokemonViewModel = PokemonViewModel(pokemon: pokemon, movePoolRepo: movePoolRepo, pokemonRepo: pokemonRepo, abilityPoolRepo: abilityPoolRepo);
     slot = updatedSlot;
     notifyListeners();
     // Reactive alternative:
@@ -109,7 +109,7 @@ class SlotViewModel extends ChangeNotifier {
           ...slot.movePoolEntryIds,
           index: movePoolEntry.id,
         });
-        _movePoolEntryViewModels[index] = MovePoolEntryViewModel(movePoolEntry: movePoolEntry, moveRepo: moveRepo, pokemonRepo: pokemonRepo);
+        _movePoolEntryViewModels[index] = MovePoolEntryViewModel(movePoolEntry: movePoolEntry, moveRepo: moveRepo, pokemonRepo: pokemonRepo, movePoolRepo: movePoolRepo, abilityPoolRepo: abilityPoolRepo);
         slot = updatedSlot;
         notifyListeners();
       }
@@ -120,7 +120,7 @@ class SlotViewModel extends ChangeNotifier {
           ...slot.movePoolEntryIds,
           index: movePoolEntry.id,
         });
-        _movePoolEntryViewModels[index] = MovePoolEntryViewModel(movePoolEntry: movePoolEntry, moveRepo: moveRepo, pokemonRepo: pokemonRepo);
+        _movePoolEntryViewModels[index] = MovePoolEntryViewModel(movePoolEntry: movePoolEntry, moveRepo: moveRepo, pokemonRepo: pokemonRepo, movePoolRepo: movePoolRepo, abilityPoolRepo: abilityPoolRepo);
         slot = updatedSlot;
         notifyListeners();
       }
@@ -144,7 +144,7 @@ class SlotViewModel extends ChangeNotifier {
       if (abilityPoolEntry != null) {
         final updatedSlot = slot.copyWith(abilityPoolEntryId: abilityPoolEntry.id);
         await slotRepo.updateSlot(updatedSlot);
-        _abilityPoolEntryViewModel = AbilityPoolEntryViewModel(abilityPoolEntry: abilityPoolEntry, abilityRepo: abilityRepo, pokemonRepo: pokemonRepo);
+        _abilityPoolEntryViewModel = AbilityPoolEntryViewModel(abilityPoolEntry: abilityPoolEntry, abilityRepo: abilityRepo, pokemonRepo: pokemonRepo, movePoolRepo: movePoolRepo, abilityPoolRepo: abilityPoolRepo);
         slot = updatedSlot;
         notifyListeners();
       }
@@ -153,7 +153,7 @@ class SlotViewModel extends ChangeNotifier {
       if (abilityPoolEntry != null) {
         final updatedSlot = slot.copyWith(abilityPoolEntryId: abilityPoolEntry.id);
         await slotRepo.updateSlot(updatedSlot);
-        _abilityPoolEntryViewModel = AbilityPoolEntryViewModel(abilityPoolEntry: abilityPoolEntry, abilityRepo: abilityRepo, pokemonRepo: pokemonRepo);
+        _abilityPoolEntryViewModel = AbilityPoolEntryViewModel(abilityPoolEntry: abilityPoolEntry, abilityRepo: abilityRepo, pokemonRepo: pokemonRepo, movePoolRepo: movePoolRepo, abilityPoolRepo: abilityPoolRepo);
         slot = updatedSlot;
         notifyListeners();
       }
@@ -202,7 +202,7 @@ class SlotViewModel extends ChangeNotifier {
 
     final pokemon = await pokemonRepo.getById(slot.pokemonId!); // Can now be sure that pokemonId is not null
     if (pokemon != null) { // If a Pokemon is found, create the ViewModel
-      _pokemonViewModel = PokemonViewModel(pokemon: pokemon);
+      _pokemonViewModel = PokemonViewModel(pokemon: pokemon, movePoolRepo: movePoolRepo, pokemonRepo: pokemonRepo, abilityPoolRepo: abilityPoolRepo);
       notifyListeners();
     } else { // If no Pokemon is found, set to null
       _pokemonViewModel = null;
@@ -214,7 +214,7 @@ class SlotViewModel extends ChangeNotifier {
     for (var entry in slot.movePoolEntryIds.entries) {
       final movePoolEntry = await movePoolRepo.getById((entry.value) ?? '');
       if (movePoolEntry != null) {
-        _movePoolEntryViewModels[entry.key] = MovePoolEntryViewModel(movePoolEntry: movePoolEntry, moveRepo: moveRepo, pokemonRepo: pokemonRepo);
+        _movePoolEntryViewModels[entry.key] = MovePoolEntryViewModel(movePoolEntry: movePoolEntry, moveRepo: moveRepo, pokemonRepo: pokemonRepo, movePoolRepo: movePoolRepo, abilityPoolRepo: abilityPoolRepo);
         notifyListeners();
       }
     }
@@ -229,7 +229,7 @@ class SlotViewModel extends ChangeNotifier {
 
     final abilityPoolEntry = await abilityPoolRepo.getById(slot.abilityPoolEntryId!);
     if (abilityPoolEntry != null) {
-      _abilityPoolEntryViewModel = AbilityPoolEntryViewModel(abilityPoolEntry: abilityPoolEntry, abilityRepo: abilityRepo, pokemonRepo: pokemonRepo);
+      _abilityPoolEntryViewModel = AbilityPoolEntryViewModel(abilityPoolEntry: abilityPoolEntry, abilityRepo: abilityRepo, pokemonRepo: pokemonRepo, movePoolRepo: movePoolRepo, abilityPoolRepo: abilityPoolRepo);
       notifyListeners();
     } else {
       _abilityPoolEntryViewModel = null;

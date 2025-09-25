@@ -1,6 +1,7 @@
 import 'package:app/model/static_models/ability_pool_entry_model.dart';
 import 'package:app/repository/repo_contracts/ability_pool_repo.dart';
 import 'package:app/utils/powersync_util.dart';
+import 'package:flutter/material.dart';
 
 class AbilityPoolRepoPowersync extends AbilityPoolRepo {
   @override
@@ -38,11 +39,15 @@ class AbilityPoolRepoPowersync extends AbilityPoolRepo {
 
   @override
   Future<List<AbilityPoolEntry>> getByPokemon(String pokemonId) async {
+    debugPrint('Fetching ability pool for Pokemon ID: $pokemonId');
+
     final results = await db.getAll(
       'SELECT * FROM abilitypools WHERE pokemon_id = ?',
       [pokemonId],
     );
-    return results.map((e) => AbilityPoolEntry.fromRow(e)).toList();
+    final res = results.map((e) => AbilityPoolEntry.fromRow(e)).toList();
+    debugPrint('Found ${res.length} ability pool entries for Pokemon ID: $pokemonId');
+    return res;
   }
 
   @override

@@ -32,6 +32,7 @@ class MoveInfoCard extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      // Type icon, move name, category icon, power, accuracy, priority
                       Row(
                         children: [
                           SizedBox(

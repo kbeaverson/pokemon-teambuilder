@@ -1,6 +1,7 @@
 import 'package:app/model/static_models/move_pool_entry.dart';
 import 'package:app/repository/repo_contracts/move_pool_repo.dart';
 import 'package:app/utils/powersync_util.dart';
+import 'package:flutter/material.dart';
 
 class MovePoolRepoPowersync extends MovePoolRepo {
 
@@ -39,11 +40,15 @@ class MovePoolRepoPowersync extends MovePoolRepo {
 
   @override
   Future<List<MovePoolEntry>> getByPokemon(String pokemonId) async {
+    debugPrint('Fetching move pool for Pokemon ID: $pokemonId');
+
     final results = await db.getAll(
       'SELECT * FROM movepools WHERE pokemon_id = ?',
       [pokemonId],
     );
-    return results.map((e) => MovePoolEntry.fromRow(e)).toList();
+    final res = results.map((e) => MovePoolEntry.fromRow(e)).toList();
+    debugPrint('Found ${res.length} move pool entries for Pokemon ID: $pokemonId');
+    return res;
   }
 
   @override

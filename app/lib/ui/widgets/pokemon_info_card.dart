@@ -1,3 +1,4 @@
+import 'package:app/ui/views/pokemon_detail_view.dart';
 import 'package:app/utils/pokemon_card_context.dart';
 import 'package:app/viewmodel/pokemon_viewmodel.dart';
 import 'package:flutter/material.dart';
@@ -67,6 +68,9 @@ class PokemonInfoCard extends StatelessWidget {
           // Handle tap
           // If context is FromPokedex, open detailed view
           // If context is FromTeamBuilder, select this Pokemon and close the modal
+          Navigator.of(context).push(
+            MaterialPageRoute(builder:(_) => PokemonDetailView(viewModel: viewModel)),
+          );
         },
       );
     });
