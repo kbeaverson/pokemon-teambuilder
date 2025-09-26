@@ -49,15 +49,18 @@ class MovepoolInfoCard extends StatelessWidget {
                           ),
                           _buildMoveName(constraints, context),
                           if (movepoolEntryViewModel.learnMethod == LearnMethod.levelup) ...[
-                            SizedBox(
-                              width: constraints.maxWidth * 0.09,
-                              child: FittedBox(
-                                fit: BoxFit.scaleDown,
-                                child: Text(
-                                  'Lv. ${movepoolEntryViewModel.levelupLevel}', 
-                                  style: Theme.of(context).textTheme.bodyMedium,
-                                  maxLines: 1,
-                                  textAlign: TextAlign.center,
+                            Padding(
+                              padding: EdgeInsets.all(constraints.maxWidth * 0.005),
+                              child: SizedBox(
+                                width: constraints.maxWidth * 0.08,
+                                child: FittedBox(
+                                  fit: BoxFit.scaleDown,
+                                  child: Text(
+                                    'Lv. ${movepoolEntryViewModel.levelupLevel}', 
+                                    style: Theme.of(context).textTheme.bodyMedium,
+                                    maxLines: 1,
+                                    textAlign: TextAlign.center,
+                                  ),
                                 ),
                               ),
                             ),
@@ -86,6 +89,14 @@ class MovepoolInfoCard extends StatelessWidget {
                             width: constraints.maxWidth * 0.09,
                               child: Image.asset(
                                 movepoolEntryViewModel.learnMethodSpritePath!,
+                              ),
+                            ),
+                          ] else ...[
+                            SizedBox(
+                            width: constraints.maxWidth * 0.09,
+                              child: Icon(
+                                Icons.question_mark,
+                                color: Theme.of(context).colorScheme.onSurfaceVariant,
                               ),
                             ),
                           ],
