@@ -14,11 +14,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		jufvrl3kwwIf60LPeTvOGlqo+F4=
+		3okVnOp44rCRgiUb4an+TfLtUc4=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		x5aMT6EYx75mkNu68W2wn6dO+0A=
+		RMrF9YtWD6jnkDhUzzwQQnVjgws=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -1374,6 +1374,10 @@
 		</data>
 		<key>flutter_assets/assets/move_sprites/learn_method/levelup.png</key>
 		<data>
+		KUOlLjetXhwSb5UoB3FNTKjUtAE=
+		</data>
+		<key>flutter_assets/assets/move_sprites/learn_method/levelup_old.png</key>
+		<data>
 		QQ6C6xSCnjbKiP7VsQOyuBjx5EU=
 		</data>
 		<key>flutter_assets/assets/move_sprites/learn_method/none.png</key>
@@ -1381,6 +1385,10 @@
 		e1jc8cmWQsdvI+yXcg58MUM10gs=
 		</data>
 		<key>flutter_assets/assets/move_sprites/learn_method/tm.png</key>
+		<data>
+		YwteKbF5RFYayo83DD9C3fWyWQ8=
+		</data>
+		<key>flutter_assets/assets/move_sprites/learn_method/tm_old.png</key>
 		<data>
 		JECwegFsJQqam90mn3Sxla8BlyY=
 		</data>
@@ -7686,7 +7694,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		nWQFKXvh00GuUFOBkF9zDez7F8M=
+		nuhHBOsiPmj0xdGnSbra7iA8Nc0=
 		</data>
 		<key>flutter_assets/libpowersync.dylib</key>
 		<data>
@@ -7718,14 +7726,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Jkasy8P3H4q2enhk+XZgBej9R9oS3VXIpi4/cqEvbaY=
+			EsveYBYSL0MmQwUs7d+xGLyVtgbmk0lanZN9mNcnyv0=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9p/ZtO1zYd7ZvH+NetYAWUMgcf5DjNEVOSz16rsCUC0=
+			xj++3PMMjnHA2xLwt5PWDPuQViTHAjXokXDAdy2K978=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -10098,6 +10106,13 @@
 		<dict>
 			<key>hash2</key>
 			<data>
+			2XJNyUQtCZ7lcDvtP3bHhSR2WjKo30sp4S9+sKbPrmM=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/move_sprites/learn_method/levelup_old.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
 			2lPiRDTEKiJr/Flit2kZS3Be7r0HRxiaTIRm5vLzHUk=
 			</data>
 		</dict>
@@ -10109,6 +10124,13 @@
 			</data>
 		</dict>
 		<key>flutter_assets/assets/move_sprites/learn_method/tm.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			s0nVQ1p7jRTFDE8LbivZu2W2ttbdbERhPpJVaCcCtbw=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/move_sprites/learn_method/tm_old.png</key>
 		<dict>
 			<key>hash2</key>
 			<data>
@@ -21130,7 +21152,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			oaWXlF0nXuZUcBiGZUo7UGltgaw7/q4YBqPBIdcx9EI=
+			Kbd/1wTxt1FAo/dlKSfKR9w5RzRrK6Lmgl20ap1IVv4=
 			</data>
 		</dict>
 		<key>flutter_assets/libpowersync.dylib</key>
