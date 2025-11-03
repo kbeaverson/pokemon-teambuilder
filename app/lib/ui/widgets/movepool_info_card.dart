@@ -49,31 +49,30 @@ class MovepoolInfoCard extends StatelessWidget {
                           ),
                           _buildMoveName(constraints, context),
                           if (movepoolEntryViewModel.learnMethod == LearnMethod.levelup) ...[
-                            Padding(
-                              padding: EdgeInsets.all(constraints.maxWidth * 0.005),
-                              child: SizedBox(
-                                width: constraints.maxWidth * 0.08,
-                                child: FittedBox(
-                                  fit: BoxFit.scaleDown,
-                                  child: Text(
-                                    'Lv. ${movepoolEntryViewModel.levelupLevel}', 
-                                    style: Theme.of(context).textTheme.bodyMedium,
-                                    maxLines: 1,
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            // SizedBox(
-                            // width: constraints.maxWidth * 0.09,
-                            //   child: FittedBox(
-                            //     fit: BoxFit.scaleDown,
-                            //     child: Icon(
-                            //       Icons.arrow_upward,
-                            //       color: Theme.of(context).colorScheme.onSurfaceVariant,
+                            // Padding(
+                            //   padding: EdgeInsets.all(constraints.maxWidth * 0.005),
+                            //   child: SizedBox(
+                            //     width: constraints.maxWidth * 0.08,
+                            //     child: FittedBox(
+                            //       fit: BoxFit.scaleDown,
+                            //       child: Text(
+                            //         'Lv. ${movepoolEntryViewModel.levelupLevel}', 
+                            //         style: Theme.of(context).textTheme.bodyMedium,
+                            //         maxLines: 1,
+                            //         textAlign: TextAlign.center,
+                            //       ),
                             //     ),
                             //   ),
                             // ),
+                            SizedBox(
+                            width: constraints.maxWidth * 0.09,
+                              child: FittedBox(
+                                fit: BoxFit.scaleDown,
+                                child: Image.asset(
+                                  movepoolEntryViewModel.learnMethodSpritePath!,
+                                ),
+                              ),
+                            ),
                           ] else if (movepoolEntryViewModel.learnMethod == LearnMethod.egg) ...[
                             SizedBox(
                             width: constraints.maxWidth * 0.09,

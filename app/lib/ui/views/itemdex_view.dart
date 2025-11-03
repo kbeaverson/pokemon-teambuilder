@@ -1,9 +1,11 @@
 import 'package:app/model/static_models/item_model.dart';
 import 'package:app/repository/item_repo_powersync.dart';
+import 'package:app/repository/repo_contracts/item_repo.dart';
 import 'package:app/ui/widgets/item_info_card.dart';
 import 'package:app/utils/item_card_context.dart';
 import 'package:app/viewmodel/item_viewmodel.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ItemdexView extends StatefulWidget {
   const ItemdexView({super.key});
@@ -22,7 +24,7 @@ class _ItemdexViewState extends State<ItemdexView> {
   @override
   void initState() {
     super.initState();
-    final itemRepo = ItemRepoPowersync();
+    final itemRepo = Provider.of<ItemRepo>(context, listen: false);
     _itemsFuture = itemRepo.getAll();
     _searchController.addListener(() {
       setState(() {

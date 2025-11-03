@@ -8,6 +8,7 @@ import 'package:app/utils/string_extension.dart';
 import 'package:app/viewmodel/ability_viewmodel.dart';
 import 'package:app/viewmodel/pokemon_viewmodel.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../model/static_models/ability_model.dart';
 import '../model/static_models/pokemon_model.dart';
@@ -21,6 +22,28 @@ class AbilityPoolEntryViewModel extends ChangeNotifier {
     required this.movePoolRepo,
     required this.abilityPoolRepo,
   }) {_loadRelatedData();}
+
+  /// Convenience constructor that reads repository instances from an
+  /// ancestor `MultiProvider` (or plain `Provider`) in the widget tree.
+  ///
+  /// Use this in widgets when you don't want to manually thread repos
+  /// through every viewmodel constructor. Example:
+  ///
+  ///   ChangeNotifierProvider(
+  ///     create: (context) => AbilityPoolEntryViewModel.fromContext(
+  ///       context,
+  ///       abilityPoolEntry: entry,
+  ///     ),
+  ///     child: ...
+  ///   )
+  AbilityPoolEntryViewModel.fromContext(BuildContext context, {required AbilityPoolEntry abilityPoolEntry})
+      : abilityPoolEntry = abilityPoolEntry,
+        pokemonRepo = Provider.of<PokemonRepo>(context, listen: false),
+        abilityRepo = Provider.of<AbilityRepo>(context, listen: false),
+        movePoolRepo = Provider.of<MovePoolRepo>(context, listen: false),
+        abilityPoolRepo = Provider.of<AbilityPoolRepo>(context, listen: false) {
+    _loadRelatedData();
+  }
 
   final AbilityPoolEntry abilityPoolEntry;
   final PokemonRepo pokemonRepo;

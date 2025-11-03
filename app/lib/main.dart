@@ -1,6 +1,19 @@
+import 'package:app/repository/ability_pool_repo_powersync.dart';
+import 'package:app/repository/move_pool_repo_powersync.dart';
+import 'package:app/repository/repo_contracts/ability_pool_repo.dart';
+import 'package:app/repository/repo_contracts/move_pool_repo.dart';
 import 'package:app/ui/views/splash_powersync_template.dart';
 import 'package:app/utils/app_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:app/repository/repo_contracts/pokemon_repo.dart';
+import 'package:app/repository/repo_contracts/item_repo.dart';
+import 'package:app/repository/repo_contracts/ability_repo.dart';
+import 'package:app/repository/repo_contracts/move_repo.dart';
+import 'package:app/repository/pokemon_repo_powersync.dart';
+import 'package:app/repository/item_repo_powersync.dart';
+import 'package:app/repository/ability_repo_powersync.dart';
+import 'package:app/repository/move_repo_powersync.dart';
 import 'utils/powersync_util.dart';
 
 Future<void> main() async {
@@ -17,41 +30,22 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: pokemonLightTheme,
-      darkTheme: pokemonDarkTheme,
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    return MultiProvider(
+      providers: [
+        Provider<PokemonRepo>(create: (_) => PokemonRepoPowersync()),
+        Provider<ItemRepo>(create: (_) => ItemRepoPowersync()),
+        Provider<AbilityRepo>(create: (_) => AbilityRepoPowersync()),
+        Provider<MoveRepo>(create: (_) => MoveRepoPowersync()),
+        Provider<MovePoolRepo>(create: (_) => MovePoolRepoPowersync()),
+        Provider<AbilityPoolRepo>(create: (_) => AbilityPoolRepoPowersync()),
+      ],
+      child: MaterialApp(
+        title: 'Powersync Demo',
+        theme: pokemonLightTheme,
+        darkTheme: pokemonDarkTheme,
+        home: const SplashPage(),
+      ),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Powersync Demo',
-      theme: pokemonLightTheme,
-      darkTheme: pokemonDarkTheme,
-      home: const SplashPage(),
-    );
-  }
-}

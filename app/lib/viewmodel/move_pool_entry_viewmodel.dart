@@ -11,6 +11,7 @@ import 'package:app/utils/string_extension.dart';
 import 'package:app/viewmodel/move_viewmodel.dart';
 import 'package:app/viewmodel/pokemon_viewmodel.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 /// ViewModel for move pool entry objects
 class MovePoolEntryViewModel extends ChangeNotifier {
@@ -21,6 +22,17 @@ class MovePoolEntryViewModel extends ChangeNotifier {
     required this.movePoolRepo,
     required this.abilityPoolRepo,
   }) {
+    _loadRelatedData();
+  }
+
+  MovePoolEntryViewModel.fromContext(
+    BuildContext context, {
+    required MovePoolEntry movePoolEntry,
+  })   : movePoolEntry = movePoolEntry,
+        moveRepo = Provider.of<MoveRepo>(context, listen: false),
+        pokemonRepo = Provider.of<PokemonRepo>(context, listen: false),
+        movePoolRepo = Provider.of<MovePoolRepo>(context, listen: false),
+        abilityPoolRepo = Provider.of<AbilityPoolRepo>(context, listen: false) {
     _loadRelatedData();
   }
 
