@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:core';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:powersync/sqlite3.dart' as sqlite;

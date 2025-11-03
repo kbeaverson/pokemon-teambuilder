@@ -1,7 +1,3 @@
-import 'package:app/repository/ability_pool_repo_powersync.dart';
-import 'package:app/repository/move_pool_repo_powersync.dart';
-import 'package:app/repository/move_repo_powersync.dart';
-import 'package:app/repository/pokemon_repo_powersync.dart';
 import 'package:app/repository/repo_contracts/ability_pool_repo.dart';
 import 'package:app/repository/repo_contracts/move_pool_repo.dart';
 import 'package:app/repository/repo_contracts/move_repo.dart';
