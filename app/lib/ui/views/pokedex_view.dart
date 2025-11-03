@@ -1,6 +1,5 @@
-import 'package:app/repository/ability_pool_repo_powersync.dart';
-import 'package:app/repository/move_pool_repo_powersync.dart';
-import 'package:app/repository/pokemon_repo_powersync.dart';
+import 'package:app/repository/repo_contracts/ability_pool_repo.dart';
+import 'package:app/repository/repo_contracts/move_pool_repo.dart';
 import 'package:app/utils/pokemon_card_context.dart';
 import 'package:flutter/material.dart';
 
@@ -167,7 +166,7 @@ class _PokedexViewState extends State<PokedexView> {
                 child: ListView.builder(
                   itemCount: filtered.length,
                   itemBuilder: (context, index) {
-                    final pokemon = PokemonViewModel(pokemon: filtered[index], pokemonRepo: PokemonRepoPowersync(), movePoolRepo: MovePoolRepoPowersync(), abilityPoolRepo: AbilityPoolRepoPowersync());
+                    final pokemon = PokemonViewModel(pokemon: filtered[index], pokemonRepo: Provider.of<PokemonRepo>(context, listen: false), movePoolRepo: Provider.of<MovePoolRepo>(context, listen: false), abilityPoolRepo: Provider.of<AbilityPoolRepo>(context, listen: false));
                     return PokemonInfoCard(viewModel: pokemon, pokemonCardContext: _cardContext);
                   },
                 ),
