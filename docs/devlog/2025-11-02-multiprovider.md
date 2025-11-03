@@ -1,0 +1,1 @@
+Successfully implemented multiprovider containing all necessary static game info repos and utilized it within each view.
