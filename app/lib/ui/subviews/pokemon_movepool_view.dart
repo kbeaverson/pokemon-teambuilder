@@ -10,6 +10,7 @@ import 'package:app/ui/widgets/movepool_info_card.dart';
 import 'package:app/viewmodel/move_pool_entry_viewmodel.dart';
 import 'package:app/viewmodel/pokemon_viewmodel.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class PokemonMovepoolView extends StatefulWidget {
   final PokemonViewModel viewModel;
@@ -31,10 +32,10 @@ class _PokemonMovepoolViewState extends State<PokemonMovepoolView> {
     super.initState();
     viewModel.addListener(_onViewModelChanged);
     viewModel.loadMovePool();
-    _pokemonRepo = PokemonRepoPowersync();
-    _moveRepo = MoveRepoPowersync();
-    _movePoolRepo = MovePoolRepoPowersync();
-    _abilityPoolRepo = AbilityPoolRepoPowersync();
+    _pokemonRepo = Provider.of<PokemonRepo>(context, listen: false);
+    _moveRepo = Provider.of<MoveRepo>(context, listen: false);
+    _movePoolRepo = Provider.of<MovePoolRepo>(context, listen: false);
+    _abilityPoolRepo = Provider.of<AbilityPoolRepo>(context, listen: false);
   }
 
   @override

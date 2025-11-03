@@ -1,5 +1,6 @@
 import 'package:app/model/static_models/move_model.dart';
 import 'package:app/repository/move_repo_powersync.dart';
+import 'package:app/repository/repo_contracts/move_repo.dart';
 import 'package:app/ui/widgets/move_info_card.dart';
 import 'package:app/utils/enums/move_category.dart';
 import 'package:app/utils/enums/pokemon_type.dart';
@@ -7,6 +8,7 @@ import 'package:app/utils/move_card_context.dart';
 import 'package:app/utils/string_extension.dart';
 import 'package:app/viewmodel/move_viewmodel.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class MovedexView extends StatefulWidget {
   const MovedexView({super.key});
@@ -31,7 +33,7 @@ class _MovedexViewState extends State<MovedexView> {
   @override
   void initState() {
     super.initState();
-    final moveRepo = MoveRepoPowersync();
+    final moveRepo = Provider.of<MoveRepo>(context, listen: false);
     _movesFuture = moveRepo.getAll();
     _searchController.addListener(() {
       setState(() {

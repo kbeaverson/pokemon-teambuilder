@@ -1,5 +1,6 @@
 import 'package:app/model/static_models/ability_model.dart';
-import 'package:app/repository/ability_repo_powersync.dart';
+import 'package:app/repository/repo_contracts/ability_repo.dart';
+import 'package:provider/provider.dart';
 import 'package:app/ui/widgets/ability_info_card.dart';
 import 'package:app/utils/ability_card_context.dart';
 import 'package:app/viewmodel/ability_viewmodel.dart';
@@ -22,7 +23,7 @@ class _AbilitydexViewState extends State<AbilitydexView> {
   @override
   void initState() {
     super.initState();
-    final abilityRepo = AbilityRepoPowersync();
+    final abilityRepo = Provider.of<AbilityRepo>(context, listen: false);
     _abilitiesFuture = abilityRepo.getAll();
     _searchController.addListener(() {
       setState(() {

@@ -8,6 +8,7 @@ import 'package:app/repository/repo_contracts/pokemon_repo.dart';
 import 'package:app/utils/enums/pokemon_type.dart';
 import 'package:app/utils/string_extension.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 /// ViewModel for Pokemon objects
 class PokemonViewModel extends ChangeNotifier {
@@ -21,6 +22,14 @@ class PokemonViewModel extends ChangeNotifier {
   final MovePoolRepo _movePoolRepo;
   final PokemonRepo _pokemonRepo;
   final AbilityPoolRepo _abilityPoolRepo;
+
+  PokemonViewModel.fromContext(
+    BuildContext context, {
+    required Pokemon pokemon,
+  })   : _pokemon = pokemon,
+        _movePoolRepo = Provider.of<MovePoolRepo>(context, listen: false),
+        _pokemonRepo = Provider.of<PokemonRepo>(context, listen: false),
+        _abilityPoolRepo = Provider.of<AbilityPoolRepo>(context, listen: false);
 
   List<MovePoolEntry> _movePool = []; // Populated externally after initialization
   bool _isLoadingMovePool = false;

@@ -8,6 +8,7 @@ import 'package:app/repository/repo_contracts/pokemon_repo.dart';
 import 'package:app/viewmodel/pokemon_viewmodel.dart';
 import 'package:app/ui/widgets/pokemon_info_card.dart';
 import 'package:app/model/static_models/pokemon_model.dart';
+import 'package:provider/provider.dart';
 
 enum PokedexSortOption { preThenDex, dexThenPre, formThenPreThenDex, name }
 
@@ -36,7 +37,7 @@ class _PokedexViewState extends State<PokedexView> {
   @override
   void initState() {
     super.initState();
-    final pokemonRepo = PokemonRepoPowersync();
+    final pokemonRepo = Provider.of<PokemonRepo>(context, listen: false);
     _pokemonFuture = pokemonRepo.getAll();
     _searchController.addListener(() {
       setState(() {
