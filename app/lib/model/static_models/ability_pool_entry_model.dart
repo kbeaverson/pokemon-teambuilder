@@ -17,10 +17,7 @@ abstract class AbilityPoolEntry with _$AbilityPoolEntry {
   factory AbilityPoolEntry.fromRow(sqlite.Row row) {
     // SQLite rows may store boolean-like values as integers (0/1) or null.
     // Convert to a Dart `bool` and provide a sensible default.
-    final dynamic rawIsHidden = row['is_hidden'];
-    final bool isHidden = rawIsHidden == null
-        ? false
-        : (rawIsHidden is int ? rawIsHidden == 1 : rawIsHidden == true);
+    final bool isHidden = row['is_hidden_ability'] == 1 ? true : false;
 
     // Ensure id and string fields are treated as strings (some sqlite drivers return ints)
     final idVal = row['id']?.toString() ?? '';

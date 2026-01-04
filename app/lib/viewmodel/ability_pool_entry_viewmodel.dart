@@ -24,21 +24,9 @@ class AbilityPoolEntryViewModel extends ChangeNotifier {
   }) {_loadRelatedData();}
 
   /// Convenience constructor that reads repository instances from an
-  /// ancestor `MultiProvider` (or plain `Provider`) in the widget tree.
-  ///
-  /// Use this in widgets when you don't want to manually thread repos
-  /// through every viewmodel constructor. Example:
-  ///
-  ///   ChangeNotifierProvider(
-  ///     create: (context) => AbilityPoolEntryViewModel.fromContext(
-  ///       context,
-  ///       abilityPoolEntry: entry,
-  ///     ),
-  ///     child: ...
-  ///   )
-  AbilityPoolEntryViewModel.fromContext(BuildContext context, {required AbilityPoolEntry abilityPoolEntry})
-      : abilityPoolEntry = abilityPoolEntry,
-        pokemonRepo = Provider.of<PokemonRepo>(context, listen: false),
+  /// ancestor `MultiProvider` in the widget tree.
+  AbilityPoolEntryViewModel.fromContext(BuildContext context, {required this.abilityPoolEntry})
+      : pokemonRepo = Provider.of<PokemonRepo>(context, listen: false),
         abilityRepo = Provider.of<AbilityRepo>(context, listen: false),
         movePoolRepo = Provider.of<MovePoolRepo>(context, listen: false),
         abilityPoolRepo = Provider.of<AbilityPoolRepo>(context, listen: false) {
@@ -70,10 +58,18 @@ class AbilityPoolEntryViewModel extends ChangeNotifier {
   /// 
   /// If the ability is hidden, it returns the path for the hidden ability sprite.
   /// Otherwise, it returns the path for the normal ability sprite.
-  String get spritePath => abilityPoolEntry.isHidden ? 'assets/sprites/ability_sprites/ability-patch.png' : 'assets/sprites/ability_sprites/ability-capsule.png';
+  String get spritePath => abilityPoolEntry.isHidden ? 'assets/ability_sprites/ability-patch.png' : 'assets/ability_sprites/ability-capsule.png';
 
-  /// TODO: Loads related pokemon and ability data from the repositories.
-  Future<void> _loadRelatedData() async {}
+  /// Loads related pokemon and ability data from the repositories.
+  Future<void> _loadRelatedData() async {
+    if (abilityPoolEntry.abilityId != null) {
+      _ability = await abilityRepo.getById(abilityPoolEntry.abilityId!);
+    }
+    if (abilityPoolEntry.pokemonId != null) {
+      _pokemon = await pokemonRepo.getById(abilityPoolEntry.pokemonId!);
+    }
+    notifyListeners();
+  }
 
   /// Data needed from AbilityPoolEntryViewModel:
   /// - Ability id

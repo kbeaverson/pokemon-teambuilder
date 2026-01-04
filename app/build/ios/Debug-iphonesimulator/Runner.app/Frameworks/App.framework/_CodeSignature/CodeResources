@@ -14,11 +14,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		3okVnOp44rCRgiUb4an+TfLtUc4=
+		DA5qTcXOUhFBtnpIh49blzYUTmc=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		RMrF9YtWD6jnkDhUzzwQQnVjgws=
+		ZkZmRo7HXBXnaKSKdVWvyGXL4Z8=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -31,6 +31,14 @@
 		<key>flutter_assets/NativeAssetsManifest.json</key>
 		<data>
 		re4p7E8rPLLsN+wzaPN/+AVpXTY=
+		</data>
+		<key>flutter_assets/assets/ability_sprites/ability-capsule.png</key>
+		<data>
+		lSwQgOf+zZosftQHAFo56+Cbi04=
+		</data>
+		<key>flutter_assets/assets/ability_sprites/ability-patch.png</key>
+		<data>
+		BvJw+0wKIPKm7YT5WxEYc42oeWI=
 		</data>
 		<key>flutter_assets/assets/item_sprites/ability-shield.png</key>
 		<data>
@@ -7694,7 +7702,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		ObOOrJBmQFpKZTS51w4ZFXKcVfI=
+		zEnGYxAoIvTcXi2cJrl1UUibRVk=
 		</data>
 		<key>flutter_assets/libpowersync.dylib</key>
 		<data>
@@ -7726,14 +7734,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			EsveYBYSL0MmQwUs7d+xGLyVtgbmk0lanZN9mNcnyv0=
+			qmf79bsV662f7ryhJhBw9L6DAT8WtJz9S6SFADgRubg=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xj++3PMMjnHA2xLwt5PWDPuQViTHAjXokXDAdy2K978=
+			swyhGECG693DxXOvCSQ3/VmnDCetI3W+gyYeW36EaRg=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -7755,6 +7763,20 @@
 			<key>hash2</key>
 			<data>
 			lUijHkoEgTXB2U+Rkyi/tirix7s8q5ZVfHlB2ql3dss=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/ability_sprites/ability-capsule.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			yDCaochlHeUFwiRTxUiObQl3Q7eQ4xBppl7jbhtWfmk=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/ability_sprites/ability-patch.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			3IEWmNFDSjoG5ZVEiEkQ8CRw+5oxn3ownY4W92OgYE0=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/item_sprites/ability-shield.png</key>
@@ -21152,7 +21174,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/bkbkBBhbNY7N6DVWMEIS/qMWrBn9kzKV2faRo0agtc=
+			l0IHtccA5L3pD+4UPrdFC0gzNx64KQmb3V58VUDqi10=
 			</data>
 		</dict>
 		<key>flutter_assets/libpowersync.dylib</key>

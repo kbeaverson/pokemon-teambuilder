@@ -47,6 +47,9 @@ class AbilityPoolRepoPowersync extends AbilityPoolRepo {
     );
     final res = results.map((e) => AbilityPoolEntry.fromRow(e)).toList();
     debugPrint('Found ${res.length} ability pool entries for Pokemon ID: $pokemonId');
+    for (var entry in res) {
+      debugPrint('Ability: ${entry.id}, Hidden: ${entry.isHidden}');
+    }
     return res;
   }
 

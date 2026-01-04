@@ -80,6 +80,7 @@ flutter:
     - assets/item_sprites/
     - assets/move_sprites/move_category/
     - assets/move_sprites/learn_method/
+    - assets/ability_sprites/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

@@ -46,7 +46,7 @@
 		</data>
 		<key>Frameworks/App.framework/App</key>
 		<data>
-		+uS7SXGoflFn0GYZv8hEyQZaVjA=
+		9kkLpCuf7GKUNxg1oBbZbj6fhnA=
 		</data>
 		<key>Frameworks/App.framework/Info.plist</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>Frameworks/App.framework/_CodeSignature/CodeResources</key>
 		<data>
-		IxSf90MO+PQhvMPvNPBhf3/HYgE=
+		bAET2DztgSDrIPptVIRpHz2QtSM=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/.env</key>
 		<data>
@@ -62,11 +62,11 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.bin</key>
 		<data>
-		3okVnOp44rCRgiUb4an+TfLtUc4=
+		DA5qTcXOUhFBtnpIh49blzYUTmc=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<data>
-		RMrF9YtWD6jnkDhUzzwQQnVjgws=
+		ZkZmRo7HXBXnaKSKdVWvyGXL4Z8=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
 		<data>
@@ -79,6 +79,14 @@
 		<key>Frameworks/App.framework/flutter_assets/NativeAssetsManifest.json</key>
 		<data>
 		re4p7E8rPLLsN+wzaPN/+AVpXTY=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/ability_sprites/ability-capsule.png</key>
+		<data>
+		lSwQgOf+zZosftQHAFo56+Cbi04=
+		</data>
+		<key>Frameworks/App.framework/flutter_assets/assets/ability_sprites/ability-patch.png</key>
+		<data>
+		BvJw+0wKIPKm7YT5WxEYc42oeWI=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/assets/item_sprites/ability-shield.png</key>
 		<data>
@@ -7734,7 +7742,7 @@
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/kernel_blob.bin</key>
 		<data>
-		ObOOrJBmQFpKZTS51w4ZFXKcVfI=
+		zEnGYxAoIvTcXi2cJrl1UUibRVk=
 		</data>
 		<key>Frameworks/App.framework/flutter_assets/libpowersync.dylib</key>
 		<data>
@@ -8069,7 +8077,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			q4bHhOC2VukP7n/2swf483mQkpc32DOdnZ2wg39vpG0=
+			tsgJjI9KAC62RigYlgigTB0SRAHBthKSVKxelgW5ExQ=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/Info.plist</key>
@@ -8083,7 +8091,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qz3yHHgfUw2Khi7rmryNfKRDMkIeaeat+hu0+ES4ijI=
+			aUDpaMZZ8RlbjHV6Fa1tU50syyCp1f3EO0iJvOeW5uk=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/.env</key>
@@ -8097,14 +8105,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			EsveYBYSL0MmQwUs7d+xGLyVtgbmk0lanZN9mNcnyv0=
+			qmf79bsV662f7ryhJhBw9L6DAT8WtJz9S6SFADgRubg=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xj++3PMMjnHA2xLwt5PWDPuQViTHAjXokXDAdy2K978=
+			swyhGECG693DxXOvCSQ3/VmnDCetI3W+gyYeW36EaRg=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/FontManifest.json</key>
@@ -8126,6 +8134,20 @@
 			<key>hash2</key>
 			<data>
 			lUijHkoEgTXB2U+Rkyi/tirix7s8q5ZVfHlB2ql3dss=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/ability_sprites/ability-capsule.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			yDCaochlHeUFwiRTxUiObQl3Q7eQ4xBppl7jbhtWfmk=
+			</data>
+		</dict>
+		<key>Frameworks/App.framework/flutter_assets/assets/ability_sprites/ability-patch.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			3IEWmNFDSjoG5ZVEiEkQ8CRw+5oxn3ownY4W92OgYE0=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/assets/item_sprites/ability-shield.png</key>
@@ -21523,7 +21545,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			/bkbkBBhbNY7N6DVWMEIS/qMWrBn9kzKV2faRo0agtc=
+			l0IHtccA5L3pD+4UPrdFC0gzNx64KQmb3V58VUDqi10=
 			</data>
 		</dict>
 		<key>Frameworks/App.framework/flutter_assets/libpowersync.dylib</key>

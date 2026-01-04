@@ -42,7 +42,9 @@ class _PokemonMovepoolViewState extends State<PokemonMovepoolView> {
 
   void _onViewModelChanged() {
     if (mounted) {
-      setState(() {});
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        setState(() {});
+      });
     }
   }
 

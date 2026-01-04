@@ -1,3 +1,4 @@
+import 'package:app/ui/subviews/pokemon_abilitypool_view.dart';
 import 'package:app/ui/subviews/pokemon_movepool_view.dart';
 import 'package:app/viewmodel/pokemon_viewmodel.dart';
 import 'package:flutter/material.dart';
@@ -112,16 +113,7 @@ class _PokemonDetailViewState extends State<PokemonDetailView> {
                     Padding(
                       padding: const EdgeInsets.all(12),
                       child: viewModel.isAbilityPoolLoaded
-                          ? ListView.builder(
-                              itemCount: viewModel.abilityPool.length,
-                              itemBuilder: (context, index) {
-                                final entry = viewModel.abilityPool[index];
-                                return ListTile(
-                                  title: Text(entry.abilityId ?? 'Unknown Ability'),
-                                  subtitle: Text(entry.isHidden ? 'Hidden Ability' : 'Standard Ability'),
-                                );
-                              },
-                            )
+                          ? PokemonAbilitypoolView(pokemonViewModel: viewModel)
                           : Center(child: Text('Loading abilities...')),
                     ),
 
