@@ -106,13 +106,7 @@ class MovepoolInfoCard extends StatelessWidget {
                         ],
                       ),
                       // Description
-                      Padding(padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          moveViewModel.longDescription,
-                          style: Theme.of(context).textTheme.bodyMedium,
-                          textAlign: TextAlign.start,
-                        ),
-                      ),
+                      _buildMoveDescription(constraints, context),
                     ],
                   ),
                 ),
@@ -183,6 +177,17 @@ class MovepoolInfoCard extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _buildMoveDescription(BoxConstraints constraints, BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Text(
+        moveViewModel.longDescription,
+        style: Theme.of(context).textTheme.bodySmall,
+        textAlign: TextAlign.start,
       ),
     );
   }

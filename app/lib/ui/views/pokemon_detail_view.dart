@@ -29,29 +29,50 @@ class _PokemonDetailViewState extends State<PokemonDetailView> {
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // Sprite
-                    SizedBox(
-                      width: 120,
-                      height: 120,
-                      child: Image.asset(
-                        viewModel.spritePath,
-                        fit: BoxFit.contain,
-                        errorBuilder: (c, e, s) => const Icon(Icons.broken_image, size: 72),
+                    Container(
+                      width: 100,
+                      height: 100,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.topRight,
+                          colors: [
+                            viewModel.primaryColor,
+                            viewModel.secondaryColor,
+                          ],
+                        ),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.fromLTRB(2, 2, 2, 8),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(12),
+                            color: Theme.of(context).colorScheme.surfaceContainer,
+                          ),
+                          child: Image.asset(
+                            viewModel.spritePath,
+                            fit: BoxFit.contain,
+                            errorBuilder: (c, e, s) => const Icon(Icons.broken_image, size: 72),
+                          ),
+                        ),
                       ),
                     ),
                     const SizedBox(width: 12),
                     // Name, types, and stats
                     Expanded(
                       child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           // Types
                           Wrap(
                             spacing: 8,
                             children: viewModel.type.map((t) {
-                              return Chip(
-                                label: Text(t.name.toUpperCase()),
-                                backgroundColor: t.color,
+                              return Image.asset(
+                                t.barSpritePath,
+                                height: 20,
+                                fit: BoxFit.cover,
+                                errorBuilder: (c, e, s) => const Icon(Icons.broken_image, size: 72),
                               );
                             }).toList(),
                           ),
@@ -70,8 +91,15 @@ class _PokemonDetailViewState extends State<PokemonDetailView> {
                           const SizedBox(height: 8),
                           // weight and evo info
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text('Weight: ${viewModel.weight} kg'),
+                              Text('Weight: ${viewModel.weight} kg',
+                                style: TextStyle(
+                                  fontWeight: Theme.of(context).textTheme.bodyMedium?.fontWeight,
+                                  fontSize: Theme.of(context).textTheme.bodyMedium?.fontSize,
+                                  color: Colors.white,
+                                ),
+                              ),
                               const SizedBox(width: 12),
                               if (viewModel.isPreEvolution) const Chip(label: Text('Pre-evolution')),
                               if (viewModel.prevoId != null) const SizedBox.shrink(),
@@ -165,9 +193,23 @@ class _StatColumn extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Text(label, style: Theme.of(context).textTheme.labelSmall),
+          Text(
+            label, 
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: Theme.of(context).textTheme.labelSmall?.fontSize,
+              color: Colors.white,
+            )
+          ),
           const SizedBox(height: 4),
-          Text(value, style: Theme.of(context).textTheme.bodyMedium),
+          Text(
+            value, 
+            style: TextStyle(
+              fontWeight: Theme.of(context).textTheme.bodyMedium?.fontWeight,
+              fontSize: Theme.of(context).textTheme.bodyMedium?.fontSize,
+              color: Colors.white,
+            )
+          ),
         ],
       ),
     );
