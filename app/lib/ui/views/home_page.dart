@@ -3,6 +3,8 @@ import 'package:app/ui/views/abilitydex_view.dart';
 import 'package:app/ui/views/itemdex_view.dart';
 import 'package:app/ui/views/movedex_view.dart';
 import 'package:app/ui/views/pokedex_view.dart';
+import 'package:app/ui/views/splash_powersync_template.dart';
+import 'package:app/utils/constants_powersync.dart';
 import 'package:flutter/material.dart';
 // Providers are available via Provider at the app root; no local imports needed here
 // pokedex_view not used directly here
@@ -18,9 +20,14 @@ class HomePage extends StatelessWidget {
         automaticallyImplyLeading: false,
         actions: [
           PopupMenuButton<String>(
-            onSelected: (value) {
+            onSelected: (value) async {
               if (value == 'logout') {
-                // TODO: Implement logout logic
+                await supabase.auth.signOut();
+                if (context.mounted) {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(builder: (context) => const SplashPage()),
+                );
+              }
               }
             },
             itemBuilder: (context) => [
